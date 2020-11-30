@@ -7,6 +7,10 @@ Rails.application.routes.draw do
     resources :vets, only: [:new, :create]
     resources :bookings, only: [:new, :create, :edit, :update]
   end
-  resources :pets, only: [:show, :edit, :update, :destroy]
+  
+  resources :users, only: [:show] do
+    resources :pets, only: [:show, :edit, :update, :destroy]
+  end
+  
   resources :bookings, only: [:destroy]
 end
