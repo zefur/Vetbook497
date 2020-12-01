@@ -1,5 +1,6 @@
 <p>form for creating new booking</p>
 
 <%= simple_form_for [@clinic, @booking] do |f| %>
-<%= @clinic.name %>
+<%=f.input :date %>
+<%=f.input :time%>
 <% end %>

@@ -22,6 +22,7 @@ class VetsController < ApplicationController
 
     def set_default
         @vet = Vet.find(params[:id])
+        @clinic = current_clinic
     end
 
     
