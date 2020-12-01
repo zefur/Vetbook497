@@ -1,1 +1,16 @@
 <p>User profile with booking detail/ lists of pets</p>
+<div>
+<h3><%= @user.first_name%> <%= @user.last_name %></h3>
+<p><%= @user.location %></p>
+<p><%= @user.phone_number %></p>
+<p><%= @user.email %></p>
+</div>
+<div>
+<% @user.pets.each do |pet| %>
+<p><%= pet.name %></p>
+<p><%= pet.dob %></p>
+<p><%= pet.breed%>
+<%= link_to "view more", user_pet_path(user, pet) %>
+<% end %>
+</div>
+<%= link_to "add new pet", new_user_pet_path(@user) %>

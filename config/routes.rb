@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
   get 'users/dash', to: 'users#dash'
   resources :users, only: [:show] do
-    resources :pets, only: [:show, :edit, :update, :destroy]
+    resources :pets, only: [:new, :create, :show, :edit, :update, :destroy]
   end
   
   resources :bookings, only: [:destroy]
