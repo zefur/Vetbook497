@@ -1,0 +1,54 @@
+.clinic-dashboard {
+  margin-top: 20px;
+}
+
+.one-booking {
+  border: 1px solid lightgray;
+  background-color: $my-background-color;
+  margin-top: 40px;
+}
+
+.one-booking-grey-bar {
+  background-color: lightgray;
+  width: 1%;
+}
+
+.one-booking-a {
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.one-booking-b {
+  border-left: 1px solid lightgray;
+  padding-left: 20px;
+  padding-top: 5px;
+}
+
+.one-booking-c {
+  border-left: 1px solid lightgray;
+  padding: 0 20px;
+  padding-top: 5px;
+}
+
+.one-booking-btn {
+  border: 1px solid $submit-button-green;
+  margin-top: 5px;
+  margin-right: 5px;
+  background-color: white;
+  color: $submit-button-green;
+}
+
+.one-booking-btn:hover {
+  background-color: $submit-button-green;
+  color: white;
+  text-decoration: none;
+}
+
+.one-booking-d .dropdown-item:hover {
+  background-color: $my-background-color;
+  color: $submit-button-green;
+}
+
+
+
