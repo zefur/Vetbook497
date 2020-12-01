@@ -1,1 +1,11 @@
 <p> A form for adding a new pet </p>
+
+<%= simple_form_for [@user,@pet] do |f| %>
+<%= f.input :name %>
+<%= f.input :species %>
+<%= f.input :breed %>
+<%= f.input :gender %>
+<%= f.input :DOB %>
+<%= f.input :notes %>
+
+<% end %>

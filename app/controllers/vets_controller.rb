@@ -1,15 +1,15 @@
 class VetsController < ApplicationController
+    before_action :set_default
     def new
         @vet = Vet.new
     end
 
     def create
-        @vet =Vet.new(vet_params)
+        @vet = Vet.new(vet_params)
         @vet.clinic = current_clinic
         if @vet.save!
             redirect_to @vet
         else
-            flash: @vet.errors.full_messages
             render :new
         end
     end
@@ -21,7 +21,7 @@ class VetsController < ApplicationController
     end
 
     def set_default
-        @vet = Vet.find(params[:id])
+        @clinic = current_clinic
     end
 
     
