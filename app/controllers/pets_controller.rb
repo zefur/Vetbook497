@@ -11,7 +11,7 @@ class PetsController < ApplicationController
         if @pet.save
             redirect_to user_path(current_user), notice: "Your family has grown =]"
         else
-            flash: @skill.errors.full_messages
+            flash: @pet.errors.full_messages
             render :new
         end
     end
@@ -26,7 +26,7 @@ class PetsController < ApplicationController
 
     def update
         if @pet.update(pet_params)
-            edirect_to @pet, notice: 'Successfully updated'
+            redirect_to @pet, notice: 'Successfully updated'
         else
             render :edit
         end
@@ -43,5 +43,6 @@ class PetsController < ApplicationController
 
     def set_default
         @pet = Pet.find(params[:id])
+        @user = current_user
     end
 end
