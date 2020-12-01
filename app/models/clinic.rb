@@ -4,6 +4,7 @@ class Clinic < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  validates: :name, :address, :phone_number, :email, :owner_name, presence :true 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
   has_many :vets
