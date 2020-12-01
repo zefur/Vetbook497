@@ -1,15 +1,55 @@
-<%= @clinic.name %>
+<body style="background-color: white;">
 
-<% @clinic.vets.each do |vet| %>
-<% vet.bookings.each do |booking| %>
-<%= booking.date %>
-<%= booking.user.name %>
-<%= booking.pet.species %>
-<%= booking.pet.breed %>
-<%= booking.pet.name %>
-<%= booking.vet.name %>
+<div class="container clinic-dashboard">
+<h2 style="color: #FF7E67; font-weight: 400; font-size: 40px;">Your dashboard</h2>
 
-<% end %>
+<h3 style="color: #006A71; font-weight: 200;"><%= @clinic.name %></h3>
 
-    
-<% end %>
+
+<%# @clinic.vets.each do |vet| %>
+  <%# vet.bookings.each do |booking| %>
+  <div class="one-booking d-flex">
+
+    <div class="one-booking-grey-bar">
+    </div>
+
+    <div class="one-booking-a">
+      <p>12/12/2020 <%#= booking.date %></p>
+    </div>
+
+    <div class="one-booking-b flex-fill">
+      <p>Owner name: <%#= booking.user.name %></p>
+      <p>Veterinary booked: <%#= booking.vet.name %></p>
+    </div>
+
+    <div class="one-booking-c flex-fill">
+      <p>Pet name: <%#= booking.pet.name %></p>
+      <p>Pet species: <%#= booking.pet.species %></p>
+      <p>Pet breed: <%#= booking.pet.breed %></p>
+    </div>
+
+
+    <div class="one-booking-d dropdown">
+      <button class="btn one-booking-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Manage
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Submit health report</a>
+        <a class="dropdown-item" href="#">Pet health profile</a>
+        <a class="dropdown-item" href="#">Change booking</a>
+        <a class="dropdown-item" href="#">Cancel booking</a>
+      </div>
+    </div>
+
+
+  </div>
+  <%# end %>
+<%# end %>
+
+
+
+
+
+</div>
+
+</body>
