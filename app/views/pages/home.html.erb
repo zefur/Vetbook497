@@ -3,5 +3,8 @@
 <div><%= link_to "user", new_user_registration_path %>  <%= link_to "clinic", new_clinic_registration_path %></div>
 
 <div><%= link_to "user login", new_user_session_path %> <%= link_to "clinic login", clinic_session_path %></div>
-
+<%= link_to "log out clinic", destroy_clinic_session_path, method: :delete %> <%= link_to "log out user", destroy_user_session_path, method: :delete %>
+<% if user_signed_in? %>
 <h2><%= current_user.email %></h2>
+
+<% end %>

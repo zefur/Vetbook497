@@ -12,3 +12,4 @@ require 'faker'
 end
 
 User.create(email: "jdhall@live.co.uk", first_name: "James", last_name: "Hall", location: "England", phone_number:"12398765432", password: "password")
+Clinic.create(email: "me@clinic.co.uk", name: "Jammy's Clinic",address: "England",owner_name: "James Hall",phone_number: "098765432109", password: "password")
