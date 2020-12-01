@@ -14,3 +14,12 @@
 <% end %>
 </div>
 <%= link_to "add new pet", new_user_pet_path(@user) %>
+
+<p>Profile picture</p>
+<%
+=begin%>
+ <% @user.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %> 
+<%
+=end%>

@@ -17,7 +17,7 @@ class VetsController < ApplicationController
     private
     
     def set_params
-        params.require(:vet).permit(:first_name, :last_name, :speciality, :bio)
+        params.require(:vet).permit(:first_name, :last_name, :speciality, :bio, :photo)
     end
 
     def set_default
