@@ -10,3 +10,5 @@ require 'faker'
     sleep(2)
     Clinic.create(name:Faker::Company.name,address:Faker::Address.full_address)
 end
+
+User.create(email: "jdhall@live.co.uk", first_name: "James", last_name: "Hall", location: "England", phone_number:"12398765432", password: "password")
