@@ -7,7 +7,7 @@ class UsersController < ApplicationController
             lat: clinic.latitude,
             lng: clinic.longitude,
             infoWindow: render_to_string(partial: "info_window", locals: { clinic: clinic }),
-            #image_url: :CLOUDINARY_URL
+            image_url: ENV['CLOUDINARY_URL']
             }
         end
     end
