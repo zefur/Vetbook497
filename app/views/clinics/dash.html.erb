@@ -1,0 +1,15 @@
+<%= @clinic.name %>
+
+<% @clinic.vets.each do |vet| %>
+<% vet.bookings.each do |booking| %>
+<%= booking.date %>
+<%= booking.user.name %>
+<%= booking.pet.species %>
+<%= booking.pet.breed %>
+<%= booking.pet.name %>
+<%= booking.vet.name %>
+
+<% end %>
+
+    
+<% end %>

@@ -1,4 +1,5 @@
 class ClinicsController < ApplicationController
+  before_action :set_clinic
     def index
       @clinics = Clinic.all
       @markers = @clinics.geocoded.map do |clinic|
@@ -11,15 +12,23 @@ class ClinicsController < ApplicationController
       end
     end
 
-    def show
-
-    end
-
     def new
 
     end
 
     def create
         
+    end
+
+    def dash
+
+    end
+
+    def show
+
+    end
+    private
+    def set_clinic
+      @clinic = current_clinic
     end
 end
