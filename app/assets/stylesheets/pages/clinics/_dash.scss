@@ -41,16 +41,17 @@
 //   color: $submit-button-green;
 // }
 
-// .btn :hover {
-//   background-color: $submit-button-green;
-//   color: white;
-//   text-decoration: none;
-// }
+.one-booking-btn:hover {
+   background-color: $submit-button-green;
+   color: white;
+   text-decoration: none;
+}
 
-// .manage-action:hover {
-//   background-color: $my-background-color;
-//   color: $submit-button-green;
-// }
+.one-booking-manage-action .dropdown-item:hover {
+   background-color: $my-background-color;
+   color: $submit-button-green;
+
+}
 
 
 
