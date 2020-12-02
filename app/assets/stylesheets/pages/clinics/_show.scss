@@ -1,0 +1,63 @@
+.button-to-edit-clinic {
+  color: #006A71;
+  background-color: white;
+  border: 1px solid #006A71;
+  padding: 5px 30px;
+  margin-right: 10px;
+  margin-top: 10px;
+  //position: fixed;
+}
+
+.button-to-edit-clinic:hover {
+  background-color: #006A71;
+  color: white;
+}
+
+.clinic-show h2 {
+  font-weight: 400;
+  color: #FF7E67;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.clinic-show h3 {
+  font-weight: 200;
+  color: #006A71;
+  text-align: center;
+}
+
+.col-11.clinic-show-vet-cards {
+  //background-color: red;
+  height: 100vh;
+  padding-top: 0;
+}
+
+////////////////////////////////
+
+.clinic-show-one-vet {
+  border-radius: 20px;
+  display: table;
+}
+
+
+.vet-profile-picture {
+  object-fit: cover;
+  width: 200px;
+  height: 200px;
+}
+
+
+.button-to-edit-vet {
+  background-color: #FF7E67;
+  color: white;
+  padding: 5px 30px;
+  margin-bottom: 10px;
+  display: table-cell;
+}
+
+///////////////////////////////
+
+.clinic-show-buttons {
+  background-color: green;
+  height: 100vh
+}
