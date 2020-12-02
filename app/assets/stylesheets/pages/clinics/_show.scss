@@ -6,6 +6,9 @@
   margin-right: 10px;
   margin-top: 10px;
   //position: fixed;
+  //position: -webkit-sticky; /* Safari */
+  //position: sticky;
+  // top: 0;
 }
 
 .button-to-edit-clinic:hover {
@@ -17,7 +20,6 @@
   font-weight: 400;
   color: #FF7E67;
   text-align: center;
-  margin-top: 20px;
 }
 
 .clinic-show h3 {
