@@ -1,1 +1,27 @@
-<p>show clinic's/vets detail</p>
+
+<%= render "shared/navbar" %>
+
+<%= @clinic.name %>
+<%= @clinic.address %>
+
+<div class="row">
+    <div class="col-3 " style="background-color: green; height: 100vh">
+        <div class= "row" >
+            <div class="col align-self-end">
+                hello
+            </div>
+        </div>
+    </div>
+    <div class="row col-9" style="background-color: red; height: 100vh">
+        <% @clinic.vets.each do |vet| %>
+<div class= "col align-self-center m-3 " style="background-color: white;">
+        <p>Name:</p><%= vet.first_name %> <%= vet.last_name %>
+        <p>Education</p>
+        <p>Speciality</p> <%= vet.speciality %>
+        <p>Bio</p> <%= vet.bio %>
+        <%= button_to "edit", edit_clinic_vet_path(vet) %>
+</div>
+        <% end %>
+
+    </div>
+</div>
