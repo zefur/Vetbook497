@@ -28,7 +28,7 @@
     <p>Age:</p>
     <p>Breed:</p>
     
-    <%= link_to "View full pet records", class: "btn button-view-record"  %>
+    <%= link_to "View full pet records",user_pet_path(@user), class: "btn button-view-record"  %>
     
     <%
 =begin%>
@@ -39,7 +39,7 @@
     <p><%= pet.dob %></p>
     <p>Breed:</p>
     <p><%= pet.breed%>
-    <%= link_to "View full pet records", user_pet_path(pet) %>
+    <%= link_to "View full pet records", user_pet_path(@user) %>
     <%# end %> 
 <%
 =end%>
