@@ -28,7 +28,8 @@
     <p>Age:</p>
     <p>Breed:</p>
     
-    <a class="btn button-view-record"  href=" " role="button">View full pet records</a >
+    <%= link_to "View full pet records", class: "btn button-view-record"  %>
+    
     <%
 =begin%>
  <%# @user.pets.each do |pet| %>
@@ -38,7 +39,7 @@
     <p><%= pet.dob %></p>
     <p>Breed:</p>
     <p><%= pet.breed%>
-    <%= link_to "view more", user_pet_path(user, pet) %>
+    <%= link_to "View full pet records", user_pet_path(pet) %>
     <%# end %> 
 <%
 =end%>
