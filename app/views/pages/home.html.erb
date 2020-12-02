@@ -1,10 +1,264 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<div><%= link_to "user", new_user_registration_path %>  <%= link_to "clinic", new_clinic_registration_path %></div>
 
-<div><%= link_to "user login", new_user_session_path %> <%= link_to "clinic login", clinic_session_path %></div>
-<%= link_to "log out clinic", destroy_clinic_session_path, method: :delete %> <%= link_to "log out user", destroy_user_session_path, method: :delete %>
-<% if user_signed_in? %>
-<h2><%= current_user.email %></h2>
+<!-- banner -->
+<div class= "banner d-flex justify-content-center" >
+  <div class="container d-flex align-items-start">
 
-<% end %>
+    <div class="homepage container">
+      <div class="row d-flex justify-content-center align-items-center">
+       <h1>VetBook</h1>
+     </div>
+
+     <div class="row d-flex d-flex justify-content-center align-items-center">
+      <p>Save your pet, cloud store the health records!</p>
+    </div>
+
+    <div class="row d d-flex justify-content-center align-items-center">
+      <%= link_to "Veterinarian", new_clinic_registration_path, class: "btn-veterinarian"  %>
+      <%= link_to "Pet Owner", new_user_registration_path, class: "btn-petowner"  %>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class= " master-box d-flex justify-content-center"  >
+  <div class="container">
+
+
+    <div class="row align-items-center justify-content-center">
+      <div class="box col-12 mt-3 mb-3 pt-2 pb-2">
+        <h2>What we do</h2>
+      </div>
+
+      <div class="box1 col-5 mt-2 pt-2 pb-2 d-flex align-items-center">
+        <div class="container">
+          <div class= "row d-flex justify-content-center">
+            <%= image_tag('calendar-line.png', height: '45', width: '45') %>
+          </div>
+          <div class= "row d-flex justify-content-center">
+            <h5>Appointments</h5>
+          </div>
+          <div class= "row d-flex justify-content-center">
+            <p>Easily make appointments with your nearest vet</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="box2 col-5 mt-2 pt-2 pb-2 d-flex align-items-center">
+        <div class="container">
+          <div class= "row d-flex justify-content-center">
+            <%= image_tag('cloud-data-download.png', height: '45', width: '45') %>
+          </div>
+
+          <div class= "row d-flex justify-content-center">
+            <h5>Medical records</h5>
+          </div>
+
+          <div class= "row d-flex justify-content-center">
+            <p>Keep detailed track of your pet's medical history</p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="box3 col-5 pb-2 d-flex align-items-center">
+       <div class="container">
+        <div class= "row d-flex justify-content-center">
+          <%= image_tag('notification-alert.png', height: '45', width: '45') %>
+        </div>
+
+        <div class= "row d-flex justify-content-center">
+          <h5>Reminders</h5>
+        </div>
+
+        <div class= "row d-flex justify-content-center">
+         <p>Never forget an upcoming vaccination </p>
+       </div>
+     </div>
+   </div>
+
+   <div class="box4 col-5 pb-2 d-flex align-items-center">
+    <div class="container">
+
+      <div class= "row d-flex justify-content-center">
+       <%= image_tag('multiple-11.png', height: '45', width: '45') %>
+     </div>
+
+     <div class= "row d-flex justify-content-center">
+      <h5>Advertise your clinic</h5>
+    </div>
+
+    <div class= "row d-flex justify-content-center">
+      <p>Reach a wider audience of pet owners</p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+
+
+<div class ="container-customer">
+
+ <div class="customer-box col-12 mt-2 pt-4 pb-2">
+  <h2>What pet owners think</h2>
+</div>
+
+<div class="container-lg my-3 d-flex justify-content-center">
+  <div id="myCarousel" class="carousel slide d-flex justify-content-center" data-ride="carousel">
+    <!-- Carousel indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <!-- Wrapper for carousel items -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="row">
+
+          <div class="col">
+           <div class="row d-flex justify-content-center">
+             <div>
+              <%= image_tag "profile3.jpg", :class => 'avatar' %>
+            </div>
+          </div>
+          <div class="review row d-flex justify-content-center tp-2 pl-2 pr-1">
+            <p>“ The only app <br>reminding me vaccinations”</p>
+            <p>Alicia B.- pet owner</p>
+          </div>
+        </div>
+
+        <div class="col">
+         <div class="row d-flex justify-content-center">
+           <div>
+            <%= image_tag "profile-1.jpg", :class => 'avatar' %>
+          </div>
+        </div>
+        <div class="review row d-flex justify-content-center tp-2 pl-2 pr-1">
+          <p>“ Awesomeeeee <br> awesome and once more awesome!!”</p>
+          <p>Jessica S.- pet owner</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="carousel-item">
+   <div class="row">
+
+    <div class="col">
+     <div class="row d-flex justify-content-center">
+       <div>
+        <%= image_tag "profile2.jpg", :class => 'avatar' %>
+      </div>
+    </div>
+    <div class="review row d-flex justify-content-center tp-2 pl-2 pr-1">
+      <p>“ Fabulous idea <br>to have handy app for pets”</p>
+      <p>Teresa B.- pet owner</p>
+    </div>
+  </div>
+
+  <div class="col">
+   <div class="row d-flex justify-content-center">
+     <div>
+      <%= image_tag "profile4.jpg", :class => 'avatar' %>
+    </div>
+  </div>
+  <div class="review row d-flex justify-content-center tp-2 pl-2 pr-1">
+    <p>“ Ive been volunteer <br> to test this app, and I love it!!”</p>
+    <p>Janice S.- pet owner</p>
+  </div>
+</div>
+
+</div>
+</div>
+      <div class="carousel-item">
+        <div class="row">
+
+          <div class="col">
+           <div class="row d-flex justify-content-center">
+             <div>
+              <%= image_tag "profile5.jpg", :class => 'avatar' %>
+            </div>
+          </div>
+          <div class="review row d-flex justify-content-center tp-2 pl-2 pr-1">
+            <p>“ Nice to have<br>app as reminder. May use now!”</p>
+            <p>Dereck S.- pet owner</p>
+          </div>
+        </div>
+
+        <div class="col">
+         <div class="row d-flex justify-content-center">
+           <div>
+            <%= image_tag "profile6.jpg", :class => 'avatar' %>
+          </div>
+        </div>
+        <div class="review row d-flex justify-content-center tp-2 pl-2 pr-1">
+          <p>“ Love it <br> coudlnt have better interface!!”</p>
+          <p>Jack N.- pet owner</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+</div>
+<!-- Carousel controls -->
+  <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+
+</div>
+
+<div class="row" style="background-color:white;">
+  <div class="col-3 logos">
+   <h4>Vetbook<br>partnered clinics</h4>
+  </div>
+
+  <div class="col-2">
+    <%= image_tag "clinic1.png", :class => 'avatar-logo' %>
+  </div>
+
+   <div class="col-2">
+    <%= image_tag "clinic2.png", :class => 'avatar-logo' %>
+  </div>
+
+   <div class="col-2">
+    <%= image_tag "clinic3.png", :class => 'avatar-logo' %>
+  </div>
+
+   <div class="col-2">
+    <%= image_tag "clinic4.png", :class => 'avatar-logo' %>
+  </div>
+
+</div>
+
+
+
+
+    <div class="footer ">
+      <div class="footer-links">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <div class="footer-copyright">
+        This project is made with <i class="fas fa-heart"></i> of Remote Team
+      </div>
+    </div>
+
+</div>
+
+<!-- </div> -->
+
+
