@@ -13,3 +13,11 @@ end
 
 User.create(email: "jdhall@live.co.uk", first_name: "James", last_name: "Hall", location: "England", phone_number:"12398765432", password: "password")
 Clinic.create(email: "me@clinic.co.uk", name: "Jammy's Clinic",address: "England",owner_name: "James Hall",phone_number: "098765432109", password: "password")
+
+3.times do 
+    Pet.create(name:Faker::Name.first_name,gender: 1, species:"cat",user_id: 1)
+end
+
+3.times do 
+    Vet.create(first_name:Faker::Name.first_name, last_name:Faker::Name.last_name, speciality:"cardio", bio: Faker::Quote.famous_last_words, clinic_id: 1)
+end
