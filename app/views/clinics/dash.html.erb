@@ -1,14 +1,14 @@
 <body style="background-color: white;">
 <%=render "shared/navbar"%>
 
-<div class="container" style="margin-top: 20px">
+<div class="container clinic-dashboard" style="margin-top: 20px">
 <h2 style="color: #FF7E67; font-weight: 400; font-size: 40px;">Your dashboard</h2>
 
 <h3 style="color: #006A71; font-weight: 200;"><%= @clinic.name %></h3>
 
 <%# @clinic.vets.each do |vet| %>
   <%# vet.bookings.each do |booking| %>
-  <div class="d-flex one-booking" style="margin-top: 40px; background-color: #ECF4F3; border: 1px solid lightgray">
+  <div class="d-flex one-booking">
 
     <div class="one-booking-grey-bar" style="background-color: lightgray; width: 1%">
     </div>
