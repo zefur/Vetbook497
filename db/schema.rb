@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_01_122928) do
+ActiveRecord::Schema.define(version: 2020_12_02_030358) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,17 @@ ActiveRecord::Schema.define(version: 2020_12_01_122928) do
     t.index ["reset_password_token"], name: "index_clinics_on_reset_password_token", unique: true
   end
 
+  create_table "health_records", force: :cascade do |t|
+    t.date "diagnosis_date"
+    t.text "diagnosis"
+    t.text "treatment"
+    t.integer "vaccination_type"
+    t.integer "vaccination_date"
+    t.bigint "pet_id", null: false
+    t.boolean "is_vaccination"
+    t.index ["pet_id"], name: "index_health_records_on_pet_id"
+  end
+
   create_table "pets", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "name"
@@ -111,6 +122,7 @@ ActiveRecord::Schema.define(version: 2020_12_01_122928) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "pets"
   add_foreign_key "bookings", "vets"
+  add_foreign_key "health_records", "pets"
   add_foreign_key "pets", "users"
   add_foreign_key "vets", "clinics"
 end

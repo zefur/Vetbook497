@@ -1,0 +1,140 @@
+.petshow {
+  height: 100vh;
+}
+
+
+h4 {
+   color: $submit-button-orange;
+   font-weight: 400;
+  font-family: 'Montserrat', sans-serif;
+  padding: 20px 20px;
+}
+
+
+.medicalrecord {
+text-align: left;
+
+h4 {
+   color: $submit-button-orange;
+   font-weight: 400;
+  font-family: 'Montserrat', sans-serif;
+  padding: 20px 20px;
+
+}
+
+
+}
+
+.info {
+ p {
+  color:$submit-button-green;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+}
+
+.avatar-doggy {
+  margin: 5px 5px;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.generalinfo {
+  // background-color: $submit-button-orange;
+  padding: 15px 15px;
+  border-bottom: 5px dotted $submit-button-orange;
+}
+
+.input-diagnosis {
+  text-decoration: none;
+  color: $submit-button-green;
+}
+
+.one-diagnosis {
+  background-color: $submit-button-green;
+  color:white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+
+.diagnosis {
+  padding: 15px 15px;
+  border-bottom: 5px dotted $submit-button-orange;
+}
+
+.medicalrecord{
+  text-align: left;
+}
+
+.btn-record {
+  color:white;
+  background-color: $submit-button-orange;
+  padding: 10px 15px;
+  border: 1px solid $submit-button-orange;
+  border-radius: 5px;
+}
+
+.btn-record:hover {
+  text-decoration: none;
+  opacity: 0.8;
+  color:white;
+  text-align: center;
+}
+
+
+.last-box {
+background-color: $my-background-color;
+border-style: none;
+}
+
+.one-vaccination {
+  background-color: $submit-button-green;
+  color:white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+
+}
+
+.one-vaccination-d {
+background-color: $my-background-color;
+height: 100px;
+overflow: auto;
+}
+
+.one-diagnosis-c {
+  height: 100px;
+  overflow: auto;
+}
+
+.one-diagnosis-a {
+  height: 100px;
+  overflow: auto;
+}
+
+.one-diagnosis-b {
+  height: 100px;
+  overflow: auto;
+}
+
+.one-vaccination-a {
+  height: 100px;
+  overflow: auto;
+}
+
+.one-vaccination-b {
+  height: 100px;
+  overflow: auto;
+}
+
+
+.one-vaccination-c {
+  height: 100px;
+  overflow: auto;
+}
+
+.vaccinations {
+  padding: 15px 15px;
+  border-bottom: 5px dotted $submit-button-orange;
+}

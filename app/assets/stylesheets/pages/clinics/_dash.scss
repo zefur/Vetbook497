@@ -2,9 +2,13 @@
   // margin-top: 20px;
 // }
 
-// .d-flex .one-booking {
-//   background-color: $my-background-color;
-// }
+.one-booking {
+  background-color: $my-background-color;
+  margin-top: 40px;
+  border: 1px solid lightgray;
+}
+
+
 
 // .one-booking .one-booking-grey-bar {
 //   background-color: lightgray;
@@ -37,16 +41,17 @@
 //   color: $submit-button-green;
 // }
 
-// .btn :hover {
-//   background-color: $submit-button-green;
-//   color: white;
-//   text-decoration: none;
-// }
+.one-booking-btn:hover {
+   background-color: $submit-button-green;
+   color: white;
+   text-decoration: none;
+}
 
-// .manage-action:hover {
-//   background-color: $my-background-color;
-//   color: $submit-button-green;
-// }
+.one-booking-manage-action .dropdown-item:hover {
+   background-color: $my-background-color;
+   color: $submit-button-green;
+
+}
 
 
 
