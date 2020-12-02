@@ -3,7 +3,7 @@ class PetsController < ApplicationController
     def new
         @pet = Pet.new
     end
-    
+
     def create
         @pet = Pet.new(pet_params)
         @pet.user = current_user
@@ -15,11 +15,11 @@ class PetsController < ApplicationController
             render :new
         end
     end
-    
+
     def show
 
     end
-    
+
     def edit
 
     end
