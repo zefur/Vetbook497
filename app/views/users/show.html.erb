@@ -1,25 +1,53 @@
-<p>User profile with booking detail/ lists of pets</p>
-<div>
-<h3><%= @user.first_name%> <%= @user.last_name %></h3>
-<p><%= @user.location %></p>
-<p><%= @user.phone_number %></p>
-<p><%= @user.email %></p>
+<body>
+<%= render "shared/navbar" %>
+<p>User profile with lists of pets</p>
+<div class="row">
+  <div class="col-3" style="background-color:  #ECF4F3">
+    <div class="container user-info">
+    <div id="avatar"></div> 
+    <p>Name:</p>
+    <p><%= @user.first_name%> <%= @user.last_name %></p>
+    <p>location:</p>
+    <p><%= @user.location %></p>
+    <p>Contact:</p>
+    <p><%= @user.phone_number %></p>
+    <p>Email:</p>
+    <p><%= @user.email %></p>
+  </div>
 </div>
-<div>
-<% @user.pets.each do |pet| %>
-<p><%= pet.name %></p>
-<p><%= pet.dob %></p>
-<p><%= pet.breed%>
-<%= link_to "view more", user_pet_path(user, pet) %>
-<% end %>
-</div>
-<%= link_to "add new pet", new_user_pet_path(@user) %>
 
-<p>Profile picture</p>
-<%
+
+<div class="col-9">
+  <div class="d-flex container pet-cards">
+  
+    <div class="one-pet-card" style="border: 1px solid white; background-color: white;">
+
+  <img src="https://www.cdc.gov/healthypets/images/pets/cute-dog-headshot.jpg" id="avatar-square"> 
+
+    <p>Name:</p>
+    <p>Age:</p>
+    <p>Breed:</p>
+    
+    <a class="btn button-view-record"  href=" " role="button">View full pet records</a >
+    <%
 =begin%>
- <% @user.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %> 
+ <%# @user.pets.each do |pet| %>
+    <p>Name:</p>
+    <p><%= pet.name %></p>
+    <p>Age:</p>
+    <p><%= pet.dob %></p>
+    <p>Breed:</p>
+    <p><%= pet.breed%>
+    <%= link_to "view more", user_pet_path(user, pet) %>
+    <%# end %> 
 <%
 =end%>
+  
+    </div>
+  </div>
+</div>
+</div>
+<%= link_to "+ Add Pet", new_user_pet_path(@user) %>
+</body>
+
+

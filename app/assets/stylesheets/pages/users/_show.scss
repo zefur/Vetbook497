@@ -1,0 +1,44 @@
+p{
+    color: black;
+    font-weight: bold;
+}
+
+body{
+  background-color: #ECF4F3;
+}
+#avatar {
+    background-image: url('https://i.pinimg.com/originals/b6/ac/a3/b6aca38da1d44b9c6e05a83394fe79f7.jpg');
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+    background-position: top center;
+    border-radius: 50%;
+}
+
+.one-pet-card {
+    width: 250px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+#avatar-square{
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.button-view-record{
+  background-color: $submit-button-orange;
+  color: white;
+}
+.pet-cards{
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: hidden;
+  justify-content: space-around;
+
+}
+
