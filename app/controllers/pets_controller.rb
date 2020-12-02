@@ -11,7 +11,7 @@ class PetsController < ApplicationController
         if @pet.save
             redirect_to user_path(current_user), notice: "Your family has grown =]"
         else
-            
+
             render :new
         end
     end
@@ -41,7 +41,9 @@ class PetsController < ApplicationController
         params.require(:pet).permit(:name,:gender, :species, :DOB,:breed,:species,:notes, :photo)
     end
 
+
     def set_default
         @user = current_user
+        # @pet = Pet.find(params[:id])
     end
 end
