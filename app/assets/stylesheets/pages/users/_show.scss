@@ -1,44 +1,63 @@
 p{
-    color: black;
-    font-weight: bold;
+  color: black;
+  font-weight: bold;
+  text-align: center;
 }
 
 body{
   background-color: #ECF4F3;
-}
-#avatar {
-    background-image: url('https://i.pinimg.com/originals/b6/ac/a3/b6aca38da1d44b9c6e05a83394fe79f7.jpg');
-    width: 150px;
-    height: 150px;
-    background-size: cover;
-    background-position: top center;
-    border-radius: 50%;
+  
 }
 
-.one-pet-card {
-    width: 250px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
+.row{
+  margin-top: 50px;
+}
+
+#avatar {
+  background-image: url('https://i.pinimg.com/originals/b6/ac/a3/b6aca38da1d44b9c6e05a83394fe79f7.jpg');
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  background-position: top center;
+  border-radius: 50%;        
+}
+
+.one-pet-card{
+  width: 320px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin: auto;          
+}
+
+.pet-cards{
+  display: flex; 
+}
+.pet-text{
+  text-align:initial;
 }
 
 #avatar-square{
-  width: 150px;
-  height: 150px;
+  width: 300px;
+  height: 200px;
   object-fit: cover;
   border-radius: 10px;
-  border: 1px solid black;
+  display: block;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
 }
 
 .button-view-record{
   background-color: $submit-button-orange;
   color: white;
+  align-self: center; 
+  display: block;  
+  
 }
-.pet-cards{
-  display: flex;
-  flex-wrap: wrap;
-  overflow-y: hidden;
-  justify-content: space-around;
 
-}
+
+
+
+
 

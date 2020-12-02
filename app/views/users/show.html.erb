@@ -1,54 +1,41 @@
 <body>
 <%= render "shared/navbar" %>
-<p>User profile with lists of pets</p>
 <div class="row">
-  <div class="col-3" style="background-color:  #ECF4F3">
-    <div class="container user-info">
-    <div id="avatar"></div> 
-    <p>Name:</p>
-    <p><%= @user.first_name%> <%= @user.last_name %></p>
-    <p>location:</p>
-    <p><%= @user.location %></p>
-    <p>Contact:</p>
-    <p><%= @user.phone_number %></p>
-    <p>Email:</p>
-    <p><%= @user.email %></p>
-  </div>
-</div>
+  <div class="col-3" style="background-color:#ECF4F3;">
+    <div class="container user-info" >
+      <div id="avatar"></div> 
+        <p>Name:</p>
+        <p><%= @user.first_name%> <%= @user.last_name %></p>
+        <p>location:</p>
+        <p><%= @user.location %></p>
+        <p>Contact:</p>
+        <p><%= @user.phone_number %></p>
+        <p>Email:</p>
+        <p><%= @user.email %></p>
+        <div class="wrapper" style="text-align: center;">
+          <%= link_to "+ Add Pet", new_user_pet_path(@user) %>
+        </div>
+      </div>
+    </div>
+ 
 
-
-<div class="col-9">
-  <div class="d-flex container pet-cards">
-  
-    <div class="one-pet-card" style="border: 1px solid white; background-color: white;">
-
-  <img src="https://www.cdc.gov/healthypets/images/pets/cute-dog-headshot.jpg" id="avatar-square"> 
-
-    <p>Name:</p>
-    <p>Age:</p>
-    <p>Breed:</p>
-    
-    <%= link_to "View full pet records",user_pet_path(@user), class: "btn button-view-record"  %>
-    
-    <%
-=begin%>
- <%# @user.pets.each do |pet| %>
-    <p>Name:</p>
-    <p><%= pet.name %></p>
-    <p>Age:</p>
-    <p><%= pet.dob %></p>
-    <p>Breed:</p>
-    <p><%= pet.breed%>
-    <%= link_to "View full pet records", user_pet_path(@user) %>
-    <%# end %> 
-<%
-=end%>
-  
+  <div class="col-9">
+    <div class="container pet-cards">
+      <% 3.times do %>
+        <div class="one-pet-card" style="border: 1px solid white; background-color: white;">
+          <img src="https://ychef.files.bbci.co.uk/976x549/p085mt0d.jpg" id="avatar-square"> 
+          <p class="pet-text">Name:</p>
+          <p class="pet-text">Age:</p>
+          <p class="pet-text">Breed:</p>
+          <div class="wrapper" style="text-align: center;">
+            <%= link_to "View full pet records",user_pet_path(@user), class: "btn button-view-record"  %>
+          </div>
+        </div>
+      <%end%>
     </div>
   </div>
 </div>
-</div>
-<%= link_to "+ Add Pet", new_user_pet_path(@user) %>
+
 </body>
 
 
