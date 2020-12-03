@@ -1,5 +1,6 @@
 // Import page-specific CSS files here.
 @import "home";
+
 @import "owners/dash";
 
 @import "owners/show";
@@ -10,6 +11,7 @@
 
 @import "clinics/dash";
 @import "clinics/show";
+@import "clinics/home";
 
 @import "bookings/new";
 
