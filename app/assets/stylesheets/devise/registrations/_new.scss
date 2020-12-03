@@ -1,0 +1,44 @@
+.sign-up {
+  h2 {
+  color:$submit-button-orange;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    text-align:center;
+  }
+
+  .form-inputs {
+     color:$submit-button-green;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+  }
+}
+
+
+.form-actions {
+
+.submit_class {
+  color:white;
+  background-color: $submit-button-orange;
+  padding: 8px 13px;
+  border: 1px solid $submit-button-orange;
+  border-radius: 5px;
+  width: 80px;
+  text-align:center;
+
+
+}
+.btn_back {
+  color:$submit-button-orange;
+  background-color: white;
+  padding: 8px 13px;
+  border: 1px solid $submit-button-orange;
+  border-radius: 5px;
+  width: 80px;
+  text-align:center;
+
+
+}
+
+
+
+}
