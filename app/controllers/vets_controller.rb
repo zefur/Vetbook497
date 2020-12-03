@@ -1,5 +1,6 @@
 class VetsController < ApplicationController
     before_action :set_default
+    has_one_attached :photo
     def new
         @vet = Vet.new
     end
