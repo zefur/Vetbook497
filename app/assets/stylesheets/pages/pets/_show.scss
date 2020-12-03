@@ -2,14 +2,24 @@
   height: 100vh;
 }
 
-
+.header{
 h4 {
+   color: $submit-button-orange;
+   font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  padding: 20px 20px;
+  margin-top: 20px;
+ }
+}
+
+.vaccinations-header {
+ h4 {
    color: $submit-button-orange;
    font-weight: 400;
   font-family: 'Montserrat', sans-serif;
   padding: 20px 20px;
 }
-
+}
 
 .medicalrecord {
 text-align: left;
@@ -35,10 +45,11 @@ h4 {
 
 .avatar-doggy {
   margin: 5px 5px;
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
+  width: 220px;
+  height: 200px;
+   border-radius: 50%;
   border: 2px solid white;
+  background-size: cover;
 }
 
 .generalinfo {
