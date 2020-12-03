@@ -7,7 +7,7 @@ class OwnersController < ApplicationController
          {
            lat: clinic.latitude,
            lng: clinic.longitude,
-           infoWindow: render_to_string(partial: "info_window", locals: { clinic: clinic }),
+           #infoWindow: render_to_string(partial: "info_window", locals: { clinic: clinic }),
            image_url: ENV['CLOUDINARY_URL']
            }
        end
