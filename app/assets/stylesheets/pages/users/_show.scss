@@ -1,0 +1,66 @@
+.newpet {
+  text-decoration: none;
+     a{
+  text-decoration: none;
+  color: $submit-button-green;
+  padding-top:5px;
+     }
+}
+
+.avatar-profile {
+  background-size: cover;
+  background-position: top center;
+  margin: 15px 5px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+.one-pet-card{
+  width: 700px;
+  height:400px;
+  justify-content: center;
+  // align-items: center;
+  border-radius: 5px;
+  margin: 20px 20px;
+  padding:20px 40px;
+  overflow: hidden;
+  display: flex;
+  background-color: white;
+  border: 1px solid $submit-button-orange;
+}
+
+
+
+.pet-text{
+  text-align:initial;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  color:$submit-button-green;
+}
+
+img.avatar-square {
+ height: 350px;
+ width: 350px;
+ object-fit: cover;
+ border-radius: 10px;
+  display: block;
+
+}
+
+.button-view-record{
+  background-color: $submit-button-orange;
+  color: white;
+  align-self: center;
+  display: block;
+
+}
+
+
+
+
+
+

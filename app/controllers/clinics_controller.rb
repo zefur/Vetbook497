@@ -1,7 +1,7 @@
 class ClinicsController < ApplicationController
   before_action :set_clinic
     def index
-  
+
     end
 
     def new
@@ -9,7 +9,7 @@ class ClinicsController < ApplicationController
     end
 
     def create
-        
+
     end
 
     def dash
@@ -21,6 +21,8 @@ class ClinicsController < ApplicationController
     end
     private
     def set_clinic
+
       @clinic = current_user
+
     end
 end
