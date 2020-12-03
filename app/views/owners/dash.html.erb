@@ -1,26 +1,17 @@
-<%#= link_to 'My profile', owner_path(current_user) %>
+<!--   <%= link_to 'My profile', owner_path(current_user) %>
 
-<!-- <h1>Upcoming appointment</h1> -->
-
-
- <%# @owner.pets.each do |pet| %>
-    <%# pet.bookings.each do |booking| %>
-        <%#= booking.date %>
-        <%#= booking.time %>
-    <%# end %>
-<%# end %>
+  <h1>Upcoming appointment</h1>
 
 
+   <% @owner.pets.each do |pet| %>
+      <% pet.bookings.each do |booking| %>
+          <%= booking.date %>
+          <%= booking.time %>
+      <% end %>
+  <% end %>
+ -->
 
-   <%
-=begin%>
- <div id="map"
-        style="width: 100%; height: 600px;"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
-<%
-=end%>
+
 
 
 
