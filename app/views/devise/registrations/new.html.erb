@@ -1,21 +1,25 @@
+<div class="sign-up container pt-5">
+
+
+
 <h2>Sign up</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name),data:{contoller:"example"})  do |f| %>
   <%= f.error_notification %>
-   
-  <div class="form-inputs">
+
+  <div class="sign-up form-inputs">
   <div>
   <%= f.input :type, collection: %w[Clinic Owner], input_html: {data: {reflex: "change->ExampleReflex#change_signup"}} %>
   </div>
   <%if @type == "Clinic" %>
   <%= f.input :owner_name, required: true,autofocus: true, placeholder: "Please input your clinic's name" %>
   <%= f.input :name,required: true, placeholder: "Please input your full name"%>
-  
+
   <%= f.input :location, required: true %>
   <%= f.input :phone_number, required: true %>
     <%= f.input :email,
                 required: true,
-                
+
                 input_html: { autocomplete: "email" }%>
     <%= f.input :password,
                 required: true,
@@ -32,12 +36,12 @@
   </div>
   <% elsif @type %>
   <%= f.input :name,required: true, autofocus: true, placeholder: "Please input your full name"%>
-  
+
   <%= f.input :location, required: true %>
   <%= f.input :phone_number, required: true %>
     <%= f.input :email,
                 required: true,
-                
+
                 input_html: { autocomplete: "email" }%>
     <%= f.input :password,
                 required: true,
@@ -50,9 +54,12 @@
 
   <div class="form-actions">
     <%= f.button :submit, "Sign up" %>
+     <%= link_to "Back", :back, class: "btn-record"%>
   </div>
-  </div>
+
   <% end%>
 <% end %>
 
 <%= render "users/shared/links" %>
+  </div>
+</div>
