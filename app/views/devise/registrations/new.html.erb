@@ -1,11 +1,12 @@
-<div class="sign-up container pt-5">
+<div class="sign-up container pt-4">
 
+    <div class = "sign-up-align d-flex justify-content-center">
+     <div class = "col-12 col-md-6 col-lg-4">
 
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name),data:{contoller:"example"})  do |f| %>
+          <%= f.error_notification %>
 
-<h2>Sign up</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name),data:{contoller:"example"})  do |f| %>
-  <%= f.error_notification %>
+            <h2>Sign up</h2>
 
   <div class="sign-up form-inputs">
   <div>
@@ -30,9 +31,12 @@
                 input_html: { autocomplete: "new-password" } %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+  <div class="form-actions d-flex justify-content-between">
+     <%= f.button :submit, "Sign up", :class => 'submit_class'  %>
+     <%= link_to "Back", :back, class: "btn_back"%>
+    <%= render "users/shared/links" %>
   </div>
+
   </div>
   <% elsif @type %>
   <%= f.input :name,required: true, autofocus: true, placeholder: "Please input your full name"%>
@@ -52,14 +56,15 @@
                 input_html: { autocomplete: "new-password" } %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-     <%= link_to "Back", :back, class: "btn-record"%>
+  <div class="form-actions d-flex justify-content-between">
+    <%= f.button :submit, "Sign up", :class => 'submit_class'  %>
+     <%= link_to "Back", :back, class: "btn_back"%>
+     <%= render "users/shared/links", locals: { myclass: 'btn_back' }  %>
+
   </div>
 
   <% end%>
 <% end %>
 
-<%= render "users/shared/links" %>
   </div>
-</div>
+

@@ -15,7 +15,7 @@
 
     <div class="row d d-flex justify-content-center align-items-center">
       <%= link_to "Sign Up", new_user_registration_path, class: "btn-veterinarian"  %>
-
+      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
       <%= link_to "Log In", new_user_session_path, class: "btn-petowner"  %>
     </div>
   </div>
