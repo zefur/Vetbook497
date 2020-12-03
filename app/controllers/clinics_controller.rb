@@ -21,6 +21,6 @@ class ClinicsController < ApplicationController
     end
     private
     def set_clinic
-      @clinic = current_clinic
+      @clinic = current_user
     end
 end

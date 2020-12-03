@@ -10,81 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_02_030358) do
+ActiveRecord::Schema.define(version: 2020_12_03_045312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "active_storage_attachments", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "record_type", null: false
-    t.bigint "record_id", null: false
-    t.bigint "blob_id", null: false
-    t.datetime "created_at", null: false
-    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
-    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
-  end
-
-  create_table "active_storage_blobs", force: :cascade do |t|
-    t.string "key", null: false
-    t.string "filename", null: false
-    t.string "content_type"
-    t.text "metadata"
-    t.bigint "byte_size", null: false
-    t.string "checksum", null: false
-    t.datetime "created_at", null: false
-    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
-  end
-
   create_table "bookings", force: :cascade do |t|
-    t.bigint "vet_id", null: false
     t.bigint "pet_id", null: false
-    t.date "booking_date"
-    t.time "booking_time"
+    t.bigint "vet_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.date "date"
+    t.time "time"
     t.index ["pet_id"], name: "index_bookings_on_pet_id"
     t.index ["vet_id"], name: "index_bookings_on_vet_id"
   end
 
-  create_table "clinics", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.string "name"
-    t.string "address"
-    t.string "phone_number"
-    t.string "owner_name"
-    t.integer "rating"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.float "latitude"
-    t.float "longitude"
-    t.index ["email"], name: "index_clinics_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_clinics_on_reset_password_token", unique: true
-  end
-
-  create_table "health_records", force: :cascade do |t|
-    t.date "diagnosis_date"
-    t.text "diagnosis"
-    t.text "treatment"
-    t.integer "vaccination_type"
-    t.integer "vaccination_date"
-    t.bigint "pet_id", null: false
-    t.boolean "is_vaccination"
-    t.index ["pet_id"], name: "index_health_records_on_pet_id"
-  end
-
   create_table "pets", force: :cascade do |t|
-    t.bigint "user_id", null: false
     t.string "name"
-    t.date "DOB"
-    t.string "species"
+    t.date "dob"
     t.string "breed"
+    t.string "species"
     t.text "notes"
-    t.integer "gender"
+    t.bigint "user_id", null: false
+    t.integer "gender", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_pets_on_user_id"
@@ -96,14 +45,15 @@ ActiveRecord::Schema.define(version: 2020_12_02_030358) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "first_name"
-    t.string "last_name"
+    t.string "type"
     t.string "location"
     t.string "phone_number"
-    t.float "latitude"
-    t.float "longitude"
+    t.string "name"
+    t.string "speciality"
+    t.text "bio"
+    t.string "owner_name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -111,18 +61,16 @@ ActiveRecord::Schema.define(version: 2020_12_02_030358) do
   create_table "vets", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.text "bio"
     t.string "speciality"
-    t.bigint "clinic_id", null: false
+    t.string "bio"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["clinic_id"], name: "index_vets_on_clinic_id"
+    t.index ["user_id"], name: "index_vets_on_user_id"
   end
 
-  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "pets"
   add_foreign_key "bookings", "vets"
-  add_foreign_key "health_records", "pets"
   add_foreign_key "pets", "users"
-  add_foreign_key "vets", "clinics"
+  add_foreign_key "vets", "users"
 end

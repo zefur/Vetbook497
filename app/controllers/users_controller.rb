@@ -1,15 +1,15 @@
 class UsersController < ApplicationController
-    before_action :set_user
+     before_action :set_user
     def dash
-        @clinics = Clinic.all
-        @markers = @clinics.geocoded.map do |clinic|
-          {
-            lat: clinic.latitude,
-            lng: clinic.longitude,
-            infoWindow: render_to_string(partial: "info_window", locals: { clinic: clinic }),
-            image_url: ENV['CLOUDINARY_URL']
-            }
-        end
+        # @clinics = Clinic.all
+        # @markers = @clinics.geocoded.map do |clinic|
+        #   {
+        #     lat: clinic.latitude,
+        #     lng: clinic.longitude,
+        #     infoWindow: render_to_string(partial: "info_window", locals: { clinic: clinic }),
+        #     image_url: ENV['CLOUDINARY_URL']
+        #     }
+        # end
     end
 
     def show

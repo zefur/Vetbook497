@@ -6,9 +6,9 @@ class VetsController < ApplicationController
 
     def create
         @vet = Vet.new(vet_params)
-        @vet.clinic = current_clinic
+        @vet.user = current_user
         if @vet.save!
-            redirect_to @vet
+            redirect_to clinic_path(@clinic)
         else
             render :new
         end
@@ -16,12 +16,12 @@ class VetsController < ApplicationController
 
     private
     
-    def set_params
+    def vet_params
         params.require(:vet).permit(:first_name, :last_name, :speciality, :bio, :photo)
     end
 
     def set_default
-        @clinic = current_clinic
+        @clinic = current_user
     end
 
     

@@ -1,9 +1,9 @@
-<%# <%= link_to 'My profile', user_path(current_user) %> %>
+<%= link_to 'My profile', owner_path(current_user) %>
 
 <h1>Upcoming appointment</h1>
 
 
- <% @user.pets.each do |pet| %>
+ <% @owner.pets.each do |pet| %>
     <% pet.bookings.each do |booking| %>
         <%= booking.date %>
         <%= booking.time %>
