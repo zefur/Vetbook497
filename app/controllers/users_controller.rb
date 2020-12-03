@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
      before_action :set_user
+     has_one_attached :photo
     def dash
         # @clinics = Clinic.all
         # @markers = @clinics.geocoded.map do |clinic|

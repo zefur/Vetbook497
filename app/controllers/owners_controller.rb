@@ -1,6 +1,6 @@
 class OwnersController < ApplicationController
     before_action :set_owner
-    has_one_attached :photo
+   
    def dash
        @clinics = Clinic.all
        @markers = @clinics.geocoded.map do |clinic|

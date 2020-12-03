@@ -1,6 +1,6 @@
 class ClinicsController < ApplicationController
   before_action :set_clinic
-  has_one_attached :photo
+  
     def index
 
     end
