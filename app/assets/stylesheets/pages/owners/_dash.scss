@@ -1,0 +1,92 @@
+
+.clinic-cards {
+  //border: 1px solid black;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: hidden;
+  justify-content: space-around
+}
+
+
+.one-clinic-card {
+  border: 1px solid #FF7E67;
+  //background-image: url(https://i.pinimg.com/originals/4d/59/1d/4d591dbf6831c8f9b56958175074c77f.png);
+  //background-size: cover;
+  background-color: white;
+  overflow: hidden;
+  padding: 10px;
+  border-radius: 5px;
+  margin:10px;
+  width: 300px;
+  color: black;
+}
+
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+}
+
+.c-col-item {
+  a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+
+.one-booking-col {
+  margin-top: 20px;
+  border: 1px solid lightgray;
+}
+
+.one-booking-col-btn {
+  margin-top: 5px;
+  margin-right: 5px;
+  background-color: #FF7E67;
+  color: white;
+}
+
+.one-booking-col-btn:hover {
+  background-color: white;
+  border: 1px solid #FF7E67;
+  color: #FF7E67;
+}
+
+.c-col-item{
+  color:black;
+}
+
+.c-col-item:hover {
+  background-color: #FF7E67;
+  color: white;
+}
+
+
+
+//
+
+/* relevant styles */
+// .img__wrap {
+//   position: relative;
+//   height: ;
+//   width: 257px;
+// }
+
+// .clinic-description {
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+//   background: rgba(29, 106, 154, 0.72);
+//   color: #fff;
+//   visibility: hidden;
+//   opacity: 0;
+
+//   /* transition effect. not necessary */
+//   transition: opacity .2s, visibility .2s;
+// }
+
+// .clinic-img:hover .clinic-description {
+//   visibility: visible;
+//   opacity: 1;
+// }
