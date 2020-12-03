@@ -9,4 +9,5 @@ class User < ApplicationRecord
   # end
   has_many :pets
   has_many :vets
+  has_one_attached :photo
 end
