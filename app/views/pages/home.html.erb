@@ -13,8 +13,10 @@
     </div>
 
     <div class="row d d-flex justify-content-center align-items-center">
-      <%= link_to "Veterinarian", new_clinic_registration_path, class: "btn-veterinarian"  %>
-      <%= link_to "Pet Owner", new_user_registration_path, class: "btn-petowner"  %>
+      <%= link_to "Sign_up", new_user_registration_path, class: "btn-veterinarian"  %>
+      
+      <%= link_to "Log in", new_user_session_path, class: "btn-petowner"  %> 
+      <%= link_to "user logout", destroy_user_session_path, method: :delete %>
     </div>
   </div>
 </div>

@@ -3,7 +3,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  validates :first_name, :last_name, :location, :phone_number, presence: true
+
+  # before_create do
+  #   self.fullname = "#{first_name} #{last_name}"
+  # end
   has_many :pets
-  has_one_attached :photo
+  has_many :vets
 end

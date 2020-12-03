@@ -1,4 +1,4 @@
 class Booking < ApplicationRecord
-  belongs_to :vet
   belongs_to :pet
+  belongs_to :vet
 end

@@ -21,6 +21,8 @@ class ClinicsController < ApplicationController
     end
     private
     def set_clinic
-      @clinic = current_clinic || Clinic.find(params[:id])
+
+      @clinic = current_user
+
     end
 end

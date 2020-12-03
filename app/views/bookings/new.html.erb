@@ -1,6 +1,7 @@
 <p>form for creating new booking</p>
 
 <%= simple_form_for [@clinic, @booking] do |f| %>
+<%= f.input :vet, collection: @clinic.vets %>
 <%=f.input :date %>
 <%=f.input :time%>
 <% end %>
