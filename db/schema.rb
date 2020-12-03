@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_03_045312) do
+ActiveRecord::Schema.define(version: 2020_12_03_060820) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,19 @@ ActiveRecord::Schema.define(version: 2020_12_03_045312) do
     t.time "time"
     t.index ["pet_id"], name: "index_bookings_on_pet_id"
     t.index ["vet_id"], name: "index_bookings_on_vet_id"
+  end
+
+  create_table "health_records", force: :cascade do |t|
+    t.date "diagnosis_date"
+    t.text "diagnosis"
+    t.text "treatment"
+    t.integer "vaccination_type"
+    t.integer "vaccination_date"
+    t.bigint "pet_id", null: false
+    t.boolean "is_vaccinated"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["pet_id"], name: "index_health_records_on_pet_id"
   end
 
   create_table "pets", force: :cascade do |t|
@@ -71,6 +84,7 @@ ActiveRecord::Schema.define(version: 2020_12_03_045312) do
 
   add_foreign_key "bookings", "pets"
   add_foreign_key "bookings", "vets"
+  add_foreign_key "health_records", "pets"
   add_foreign_key "pets", "users"
   add_foreign_key "vets", "users"
 end
