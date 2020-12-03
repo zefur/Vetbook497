@@ -1,59 +1,62 @@
-p{
-  color: black;
-  font-weight: bold;
-  text-align: center;
+.newpet {
+  text-decoration: none;
+     a{
+  text-decoration: none;
+  color: $submit-button-green;
+  padding-top:5px;
+     }
 }
 
-body{
-  background-color: #ECF4F3;
-  
-}
-
-.row{
-  margin-top: 50px;
-}
-
-#avatar {
-  background-image: url('https://i.pinimg.com/originals/b6/ac/a3/b6aca38da1d44b9c6e05a83394fe79f7.jpg');
-  width: 200px;
-  height: 200px;
+.avatar-profile {
   background-size: cover;
   background-position: top center;
-  border-radius: 50%;        
+  margin: 15px 5px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
 }
 
 .one-pet-card{
-  width: 320px;
+  width: 700px;
+  height:400px;
   justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  margin: auto;          
+  // align-items: center;
+  border-radius: 5px;
+  margin: 20px 20px;
+  padding:20px 40px;
+  overflow: hidden;
+  display: flex;
+  background-color: white;
+  border: 1px solid $submit-button-orange;
 }
 
-.pet-cards{
-  display: flex; 
-}
+
+
 .pet-text{
   text-align:initial;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  color:$submit-button-green;
 }
 
-#avatar-square{
-  width: 300px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
+img.avatar-square {
+ height: 350px;
+ width: 350px;
+ object-fit: cover;
+ border-radius: 10px;
   display: block;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-top: 10px;
+
 }
 
 .button-view-record{
   background-color: $submit-button-orange;
   color: white;
-  align-self: center; 
-  display: block;  
-  
+  align-self: center;
+  display: block;
+
 }
 
 
