@@ -4,34 +4,48 @@
   display: flex;
   flex-wrap: wrap;
   overflow-y: hidden;
-  justify-content: space-around
+  justify-content: space-around;
 }
 
-
-.one-clinic-card {
-  border: 1px solid #FF7E67;
-  //background-image: url(https://i.pinimg.com/originals/4d/59/1d/4d591dbf6831c8f9b56958175074c77f.png);
-  //background-size: cover;
-  background-color: white;
-  overflow: hidden;
-  padding: 10px;
-  border-radius: 5px;
-  margin:10px;
-  width: 300px;
-  color: black;
+.test-one-clinic-card {
+  display: flex;
+  width: 400px;
+  height: auto;
+  margin: 10px;
+  background-color: #006A71;
+  border-radius: 10px;
+  transition: .4s ease;
+  box-shadow: 1px 1px 30px 1px rgba(0, 0, 0, 0.2);
 }
+
+.test-one-clinic-card:hover {
+  box-shadow: 8px 28px 50px rgba(39, 44, 49, 0.07),
+    1px 6px 12px rgba(39, 44, 49, 0.04);
+  transform: translate3D(0, 1px, 1rem) scale(1.02);
+  transition: all 0.5s ease;
+}
+
+.test-clinic-logo img {
+  height: 150px;
+  width: 150px;
+  border: 15px solid #ECF4F3;
+  border-radius: 50%;
+}
+
+.test-clinic-logo,
+.test-one-clinic-card-description {
+  padding: 20px;
+  text-align: right;
+  //direction: ltr;
+  color: white;
+}
+
 
 a:link, a:visited, a:hover, a:active {
   text-decoration: none;
 }
 
-.c-col-item {
-  a:link, a:visited, a:hover, a:active {
-    text-decoration: none;
-    color: black;
-  }
-}
-
+/////////////////////////////
 
 .one-booking-col {
   margin-top: 20px;
@@ -51,42 +65,17 @@ a:link, a:visited, a:hover, a:active {
   color: #FF7E67;
 }
 
-.c-col-item{
-  color:black;
-}
+// #c-col-item a{
+//     color: black;
+// }
 
-.c-col-item:hover {
-  background-color: #FF7E67;
-  color: white;
-}
+// #c-col-item:hover {
+//   background-color: #FF7E67;
+//   color: white;
+// }
 
 
 
 //
 
-/* relevant styles */
-// .img__wrap {
-//   position: relative;
-//   height: ;
-//   width: 257px;
-// }
 
-// .clinic-description {
-//   position: absolute;
-//   top: 0;
-//   bottom: 0;
-//   left: 0;
-//   right: 0;
-//   background: rgba(29, 106, 154, 0.72);
-//   color: #fff;
-//   visibility: hidden;
-//   opacity: 0;
-
-//   /* transition effect. not necessary */
-//   transition: opacity .2s, visibility .2s;
-// }
-
-// .clinic-img:hover .clinic-description {
-//   visibility: visible;
-//   opacity: 1;
-// }
