@@ -23,7 +23,11 @@ class ClinicsController < ApplicationController
     private
     def set_clinic
 
-      @clinic = current_user
+      if current_user.type == "Clinic"
+        @clinic = current_user
+      else
+        @clinic = Clinic.find(params[:id])
+      end
 
     end
 end

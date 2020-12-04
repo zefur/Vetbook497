@@ -1,24 +1,6 @@
 
-<!--   <%= link_to 'My profile', owner_path(current_user) %>
-
-  <h1>Upcoming appointment</h1>
-
-
-   <%# @owner.pets.each do |pet| %>
-      <%# pet.bookings.each do |booking| %>
-          <%#= booking.date %>
-          <%#= booking.time %>
-      <%# end %>
-  <%# end %>
- -->
-
-
-
-
-
-
 <%= render "shared/navbar" %>
-<%= link_to 'My profile', owner_path(current_user) %>
+<%#= link_to 'My profile', owner_path(current_user) %>
 
 <body>
   <h2 style="color: #FF7E67; font-weight: 400; text-align: center">Clinics within your area</h2>
@@ -27,15 +9,15 @@
 
       <div class="col-7">
         <div class="container clinic-cards">
-          <% 6.times do %>
-            <%= link_to clinics_path(@clinic) do %>
-            <div class="test-one-clinic-card">
-              <div class="test-one-clinic-card-description">
-                <h4 class="clinic-description" style="font-weight: 700">Techno pet</h4>
-                <p class="clinic-description" style="padding: 10px 0; border-top: 1px solid #ECF4F3; border-bottom: 1px solid #ECF4F3; ">Hong Kong, Tsim Sha Tsui, Stanley Road 5</p>
-                <p class="clinic-description">⭐️ ⭐️ ⭐️ ⭐️</p>
+          <% @clinics.each do |clinic| %>
+            <%= link_to clinic_path(clinic) do %>
+            <div class="one-clinic-card">
+              <div class="one-clinic-card-description">
+                <h4 class="col-6 clinic-card-description" style="font-weight: 400"> <%= clinic.name %> </h4>
+                <p class="clinic-card-description" style="padding: 10px 0; border-top: 1px solid #ECF4F3; border-bottom: 1px solid #ECF4F3; "> <%= clinic.location %> </p>
+                <p class="clinic-card-description">⭐️ ⭐️ ⭐️ ⭐️</p>
               </div>
-              <div class="header test-clinic-logo">
+              <div class="col-6 header one-clinic-logo">
                 <img src="https://images.freeimg.net/rsynced_images/stethoscope-icon-2316460_1280.png" alt="Photo profile">
               </div>
             </div>
@@ -62,21 +44,19 @@
           <!-- APPOINTMENTS -->
           <h3 style="color: #FF7E67; font-weight: 200; text-align: center">My upcoming appointments</h3>
 
-          <%# @owner.pets.each do |pet| %>
-            <%# pet.bookings.each do |booking| %>
+          <% @owner.pets.each do |pet| %>
+            <% pet.bookings.each do |booking| %>
               <div class="d-flex one-booking-col">
                 <div class="one-booking-col-grey-bar" style="background-color: lightgray; width: 1%">
                 </div>
-
                 <div class="one-booking-a-col" style="margin-right: 10px; padding: 5px 0 10px 10px">
-                  <p>12/12/2020 <%#= booking.date %></p>
+                  <p> <%= booking.date %></p>
                 </div>
-
                 <div class="flex-fill one-booking-b-col" style="  border-left: 1px solid lightgray; padding-left: 20px; padding-top: 5px">
-                  <p>Time: <%#= booking.time %></p>
-                  <p>Clinic name:</p>
-                  <p>Clinic address:</p>
-                  <p>Veterinary booked: <%#= booking.vet.name %></p>
+                  <p>Time: <%= booking.time %></p>
+                  <p>Clinic name: <%= booking.vet.user.name%></p>
+                  <p>Clinic address: <%= booking.vet.user.location %></p>
+                  <p>Veterinary booked: <%= booking.vet.first_name %> <%= booking.vet.last_name %></p>
                 </div>
 
 
@@ -106,8 +86,8 @@
                 </div>
 
                </div>
-            <%# end %>
-          <%# end %>
+            <% end %>
+          <% end %>
 
           <!-- REMINDERS -->
 
