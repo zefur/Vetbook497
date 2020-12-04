@@ -17,16 +17,18 @@
 
 }
 
-.col-11.clinic-show-vet-cards {
+.clinic-show-vet-cards {
   //background-color: red;
   height: 100vh;
   padding-top: 0;
+  display: flex;
+  justify-content: space-around;
 }
 
-////////////////////////////////
 
 .clinic-show-one-vet {
   border-radius: 20px;
+  margin: 20px;
   //display: table;
 
 }

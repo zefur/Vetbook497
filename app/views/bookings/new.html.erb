@@ -5,9 +5,12 @@
 
 <div class = "booking-form d-flex ml-3 mr-2">
     <div class="form-inputs-booking d-flex">
-<%= simple_form_for [@clinic, @booking] do |f| %>
-<%= f.input :vet, collection: @clinic.vets %>
-<%= f.input :reason_for_visit,
+
+      <%= simple_form_for [@clinic, @booking] do |f| %>
+      <%= f.input :vet, input_html: {value: "#{@vet.first_name} #{@vet.last_name}"} , disabled: true   %>
+      <%=f.input :vet_id, :as => :hidden, :input_html => { :value => @vet.id }%>
+      <%= f.input :pet_id, collection: current_user.pets %>
+                       <%= f.input :reason_for_visit,
     collection: [
       "Skin conditions",
 "Stomach issues",
@@ -19,13 +22,14 @@
 "Urinary tract infections",
 "Allergies"]
      %>
-<%=f.input :date %>
-<%=f.input :time%>
+      <%=f.input :date %>
+      <%=f.input :time%>
 
-<div class="booking-buttons d-flex justify-content-around mt-5">
-   <!-- <button type="button" onclick="calculatePrice()">Calculate Price</button> -->
-    <%= f.button :submit, "Book",:class => 'submit_class'%>
-    <%= link_to "Back",owners_dash_path(@owner), class: "btn_back"  %>
+      <div class="form-actions-booking d-flex justify-content-around">
+        <!-- <button type="button" onclick="calculatePrice()">Calculate Price</button> -->
+        <%= f.button :submit, "Book"%>
+        <%= link_to "Back",owners_dash_path(@owner), class: "btn btn-lg btn-light"  %>
+
 
   </div>
     <% end %>

@@ -1,14 +1,17 @@
-<%# <%= render "shared/navbar" %>
 
-  <div style="text-align: right; position: -webkit-sticky; position: sticky; top: 0;">
-    <%= link_to "Edit clinic profile", clinics_dash_path, class: "btn button-to-edit-clinic" %>
-    <%= link_to "✚ Add a vet profile", new_clinic_vet_path(@clinic), class: "btn button-to-edit-clinic" %>
-  </div>
+<%= render "shared/navbar" %>
+  <% if current_user.type == "Clinic" %>
+    <div style="text-align: right; position: -webkit-sticky; position: sticky; top: 0;">
+      <%= link_to "Edit clinic profile", clinics_dash_path, class: "btn button-to-edit-clinic" %>
+      <%= link_to "✚ Add a vet profile", new_clinic_vet_path(@clinic), class: "btn button-to-edit-clinic" %>
+    </div>
+  <% end %>
+
 
 
 <div class="container clinic-show">
 
-  <h2><%= @clinic.name %></h2>
+  <h1><%= @clinic.name %></h1>
   <h3><%= @clinic.location %></h3>
 
 
@@ -25,19 +28,26 @@
     </div> -->
 
 
-<!-- Right column  -->
-    <div class="row col clinic-show-vet-cards">
+    <div class="row clinic-show-vet-cards">
       <% @clinic.vets.each do |vet| %>
-        <div class= "col m-3 clinic-show-one-vet" style="background-color: white;">
+        <div class= "col-3 clinic-show-one-vet" style="background-color: white;">
           <div style="text-align: center">
             <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80" alt="photo" class="avatar vet-profile-picture">
           </div>
-          <p><strong>Name:</strong> <%= vet.first_name %> <%= vet.last_name %></p>
-          <p><strong>Education:</strong></p>
-          <p><strong>Speciality:</strong> <%= vet.speciality %></p>
-          <p><strong>Bio: </strong> <%= vet.bio %></p>
+          <div>
+            <p><strong>Name:</strong> <%= vet.first_name %> <%= vet.last_name %></p>
+            <p><strong>Speciality:</strong> <%= vet.speciality %></p>
+          </div>
+          <div class="vet-bio-box">
+            <p><strong>Bio: </strong><%= vet.bio %></p></span>
+          </div>
           <div style="text-align: center">
-            <%= link_to "edit", edit_clinic_vet_path(vet), class: "btn button-to-edit-vet" %>
+            <% if current_user.type == "Clinic" %>
+              <%= link_to "Edit", new_clinic_booking_path(@clinic, {vet: vet}), class: "btn button-to-edit-vet" %>
+            <% else %>
+              <%= link_to "Book", new_clinic_booking_path(@clinic, {vet: vet}), class: "btn button-to-edit-vet" %>
+            <% end %>
+
           </div>
         </div>
       <% end %>
