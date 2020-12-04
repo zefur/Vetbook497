@@ -1,8 +1,8 @@
-<%# <%= render "shared/navbar" %> 
+<%# <%= render "shared/navbar" %>
 
   <div style="text-align: right; position: -webkit-sticky; position: sticky; top: 0;">
-    <%= button_to "Edit clinic profile", clinics_dash_path, class: "btn button-to-edit-clinic" %>
-    <%= button_to "✚ Add a vet profile", new_clinic_vet_path(@clinic), class: "btn button-to-edit-clinic" %>
+    <%= link_to "Edit clinic profile", clinics_dash_path, class: "btn button-to-edit-clinic" %>
+    <%= link_to "✚ Add a vet profile", new_clinic_vet_path(@clinic), class: "btn button-to-edit-clinic" %>
   </div>
 
 
@@ -37,7 +37,7 @@
           <p><strong>Speciality:</strong> <%= vet.speciality %></p>
           <p><strong>Bio: </strong> <%= vet.bio %></p>
           <div style="text-align: center">
-            <%= button_to "edit", edit_clinic_vet_path(vet), class: "btn button-to-edit-vet" %>
+            <%= link_to "edit", edit_clinic_vet_path(vet), class: "btn button-to-edit-vet" %>
           </div>
         </div>
       <% end %>
