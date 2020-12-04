@@ -1,13 +1,65 @@
-.navbar-lewagon {
+.navbar-light {
+  background-color: white;
+  border-bottom: 1px solid lightgrey;
+  height: 50px;
   justify-content: space-between;
-  background: white;
-  box-shadow: 5px 0 10px rgba(0,0,0,0.15);
 }
 
-.navbar-lewagon .navbar-collapse {
+.nav-link, .nav-link:hover  {
+  margin: 0 10px;
+     color: $submit-button-orange;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    text-decoration:none;
+    .profile-button {
+  text-decoration: none;
+  color: $submit-button-green;
+}
+
+}
+
+.navbar-light .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+
+.profile-button {
+    color: $submit-button-orange;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    text-decoration:none;
+
+}
+
+.logo-button {
+  text-decoration: none;
+  color: $submit-button-green;
+  font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.logout-button {
+    color: $submit-button-orange;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    text-decoration:none;
+
+}
+
+.navbar-brand {
+    color: $submit-button-green;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    text-decoration:none;
+    padding-left: 30px;
+
+}
+
+
+.nav_profile {
+  a {
+    color: $submit-button-green;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+ }
 }
