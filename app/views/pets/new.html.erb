@@ -1,4 +1,4 @@
-<p> A form for adding a new pet </p>
+<!-- p> A form for adding a new pet </p>
 
 <%= simple_form_for [@owner,@pet] do |f| %>
 <%= f.input :name %>
@@ -10,4 +10,26 @@
 <%= f.input :notes %>
 <%= f.submit "Submit", disable_with: 'Submiting...' %>
 
-<% end %>
+<% end %> -->
+
+<div class="newpet-background d-flex justify-content-center">
+  <div class="newpet-form form pt-3">
+    <h4>Add pet to your family</h4>
+        <div class="form-inputs-newpet">
+        <%= simple_form_for [@owner,@pet] do |f| %>
+          <%= f.input :name %>
+            <%= f.input :dob %>
+            <%= f.input :species %>
+            <%= f.input :breed %>
+            <%= f.input :gender, collection: Pet.genders.keys %>
+            <%= f.input :notes %>
+        </div>
+        <div class="newpet-buttons d-flex justify-content-around">
+          <%= f.submit "Add Pet", disable_with: 'Submiting...',:class => 'submit_class' %>
+          <%= link_to "Back",owner_path(current_user), class: "btn_back"  %>
+        </div>
+
+  <% end %>
+
+  </div>
+</div>
