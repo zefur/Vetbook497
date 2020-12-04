@@ -1,6 +1,6 @@
 class PetsController < ApplicationController
     before_action :set_default
-    
+
     def new
         @pet = Pet.new
     end

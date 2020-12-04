@@ -9,7 +9,7 @@ class BookingsController < ApplicationController
         @booking = Booking.new(booking_params)
 
         if @booking.save
-          redirect_to clinic_path(@clinic), notice: "Your booking has been sent, please wait for confirmation"
+          redirect_to owners_dash_path(@user), notice: "Your booking has been sent, please wait for confirmation"
         else
           render :new
         end

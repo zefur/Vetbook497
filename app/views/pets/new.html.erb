@@ -2,6 +2,7 @@
 
 <%= simple_form_for [@owner,@pet] do |f| %>
 <%= f.input :name %>
+<%= f.input :dob %>
 <%= f.input :species %>
 <%= f.input :breed %>
 <%= f.input :gender, collection: Pet.genders.keys %>
