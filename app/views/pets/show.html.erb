@@ -4,7 +4,7 @@
 
 
     <div class="header row d-flex justify-content-center align-items-center mt-4">
-      <h4>Fluffy Health Record</h4>
+      <h4><%= @pet.name %>'s Health Record</h4>
     </div>
 
      <div class="back row d-flex justify-content-end align-items-center">
@@ -21,16 +21,16 @@
          <div class="col info">
 
             <div>
-              <p> Animal breed:</p>
+              <p> Animal breed: <%= @pet.breed %> </p>
             </div>
             <div>
-              <p> Animal gender:</p>
+              <p> Animal gender: <%= @pet.gender %></p>
             </div>
             <div>
-              <p> Age:</p>
+              <p> DOB: <%= @pet.dob %> </p>
             </div>
              <div>
-              <p> Owner name:</p>
+              <p> Owner name: <%= @pet.user.name %></p>
             </div>
              <div>
               <p> Fluffy behavior at clinic</p>
