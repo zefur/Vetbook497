@@ -29,7 +29,7 @@ class BookingsController < ApplicationController
 
     private
     def booking_params
-        params.require(:booking).permit(:date, :time, :vet_id, :pet_id)
+        params.require(:booking).permit(:date, :time, :reason_for_visit, :vet_id, :pet_id)
     end
     def set_default
         @clinic= Clinic.find(params[:clinic_id])

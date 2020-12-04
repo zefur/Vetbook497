@@ -1,4 +1,4 @@
-.booking-background {
+.login-background{
   background-size: cover;
   background-position: center;
   padding: 150px 0;
@@ -7,34 +7,7 @@
   height: 100vh;
 }
 
-  .booking-form-container {
-    padding-left: 20px;
-    padding-right: 20px;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  background-color: $submit-button-green;
-  height-max: 300px;
-  border-radius:3px;
-   h4 {
-     color:$submit-button-orange;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    text-align:center;
-    margin-top:20px;
-
-   }
-  }
-
-  .form-inputs-booking {
-      color:white;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    margin-top: 10px;
-
-  }
-
-.booking-buttons {
-margin-top: 10px;
+.form-actions-log-in {
 
 .submit_class {
   color:white;
@@ -62,3 +35,37 @@ margin-top: 10px;
 
 }
 }
+
+.log-in {
+
+  h2 {
+  color:$submit-button-orange;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    text-align:center;
+  }
+
+  .form-inputs {
+     color:$submit-button-green;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+  }
+}
+
+.input {
+  .label.email {
+    margin-right:40px;
+  }
+  .label.password {
+    margin-right:10px;
+  }
+}
+
+.links {
+  a {
+    color:$submit-button-green;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+  }
+}
+

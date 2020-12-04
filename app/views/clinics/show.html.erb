@@ -1,3 +1,4 @@
+
 <%= render "shared/navbar" %>
   <% if current_user.type == "Clinic" %>
     <div style="text-align: right; position: -webkit-sticky; position: sticky; top: 0;">
@@ -5,6 +6,7 @@
       <%= link_to "✚ Add a vet profile", new_clinic_vet_path(@clinic), class: "btn button-to-edit-clinic" %>
     </div>
   <% end %>
+
 
 
 <div class="container clinic-show">
@@ -45,6 +47,7 @@
             <% else %>
               <%= link_to "Book", new_clinic_booking_path(@clinic, {vet: vet}), class: "btn button-to-edit-vet" %>
             <% end %>
+
           </div>
         </div>
       <% end %>
