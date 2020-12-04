@@ -1,0 +1,71 @@
+.login-background{
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  display: flex;
+  background-image: image-url("paws.png");
+  height: 100vh;
+}
+
+.form-actions-log-in {
+
+.submit_class {
+  color:white;
+  background-color: $submit-button-orange;
+  padding: 8px 13px;
+  border: 1px solid $submit-button-orange;
+  border-radius: 5px;
+  width: 80px;
+  text-align:center;
+  margin-right: 5px;
+
+
+
+}
+.btn_back {
+  color:$submit-button-orange;
+  background-color: white;
+  padding: 8px 13px;
+  border: 1px solid $submit-button-orange;
+  border-radius: 5px;
+  width: 80px;
+  text-align:center;
+  margin-left: 5px;
+
+
+}
+}
+
+.log-in {
+
+  h2 {
+  color:$submit-button-orange;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    text-align:center;
+  }
+
+  .form-inputs {
+     color:$submit-button-green;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+  }
+}
+
+.input {
+  .label.email {
+    margin-right:40px;
+  }
+  .label.password {
+    margin-right:10px;
+  }
+}
+
+.links {
+  a {
+    color:$submit-button-green;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+  }
+}
+
