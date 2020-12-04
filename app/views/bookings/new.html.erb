@@ -25,10 +25,10 @@
       <%=f.input :date %>
       <%=f.input :time%>
 
-      <div class="form-actions-booking d-flex justify-content-around">
+      <div class="booking-buttons d-flex justify-content-around">
         <!-- <button type="button" onclick="calculatePrice()">Calculate Price</button> -->
-        <%= f.button :submit, "Book"%>
-        <%= link_to "Back",owners_dash_path(@owner), class: "btn btn-lg btn-light"  %>
+        <%= f.button :submit, "Book",class: "submit_class"  %>
+        <%= link_to "Back",owners_dash_path(@owner), class: "btn_back"  %>
 
 
   </div>

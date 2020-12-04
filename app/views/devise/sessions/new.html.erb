@@ -1,31 +1,25 @@
 
 <div class= "login-background" >
-
-
-<div class="log-in container">
-
-    <div class = "sign-up-align d-flex justify-content-center">
-     <div class = "col-8 col-md-6 col-lg-4">
-
-
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <h2>Log In</h2>
+    <div class="log-in container">
+      <h2>Log In</h2>
+        <div class = "sign-up-align">
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
   <div class="log-in form-inputs">
-    <div class="d-flex row mt-3 input">
+    <div class="d-flex row mt-3 input d-flex justify-content-center">
       <%= f.label :email, class: "label" %>
       <%= f.input_field :email,
                   required: true,
                   autofocus: true,
                   input_html: { autocomplete: "email" }, class: "input" %>
     </div>
-    <div class="d-flex row mt-3 input">
+    <div class="d-flex row mt-3 input d-flex justify-content-center">
       <%= f.label :password, class: "label" %>
       <%= f.input_field :password,
                   required: true,
                   input_html: { autocomplete: "current-password" }, class: "input" %>
     </div>
-    <div class="d-flex row mt-3">
+    <div class="d-flex row mt-3 d-flex justify-content-center">
       <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
     </div>
 
@@ -37,10 +31,11 @@
     </div>
 <% end %>
 
-    <div class=" d-flex justify-content-between mt-4 links">
+    <div class="d-flex justify-content-center mt-4 links">
       <%= render "devise/shared/links"%>
     </div>
 
     </div>
   </div>
+</div>
 </div>
