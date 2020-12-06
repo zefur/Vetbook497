@@ -1,9 +1,7 @@
 class ClinicsController < ApplicationController
   before_action :set_clinic
 
-    def index
-
-    end
+   
 
     def new
 
