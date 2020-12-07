@@ -1,6 +1,6 @@
 class OwnersController < ApplicationController
     before_action :set_owner
-   
+
    def dash
        @clinics = Clinic.all
        @markers = @clinics.geocoded.map do |clinic|
@@ -17,14 +17,27 @@ class OwnersController < ApplicationController
 
    end
 
+   def edit
+    @owner = Owner.find(params[:id])
+   end
+
+   def update
+      @owner = Owner.find(params[:id])
+      if @owner.update(user_params)
+         redirect_to owner_path(current_user), notice: 'Successfully updated'
+        else
+          render :edit
+      end
+   end
+
    private
 
    def user_params
        params.require(:owner).permit(:first_name,:last_name,:location,:phone_number, :photo)
    end
-   
+
    def set_owner
        @owner = current_user
-       
+
    end
 end
