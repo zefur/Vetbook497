@@ -1,11 +1,26 @@
-<%= simple_form_for [@owner, @pet, @health_record] do |f| %>
-<%= f.input :pet, input_html: {value: @pet.name}, disabled: true %>
+<%= simple_form_for([@owner, @pet, @health_record], data:{contoller:"example"}) do |f| %>
+
+<%= f.input :type, collection: %w[Diagnosis Vaccination], input_html: {data: {reflex: "change->ExampleReflex#change_record"}} %>
+
+<% if @type == "Diagnosis" %>
+
+    <%= f.input :pet, input_html: {value: @pet.name}, disabled: true %>
 <%=f.input :pet_id, :as => :hidden, :input_html => { :value => @pet.id }%>
 <%= f.input :diagnosis_date %>
 <%= f.input :diagnosis%>
 <%= f.input :treatment%>
-
 <%= f.submit "Submit", disable_with: 'Submiting...' %>
+<% else %>
+<%= f.input :pet, input_html: {value: @pet.name}, disabled: true %>
+<%=f.input :pet_id, :as => :hidden, :input_html => { :value => @pet.id }%>
+<%= f.input :vaccination_date %>
+<%= f.input :vaccination_type%>
+<%= f.submit "Submit", disable_with: 'Submiting...' %>
+<% end %>
+
+
+
+
 
 
 <% end %>

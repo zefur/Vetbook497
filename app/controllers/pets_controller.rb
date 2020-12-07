@@ -12,7 +12,6 @@ class PetsController < ApplicationController
         if @pet.save
             redirect_to owner_path(current_user), notice: "Your family has grown =]"
         else
-
             render :new
         end
     end

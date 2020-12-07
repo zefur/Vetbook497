@@ -27,6 +27,12 @@ export default class extends ApplicationController {
         this.signupPlaceholderTarget.hidden = false
     }
   
+    beforeReflex (element, reflex) {
+      super.beforeReflex(element, reflex)
+  
+      if (reflex === 'ExampleReflex#change_record')
+        this.recordPlaceholderTarget.hidden = false
+    }
 
   connect () {
     super.connect()
