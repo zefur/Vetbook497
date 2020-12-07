@@ -1,9 +1,22 @@
-<p>form for crating new vet</p>
+<div class="vet-new-background d-flex justify-content-center">
+  <div class="vet-new-form-container">
+    <h4>Add a vet to your clinic</h4>
 
-<%= simple_form_for [@clinic,@vet] do |f| %>
-<%= f.input :first_name %>
-<%= f.input :last_name %>
-<%= f.input :speciality %>
-<%= f.input :bio %>
-<%= f.submit "Submit", disable_with: 'Submiting...' %>
-<% end %>
+      <div class = "vet-new-form d-flex ml-4 mr-3">
+        <div class="form-inputs-vet d-flex">
+
+        <%= simple_form_for [@clinic,@vet] do |f| %>
+          <%= f.input :first_name %>
+          <%= f.input :last_name %>
+          <%= f.input :speciality %>
+          <%= f.input :bio %>
+
+          <div class="vet-new-buttons d-flex justify-content-around">
+            <%= f.submit "Submit", disable_with: 'Submiting...', class: "submit_class" %>
+            <%= link_to "Back", clinic_path(@clinic), class: "btn_back"  %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

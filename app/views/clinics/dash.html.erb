@@ -41,12 +41,12 @@
         <li class="dropdown-item" >Submit health report</li>
         <% end %>
         <!-- <a class="dropdown-item" href="#">Pet health profile</a> -->
-       <%= link_to '#' do %><li class="dropdown-item" > Pet health profile</li> 
+       <%= link_to '#' do %><li class="dropdown-item" > Pet health profile</li>
        <% end %>
        <%= link_to '#' do %>
        <li class="dropdown-item" >Cancel booking</li>
        <% end %>
-       
+
       </ul>
     </div>
 
@@ -62,7 +62,7 @@
 <% @clinic.vets.each do |vet| %>
   <% vet.bookings.each do |booking| %>
   <% if !booking.accepted %>
-  
+
   <div class="d-flex one-booking">
 
     <div class="one-booking-grey-bar" style="background-color: lightgray; width: 1%">
@@ -95,14 +95,14 @@
         <% end %>
         <!-- <a class="dropdown-item" href="#">Pet health profile</a> -->
        <%= link_to toggle_accepted_clinic_booking_path(@clinic,booking.id) do %>
-       <li class="dropdown-item"> Accept booking </li> 
+       <li class="dropdown-item"> Accept booking </li>
        <% end %>
-       <%= link_to '#' do %><li class="dropdown-item" > Pet health profile</li> 
+       <%= link_to '#' do %><li class="dropdown-item" > Pet health profile</li>
        <% end %>
        <%= link_to '#' do %>
        <li class="dropdown-item" >Cancel booking</li>
        <% end %>
-       
+
       </ul>
     </div>
 
