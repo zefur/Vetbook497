@@ -1,6 +1,5 @@
 class PetsController < ApplicationController
     before_action :set_default
-    # skip_before_action :verify_authenticity_token, except: [:create,:destroy]
 
     def new
         @pet = Pet.new
@@ -21,7 +20,6 @@ class PetsController < ApplicationController
     def show
         @pet = Pet.find(params[:id])
     end
-
 
 
     def update

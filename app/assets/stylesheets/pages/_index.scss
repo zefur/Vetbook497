@@ -2,8 +2,9 @@
 @import "home";
 
 @import "owners/dash";
-
 @import "owners/show";
+@import "owners/edit";
+
 
 
 @import "pets/index";
@@ -14,5 +15,7 @@
 @import "clinics/home";
 
 @import "bookings/new";
+@import "health_records/index";
+
 
 @import "vets/new";
