@@ -1,5 +1,6 @@
 class PetsController < ApplicationController
     before_action :set_default
+    # skip_before_action :verify_authenticity_token, except: [:create,:destroy]
 
     def new
         @pet = Pet.new
@@ -10,9 +11,9 @@ class PetsController < ApplicationController
         @pet.user = current_user
 
         if @pet.save
+          puts "printed"
             redirect_to owner_path(current_user), notice: "Your family has grown =]"
         else
-
             render :new
         end
     end
@@ -21,9 +22,7 @@ class PetsController < ApplicationController
         @pet = Pet.find(params[:id])
     end
 
-    def edit
 
-    end
 
     def update
         if @pet.update(pet_params)
@@ -34,8 +33,11 @@ class PetsController < ApplicationController
     end
 
     def destroy
-
+       @pet = Pet.find(params[:id])
+       @pet.destroy
+       redirect_to owner_path(current_user)
     end
+
     private
 
     def pet_params
