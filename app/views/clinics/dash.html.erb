@@ -4,28 +4,32 @@
 <div class="container clinic-dashboard" style="margin-top: 20px">
 <h2 style="color: #FF7E67; font-weight: 400; font-size: 40px;">Your dashboard</h2>
 
-<h3 style="color: #006A71; font-weight: 200;"><%= @clinic.name %></h3>
+<h3 style="color: #006A71; font-weight: 200; border-bottom: 1px solid lightgrey; padding-bottom: 10px;"><%= @clinic.name %></h3>
 
-<%# @clinic.vets.each do |vet| %>
-  <%# vet.bookings.each do |booking| %>
+<h4>Confirmed bookings</h4>
+<%# 2.times do %>
+<% @clinic.vets.each do |vet| %>
+  <% vet.bookings.each do |booking| %>
+  <% if booking.accepted %>
   <div class="d-flex one-booking">
 
     <div class="one-booking-grey-bar" style="background-color: lightgray; width: 1%">
     </div>
 
     <div class="one-booking-a" style="margin-right: 10px; padding: 5px 0 10px 10px">
-      <p>12/12/2020 <%#= booking.date %></p>
+      <p> Date: <%= booking.date %></p>
+      <p> Time: <%= booking.time %></p>
     </div>
 
     <div class="flex-fill one-booking-b" style="  border-left: 1px solid lightgray; padding-left: 20px; padding-top: 5px">
-      <p>Owner name: <%#= booking.user.name %></p>
-      <p>Veterinary booked: <%#= booking.vet.name %></p>
+      <p><strong>Owner name:</strong> <%= booking.pet.user.name %></p>
+      <p><strong>Veterinary booked:</strong> <%= vet.first_name %> <%= vet.last_name %></p>
     </div>
 
     <div class="flex-fill one-booking-c" style="  border-left: 1px solid lightgray; padding: 0 20px; padding-top: 5px">
-      <p>Pet name: <%#= booking.pet.name %></p>
-      <p>Pet species: <%#= booking.pet.species %></p>
-      <p>Pet breed: <%#= booking.pet.breed %></p>
+      <p><strong>Pet name:</strong> <%= booking.pet.name %></p>
+      <p><strong>Pet species:</strong> <%= booking.pet.species %></p>
+      <p><strong>Pet breed:</strong> <%= booking.pet.breed %></p>
     </div>
 
 
@@ -33,20 +37,83 @@
       <button class="btn dropdown-toggle one-booking-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border: 1px solid #006A71; margin-top: 5px; margin-right: 5px; background-color: white; color: #006A71;">
       Manage
       </button>
-      <div class="dropdown-menu one-booking-manage-action" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Submit health report</a>
+      <ul class="dropdown-menu one-booking-manage-action" aria-labelledby="dropdownMenuButton">
+      <%#= link_to new_owner_pet_health_record_path(booking.pet.user, booking.pet) do %>
+        <li class="dropdown-item" >Submit health report</li>
+        <%# end %>
         <!-- <a class="dropdown-item" href="#">Pet health profile</a> -->
-        <%= link_to "Pet health profile", class: "dropdown-item-link" %>
-        <a class="dropdown-item" href="#">Cancel booking</a>
-      </div>
+       <%#= link_to '#' do %><li class="dropdown-item" > Pet health profile</li>
+       <%# end %>
+       <%#= link_to '#' do %>
+       <li class="dropdown-item" >Cancel booking</li>
+       <%# end %>
+
+      </ul>
     </div>
 
 
   </div>
 
-  <%# end %>
-<%# end %>
+<% end %>
 
+  <%end %>
+<% end %>
+
+<h4 class="awating-confirmation" style="border-top: 1px solid lightgrey; margin-top: 30px; padding-top: 10px;">Awaiting confirmation</h4>
+<% @clinic.vets.each do |vet| %>
+  <% vet.bookings.each do |booking| %>
+  <% if !booking.accepted %>
+  <%# 2.times do %>
+  <div class="d-flex one-booking">
+
+    <div class="one-booking-grey-bar" style="background-color: lightgray; width: 1%">
+    </div>
+
+    <div class="one-booking-a" style="margin-right: 10px; padding: 5px 0 10px 10px">
+      <p> Date: <%= booking.date %></p>
+      <p> Time: <%= booking.time %></p>
+    </div>
+
+    <div class="flex-fill one-booking-b" style="  border-left: 1px solid lightgray; padding-left: 20px; padding-top: 5px">
+      <p><strong>Owner name:</strong> <%= booking.pet.user.name %></p>
+      <p><strong>Veterinary booked:</strong> <%= vet.first_name %> <%= vet.last_name %></p>
+    </div>
+
+    <div class="flex-fill one-booking-c" style="  border-left: 1px solid lightgray; padding: 0 20px; padding-top: 5px">
+      <p><strong>Pet name:</strong> <%= booking.pet.name %></p>
+      <p><strong>Pet species:</strong> <%= booking.pet.species %></p>
+      <p><strong>Pet breed:</strong> <%= booking.pet.breed %></p>
+    </div>
+
+
+    <div class="dropdown one-booking-d">
+      <button class="btn dropdown-toggle one-booking-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border: 1px solid #006A71; margin-top: 5px; margin-right: 5px; background-color: white; color: #006A71;">
+      Manage
+      </button>
+      <ul class="dropdown-menu one-booking-manage-action" aria-labelledby="dropdownMenuButton">
+      <%= link_to '#' do %>
+        <li class="dropdown-item" >Submit health report</li>
+        <% end %>
+        <!-- <a class="dropdown-item" href="#">Pet health profile</a> -->
+       <%= link_to toggle_accepted_clinic_booking_path(@clinic,booking.id) do %>
+       <li class="dropdown-item"> Accept booking </li>
+       <% end %>
+       <%= link_to '#' do %><li class="dropdown-item" > Pet health profile</li>
+       <% end %>
+       <%= link_to '#' do %>
+       <li class="dropdown-item" >Cancel booking</li>
+       <% end %>
+
+      </ul>
+    </div>
+
+
+  </div>
+
+<% end %>
+
+  <%end %>
+<% end %>
 
 
 

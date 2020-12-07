@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_04_032321) do
+ActiveRecord::Schema.define(version: 2020_12_07_040456) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2020_12_04_032321) do
     t.date "date"
     t.time "time"
     t.string "reason_for_visit"
+    t.boolean "accepted", default: false
     t.index ["pet_id"], name: "index_bookings_on_pet_id"
     t.index ["vet_id"], name: "index_bookings_on_vet_id"
   end
@@ -31,12 +32,13 @@ ActiveRecord::Schema.define(version: 2020_12_04_032321) do
     t.date "diagnosis_date"
     t.text "diagnosis"
     t.text "treatment"
-    t.integer "vaccination_type"
-    t.integer "vaccination_date"
+    t.string "vaccination_type"
     t.bigint "pet_id", null: false
     t.boolean "is_vaccinated"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "type"
+    t.date "vaccination_date"
     t.index ["pet_id"], name: "index_health_records_on_pet_id"
   end
 

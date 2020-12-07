@@ -23,6 +23,15 @@ class BookingsController < ApplicationController
 
     end
 
+    def toggle_accepted
+        @booking = Booking.find(params[:id])
+        if !@booking.accepted
+            @booking.accepted = true
+            @booking.save
+        end
+        redirect_to clinics_dash_path
+    end
+
     def destroy
 
     end
