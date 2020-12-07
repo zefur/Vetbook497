@@ -37,6 +37,7 @@ body {
   }
 }
 
+
 .btn-veterinarian {
   background-color: $submit-button-orange;
   color:white;
@@ -67,11 +68,45 @@ body {
 }
 
 
+.part2-homepage {
+  // background-image: image-url("renovation.png");
+  background-size: cover;
+  background-position: center;
+   // background-color: #ffe3d8;
+  // background-color: #fbf6f0;
+  background-color: #fff5ea;
+
+}
+
+// .card-product img {
+//   height: 50%;
+//   width: 120px;
+//   object-fit: cover;
+// }
+
+  .card-product{
+  overflow: hidden;
+  height: 150px;
+  width: 400px;
+     // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  padding-left: 50px;
+  }
+
+
 .box {
+  padding-top:50px;
+  padding-bottom:50px;
+  // border-right: 25px dotted $submit-button-orange;
 
   h2{
+    // margin-top:3px;
    text-align:center;
-   color: $submit-button-green;
+   font-size: 40px;
+   color:$submit-button-green;
+   margin-bottom: 0;
+   margin-top: 15px;
   }
 }
 
@@ -79,86 +114,37 @@ body {
   height: 100vh;
 }
 
+.dotted-div {
+  border-left: 30px dotted $submit-button-orange;
+}
 
-.box1 {
-  text-align:center;
-  background-color: #FFA899;
-  height:250px;
-  width:250px;
+.box-1 {
   h5{
-    color:white;
+    // color:white;
+    color: $submit-button-orange;
     margin: 5px 5px;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
+    font-weight: 700;
   }
   p{
-    color:white;
+    color:black;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
+    font-size: 18px;
+    text-align: center;
   }
 }
 
 
 
-.box2 {
-  text-align:center;
-  background-color: #DD917E;
-  height:250px;
-  width:250px;
-
-  h5{
-    color:white;
-    margin: 5px 5px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-  }
-  p{
-    color:white;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-  }
-}
-
-.box3 {
-  text-align:center;
- background-color: #FF7E67;
- margin-top: 0px;
- height:250px;
-  width:250px;
-  padding-top:20px;
-
-  h5{
-    color:white;
-    margin: 5px 5px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-  }
-  p{
-    color:white;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-  }
-}
-
-.box4 {
-  text-align:center;
-  background-color: #F7B8B5;
-   margin-top: 0px;
-   height:250px;
-  width:250px;
 
 
-  h5{
-    color:white;
-    margin: 5px 5px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-  }
-  p{
-    color:white;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-  }
+
+.flex-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between
 }
 
 .carousel-item .active {
@@ -173,10 +159,6 @@ body {
 
 }
 
-.container-customer {
-    height: 100vh;
-    background-size: cover;
-}
 
 .carousel{
 
@@ -234,6 +216,7 @@ body {
   display:flex;
   justify-content:center;
   align-items:center;
+  margin-bottom: 0px;
   h4 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
@@ -250,7 +233,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
+  height: 120px;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
 }
@@ -259,8 +242,8 @@ body {
   align-items: center;
 }
 .footer-links a {
-  color: white;
-  opacity: 0.15;
+  color: $submit-button-orange;
+  // opacity: 0.15;
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
