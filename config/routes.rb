@@ -13,11 +13,9 @@ end
   end
   get 'owners/dash', to: 'owners#dash'
   resources :owners, only: [:show] do
-
     resources :pets, only: [:new, :create, :show, :edit, :update, :destroy] do
       resources :health_records
     end
-
   end
 
   resources :bookings, only: [:destroy]

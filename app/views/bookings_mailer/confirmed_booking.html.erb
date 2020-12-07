@@ -1,0 +1,16 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+
+  <h1> Booking confirmed</h1>
+  <p> Hi <%= @booking.pet.user.name %> your booking for <%= @booking.pet.name %> has been confirmed by <%= @booking.vet.user.name %>.</p> Your booking on <%= @booking.date %>
+  will be at <%= @booking.time %>, please arrive early so as to ensure you get seen in a timely manner.
+<p><br/><p>
+  Vetbook
+  </p>
+  </body>
+  </html>

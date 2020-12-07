@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+
+  <h1> Booking recieved</h1>
+  <p> Hello <%= @booking.vet.user.owner_name %> you have recieved a booking.</p> 
+<p> Details </p>
+  <p> Booking date: <%= @booking.date %></p>
+  <p> Booking time: <%= @booking.time %> </p>
+  <p> Vet booked: <%= @booking.vet.first_name %> <%= @booking.vet.last_name %></p>
+  <p> Animal: <%= @booking.pet.species %> </p>
+  <p> Please go to your Dash to review this booking.</p>
+<br/>
+<p>Vetbook</p>
+  </body>
+  </html>
