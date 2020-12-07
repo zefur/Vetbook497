@@ -18,7 +18,7 @@ const addMarkersToMap = (map, markers) => {
     element.style.width = '35px';
     element.style.height = '35px';
     
-    new mapboxgl.Marker()
+    new mapboxgl.Marker({icon:'https://icons8.com/icon/14865/hospital-3">Hospital 3 icon by Icons8',color: 'blue'})
       .setLngLat([ marker.lng, marker.lat ])
       .setPopup(popup) // add this
       .addTo(map);
@@ -32,8 +32,18 @@ const initMapbox = () => {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/charinrat/ckhyj7vqj0r6x19pjqivnnnav'
+      style: 'mapbox://styles/charinrat/ckhyj7vqj0r6x19pjqivnnnav',
+      center: [-96, 37.8],
+      zoom: 3
     });
+    map.addControl(
+      new mapboxgl.GeolocateControl({
+        positionOptions: {
+          enableHighAccuracy: true
+        },
+        trackUserLocation: true
+      })
+    );
     const markers = JSON.parse(mapElement.dataset.markers);
   markers.forEach((marker) => {
     new mapboxgl.Marker()
@@ -44,7 +54,8 @@ const initMapbox = () => {
     fitMapToMarkers(map, markers);
 
     map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
-      mapboxgl: mapboxgl }));
+      mapboxgl: mapboxgl}),new mapboxgl.NavigationControl());
+    
   }
 };
 export { initMapbox };

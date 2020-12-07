@@ -39,8 +39,14 @@
             style="width: 100%; height: 300px; margin-top: 10px; margin-bottom: 20px;"
             data-markers="<%= @markers.to_json %>"
             data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+            <ul id="buttons">
+<li id="button-fr" class="button">French</li>
+<li id="button-ru" class="button">Russian</li>
+<li id="button-de" class="button">German</li>
+<li id="button-es" class="button">Spanish</li>
+</ul>
           </div>
-
+          
 
           <!-- APPOINTMENTS -->
           <h3 style="color: #FF7E67; font-weight: 200; text-align: center">My upcoming appointments</h3>
