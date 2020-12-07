@@ -4,7 +4,7 @@
 
 
     <div class="header row d-flex justify-content-center align-items-center mt-4">
-      <h4><%= @pet.name %>'s Health Record</h4>
+      <h4><%= @pet.name.capitalize %>'s Health Record</h4>
     </div>
 
      <div class="back row d-flex justify-content-end align-items-center">
@@ -56,22 +56,24 @@
 
       <div class="one-diagnosis-grey-bar" style="background-color: lightgray; width: 1%">
       </div>
-
+<% @pet.health_records.each do |record| %>
       <div class="one-diagnosis-a d-flex align-items-center col-2" style="margin-right: 10px; padding: 5px 0 10px 10px">
-        <p>Date of visit<br>12/12/2020 <%#=  %></p>
+        <p>Date of visit<br> <%=record.diagnosis_date  %></p>
       </div>
 
       <div class="flex-fill one-diagnosis-b d-flex align-items-start col-4" style="  border-left: 1px solid lightgray; padding-left: 20px; padding-top: 5px">
-        <p>Diagnosis: <%#=  %></p>
+        <p>Diagnosis: <%= record.diagnosis %></p>
       </div>
 
       <div class="flex-fill one-diagnosis-c d-flex align-items-start col-4" style=" border-left: 1px solid lightgray; padding: 0 20px; padding-top: 5px;">
-        <p>Treatment:<%#=  %></p>
+        <p>Treatment:<%= record.treatment  %></p>
       </div>
 
        <div class="d-flex align-items-center last-box col-2" style=" padding: 0 20px; padding-top: 5px">
-        <%= link_to "View full records", "#", class: "btn-record"%>
+        <%= link_to "View full records", '#', class: "btn-record"%>
       </div>
+
+<% end %>
 
    </div>
 </div>
@@ -81,18 +83,18 @@
         <h4>💉Vaccinations</h4>
         <%= link_to "ℹ️ Input more details", "#", class: "input-diagnosis"%>
   </div>
-
+<%= @pet.health_records.each do |record| %>
   <div class="d-flex one-vaccination" style="margin-top: 40px;">
 
       <div class="one-vaccination-grey-bar" style="background-color: lightgray; width: 1%">
       </div>
 
       <div class="one-vaccination-a d-flex align-items-center col-2" style="margin-right: 10px; padding: 5px 0 10px 10px">
-        <p>Vaccination date<br>12/12/2020 <%#=  %></p>
+        <p>Vaccination date<br> <%= record.vaccination_date  %></p>
       </div>
 
       <div class="flex-fill one-vaccination-b d-flex align-items-start col-4" style="  border-left: 1px solid lightgray; padding-left: 20px; padding-top: 5px">
-        <p>Vaccine: <%#=  %></p>
+        <p>Vaccine: <%= record.vaccination_type  %></p>
       </div>
 
       <div class="flex-fill one-vaccination-c d-flex align-items-start col-4" style="  border-left: 1px solid lightgray; padding: 0 20px; padding-top: 5px">
@@ -100,10 +102,13 @@
       </div>
 
       <div class="d-fill align-items-center last-box col-2" style=" padding: 0 20px; padding-top: 5px">
-        <!-- <%= link_to "View full records", "#", class: "btn-record"%> -->
+   <%= link_to "View full records", '#', class: "btn-record"%> 
       </div>
 
     </div>
+    
+    <% end %>
+    
 </div>
 
 </div>
