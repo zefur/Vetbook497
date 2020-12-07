@@ -16,29 +16,60 @@
   color: white;
 }
 
-.clinic-show h2 {
+.clinic-show-container h1 {
   font-weight: 400;
-  color: #FF7E67;
+  color: #006A71;
   text-align: center;
+  //border-top: 1px solid lightgray;
+  margin-top: 10px;
+  padding-top: 10px;
 }
 
-.clinic-show h3 {
+.clinic-show-container h2 {
+  font-weight: 200;
+  color: #FF7E67;
+  text-align: left;
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+
+}
+
+.clinic-show-container h3 {
   font-weight: 200;
   color: #006A71;
   text-align: center;
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
 }
 
-.col-11.clinic-show-vet-cards {
-  //background-color: red;
-  height: 100vh;
-  padding-top: 0;
+.clinic-show-container{
+  //border: 1px solid green;
+  margin: 0 auto;
+}
+
+.clinic-show-cards {
+  //background-color: gray;
+  //height: 100vh;
+  padding: 0 auto;
+  justify-content: center;
+  align-items: center;
 }
 
 ////////////////////////////////
 
-.clinic-show-one-vet {
+
+
+.clinic-show-vet {
   border-radius: 20px;
-  display: table;
+  //border: 1px solid red;
+  color: white;
+  width: 100%;
+  display: flex;
+  margin: 10px 0;
+  //height: 300px;
+  background-color: #036A71;
 }
 
 
@@ -46,15 +77,28 @@
   object-fit: cover;
   width: 200px;
   height: 200px;
+  //border: 2px solid red;
+
 }
 
+.clinic-show-vet-name {
+  border-bottom: 1px solid lightgray;
+  margin-top: 20px;
+}
+
+.vet-bio-div{
+  overflow: auto;
+  //border: 2px solid red;
+  padding: 0;
+  height: 130px;
+  margin-bottom: 10px;
+}
 
 .button-to-edit-vet {
   background-color: #FF7E67;
   color: white;
   padding: 5px 30px;
   margin-bottom: 10px;
-  //display: table-cell;
 }
 
 ///////////////////////////////
