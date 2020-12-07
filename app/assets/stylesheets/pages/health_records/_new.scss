@@ -1,0 +1,71 @@
+.health_record-background {
+  background-size: cover;
+  background-position: center;
+  padding: 20px 0;
+  display: flex;
+  background-image: image-url("paws.png");
+  height: 100vh;
+}
+
+
+.form-inputs-health_record {
+  margin-top: 0;
+}
+
+  .health_record-form-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: $submit-button-green;
+  height-max: 300px;
+  border-radius:3px;
+  width: 500px;
+     h4 {
+     color:$submit-button-orange;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    text-align:center;
+    margin-top:20px;
+
+   }
+  }
+
+  .form-inputs-health_record {
+      color:white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    margin-top: 10px;
+
+  }
+
+.health_record-buttons {
+margin-top: 10px;
+  text-align:center;
+
+
+.submit_record {
+  color:white;
+  background-color: $submit-button-orange;
+  padding: 10px 20px;
+  border: 1px solid $submit-button-orange;
+  border-radius: 5px;
+  width: 80px;
+  width: 130px;
+  text-align:center;
+  margin-right: 5px;
+
+}
+.btn_back {
+  color:$submit-button-orange;
+  background-color: white;
+  padding: 8px 13px;
+  border: 1px solid $submit-button-orange;
+  border-radius: 5px;
+  width: 80px;
+  text-align:center;
+  margin-left: 5px;
+
+
+}
+}

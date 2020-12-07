@@ -45,7 +45,7 @@
 <div class="diagnosis">
       <div class="medicalrecord row d-flex align-items-center">
         <h4>📄Vet reports</h4>
-        <%= link_to "📝 Input more details", "#", class: "input-diagnosis"%>
+        <%= link_to "📝 Input more details", new_owner_pet_health_record_path(@owner,@pet), class: "input-diagnosis"%>
       </div>
 
       <div class="d-flex one-diagnosis" style="margin-top: 10px;">
@@ -73,7 +73,7 @@
       </div>
 <% end %>
 
-     
+
 
 <% end %>
 
@@ -84,13 +84,13 @@
 <div class="vaccinations">
   <div class="vaccinations-header row d-flex align-items-center">
         <h4>💉Vaccinations</h4>
-        <%= link_to "📝 Input more details", "#", class: "input-diagnosis"%>
+        <%= link_to "📝 Input more details", new_owner_pet_health_record_path(@owner,@pet), class: "input-diagnosis"%>
   </div>
 
 <% @pet.health_records.each do |record| %>
 
 <% if record.type == "Vaccination" %>
-  
+
   <div class="d-flex one-vaccination" style="margin-top: 40px;">
 
       <div class="one-vaccination-grey-bar" style="background-color: lightgray; width: 1%">
@@ -110,12 +110,12 @@
       </div>
 
       <div class="d-fill align-items-center last-box col-2" style=" padding: 0 20px; padding-top: 5px">
-   <%= link_to "View full records", '#', class: "btn-record"%> 
+   <%= link_to "View full records", '#', class: "btn-record"%>
       </div>
-    
+
 <% end %>
 
-     <%end%> 
+     <%end%>
 
 </div>
 
