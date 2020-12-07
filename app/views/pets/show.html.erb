@@ -54,7 +54,9 @@
       <div class="one-diagnosis-grey-bar" style="background-color: lightgray; width: 1%">
       </div>
 <% @pet.health_records.each do |record| %>
-      <div class="one-diagnosis-a d-flex align-items-center col-2" style="margin-right: 10px; padding: 5px 0 10px 10px">
+
+<% if record.type == "Diagnosis" %>
+   <div class="one-diagnosis-a d-flex align-items-center col-2" style="margin-right: 10px; padding: 5px 0 10px 10px">
         <p>Date of visit<br> <%=record.diagnosis_date  %></p>
       </div>
 
@@ -63,12 +65,15 @@
       </div>
 
       <div class="flex-fill one-diagnosis-c d-flex align-items-start col-4" style=" border-left: 1px solid lightgray; padding: 0 20px; padding-top: 5px;">
-        <p>Treatment:<%= record.treatment  %></p>
+        <p>Treatment: <%= record.treatment  %></p>
       </div>
 
        <div class="d-flex align-items-center last-box col-2" style=" padding: 0 20px; padding-top: 5px">
         <%= link_to "View full records", '#', class: "btn-record"%>
       </div>
+<% end %>
+
+     
 
 <% end %>
 
@@ -82,7 +87,10 @@
         <%= link_to "📝 Input more details", "#", class: "input-diagnosis"%>
   </div>
 
-<%= @pet.health_records.each do |record| %>
+<% @pet.health_records.each do |record| %>
+
+<% if record.type == "Vaccination" %>
+  
   <div class="d-flex one-vaccination" style="margin-top: 40px;">
 
       <div class="one-vaccination-grey-bar" style="background-color: lightgray; width: 1%">
@@ -105,6 +113,8 @@
    <%= link_to "View full records", '#', class: "btn-record"%> 
       </div>
     
+<% end %>
+
      <%end%> 
 
 </div>

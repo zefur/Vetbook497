@@ -1,0 +1,3 @@
+class Diagnosis < HealthRecord
+    
+end

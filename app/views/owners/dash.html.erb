@@ -47,6 +47,8 @@
 
           <% @owner.pets.each do |pet| %>
             <% pet.bookings.each do |booking| %>
+            
+            <% if booking.accepted %>
               <div class="d-flex one-booking-col">
                 <div class="one-booking-col-grey-bar" style="background-color: lightgray; width: 1%">
                 </div>
@@ -84,9 +86,12 @@
                     <!-- <a class="dropdown-item c-col-item" href="#">Change booking</a> -->
                     <!-- <a class="dropdown-item c-col-item" href="#">Cancel booking</a> -->
                   </div>
-                </div>
+                </div> </div>
+            <% end %>
+            
+              
 
-               </div>
+              
             <% end %>
           <% end %>
 
