@@ -4,9 +4,10 @@
 <div class="container clinic-dashboard" style="margin-top: 20px">
 <h2 style="color: #FF7E67; font-weight: 400; font-size: 40px;">Your dashboard</h2>
 
-<h3 style="color: #006A71; font-weight: 200;"><%= @clinic.name %></h3>
+<h3 style="color: #006A71; font-weight: 200; border-bottom: 1px solid lightgrey; padding-bottom: 10px;"><%= @clinic.name %></h3>
 
 <h4>Confirmed bookings</h4>
+<%# 2.times do %>
 <% @clinic.vets.each do |vet| %>
   <% vet.bookings.each do |booking| %>
   <% if booking.accepted %>
@@ -21,14 +22,14 @@
     </div>
 
     <div class="flex-fill one-booking-b" style="  border-left: 1px solid lightgray; padding-left: 20px; padding-top: 5px">
-      <p>Owner name: <%= booking.pet.user.name %></p>
-      <p>Veterinary booked: <%= vet.first_name %> <%= vet.last_name %></p>
+      <p><strong>Owner name:</strong> <%= booking.pet.user.name %></p>
+      <p><strong>Veterinary booked:</strong> <%= vet.first_name %> <%= vet.last_name %></p>
     </div>
 
     <div class="flex-fill one-booking-c" style="  border-left: 1px solid lightgray; padding: 0 20px; padding-top: 5px">
-      <p>Pet name: <%= booking.pet.name %></p>
-      <p>Pet species: <%= booking.pet.species %></p>
-      <p>Pet breed: <%= booking.pet.breed %></p>
+      <p><strong>Pet name:</strong> <%= booking.pet.name %></p>
+      <p><strong>Pet species:</strong> <%= booking.pet.species %></p>
+      <p><strong>Pet breed:</strong> <%= booking.pet.breed %></p>
     </div>
 
 
@@ -37,15 +38,15 @@
       Manage
       </button>
       <ul class="dropdown-menu one-booking-manage-action" aria-labelledby="dropdownMenuButton">
-      <%= link_to new_owner_pet_health_record_path(booking.pet.user, booking.pet) do %>
+      <%#= link_to new_owner_pet_health_record_path(booking.pet.user, booking.pet) do %>
         <li class="dropdown-item" >Submit health report</li>
-        <% end %>
+        <%# end %>
         <!-- <a class="dropdown-item" href="#">Pet health profile</a> -->
-       <%= link_to '#' do %><li class="dropdown-item" > Pet health profile</li>
-       <% end %>
-       <%= link_to '#' do %>
+       <%#= link_to '#' do %><li class="dropdown-item" > Pet health profile</li>
+       <%# end %>
+       <%#= link_to '#' do %>
        <li class="dropdown-item" >Cancel booking</li>
-       <% end %>
+       <%# end %>
 
       </ul>
     </div>
@@ -58,11 +59,11 @@
   <%end %>
 <% end %>
 
-<h4>Awaiting confirmation</h4>
+<h4 class="awating-confirmation" style="border-top: 1px solid lightgrey; margin-top: 30px; padding-top: 10px;">Awaiting confirmation</h4>
 <% @clinic.vets.each do |vet| %>
   <% vet.bookings.each do |booking| %>
   <% if !booking.accepted %>
-
+  <%# 2.times do %>
   <div class="d-flex one-booking">
 
     <div class="one-booking-grey-bar" style="background-color: lightgray; width: 1%">
@@ -74,14 +75,14 @@
     </div>
 
     <div class="flex-fill one-booking-b" style="  border-left: 1px solid lightgray; padding-left: 20px; padding-top: 5px">
-      <p>Owner name: <%= booking.pet.user.name %></p>
-      <p>Veterinary booked: <%= vet.first_name %> <%= vet.last_name %></p>
+      <p><strong>Owner name:</strong> <%= booking.pet.user.name %></p>
+      <p><strong>Veterinary booked:</strong> <%= vet.first_name %> <%= vet.last_name %></p>
     </div>
 
     <div class="flex-fill one-booking-c" style="  border-left: 1px solid lightgray; padding: 0 20px; padding-top: 5px">
-      <p>Pet name: <%= booking.pet.name %></p>
-      <p>Pet species: <%= booking.pet.species %></p>
-      <p>Pet breed: <%= booking.pet.breed %></p>
+      <p><strong>Pet name:</strong> <%= booking.pet.name %></p>
+      <p><strong>Pet species:</strong> <%= booking.pet.species %></p>
+      <p><strong>Pet breed:</strong> <%= booking.pet.breed %></p>
     </div>
 
 
