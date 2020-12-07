@@ -9,45 +9,34 @@
 
 
 
-<div class="container clinic-show">
+<div class="container clinic-show-container">
 
-  <h1><%= @clinic.name %></h1>
+
+  <h1><strong><%= @clinic.name %></strong></h1>
   <h3><%= @clinic.location %></h3>
+  <h2><strong>OUR VETS</strong></h2>
 
 
-  <!-- <div class="row"> -->
 
-<!-- Left column -->
-<!--     <div class="col-1 clinic-show-buttons">
-  <div class= "row" >
-        <div class="col align-self-end">
-
-
-    </div>
-      </div>
-    </div> -->
-
-
-    <div class="row clinic-show-vet-cards">
+    <div class="clinic-show-cards">
       <% @clinic.vets.each do |vet| %>
-        <div class= "col-3 clinic-show-one-vet" style="background-color: white;">
-          <div style="text-align: center">
+        <div class= "clinic-show-vet">
+          <div style="text-align: center;">
             <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80" alt="photo" class="avatar vet-profile-picture">
           </div>
-          <div>
-            <p><strong>Name:</strong> <%= vet.first_name %> <%= vet.last_name %></p>
+          <div style="padding: 10px">
+            <h4 class="clinic-show-vet-name"><strong>Name:</strong> <%= vet.first_name %> <%= vet.last_name %></h4>
             <p><strong>Speciality:</strong> <%= vet.speciality %></p>
-          </div>
-          <div class="vet-bio-box">
-            <p><strong>Bio: </strong><%= vet.bio %></p></span>
-          </div>
-          <div style="text-align: center">
-            <% if current_user.type == "Clinic" %>
-              <%= link_to "Edit", new_clinic_booking_path(@clinic, {vet: vet}), class: "btn button-to-edit-vet" %>
-            <% else %>
-              <%= link_to "Book", new_clinic_booking_path(@clinic, {vet: vet}), class: "btn button-to-edit-vet" %>
-            <% end %>
-
+            <div class="vet-bio-div">
+              <p><strong>Bio: </strong><%= vet.bio %></p>
+            </div>
+            <div style="text-align: left">
+              <% if current_user.type == "Clinic" %>
+                <%= link_to "Edit", new_clinic_booking_path(@clinic, {vet: vet}), class: "btn button-to-edit-vet" %>
+              <% else %>
+                <%= link_to "Book", new_clinic_booking_path(@clinic, {vet: vet}), class: "btn button-to-edit-vet" %>
+              <% end %>
+            </div>
           </div>
         </div>
       <% end %>
