@@ -7,38 +7,34 @@
       <h4><%= @pet.name %>'s Health Record</h4>
     </div>
 
-     <div class="back row d-flex justify-content-end align-items-center">
-      <%= link_to "Back", :back, class: "btn-record"%>
-    </div>
+    <div class="container generalinfo pt-0">
 
-    <div class="medicalrecord row d-flex align-items-center">
-      <h4>General info</h4>
+      <div class="medicalrecord row d-flex align-items-center">
+      <h4>ℹ️General info</h4>
     </div>
-
-    <div class="container generalinfo">
 
        <div class="row">
-         <div class="col info">
+         <div class="col info-written">
 
-            <div>
-              <p> Animal breed: <%= @pet.breed %> </p>
+            <div class="underline">
+              <p><b>Animal breed:</b> <%= @pet.breed %> </p>
             </div>
-            <div>
-              <p> Animal gender: <%= @pet.gender %></p>
+            <div class="underline">
+              <p><b>Animal gender:</b> <%= @pet.gender %></p>
             </div>
-            <div>
-              <p> DOB: <%= @pet.dob %> </p>
+            <div class="underline">
+              <p><b>DOB:</b> <%= @pet.dob %> </p>
             </div>
-             <div>
-              <p> Owner name: <%= @pet.user.name %></p>
+            <div class="underline">
+              <p><b>Owner name:</b> <%= @pet.user.name %></p>
             </div>
-             <div>
-              <p> Fluffy behavior at clinic</p>
+            <div class="underline">
+              <p><b>Fluffy behavior at clinic:</b></p>
             </div>
 
          </div>
 
-        <div class="col info d-flex justify-content-center align-items-center">
+        <div class="col info d-flex justify-content-end align-items-center">
           <%= image_tag "chihuahua.jpg", :class => 'avatar-doggy'%>
        </div>
 
@@ -49,46 +45,40 @@
 <div class="diagnosis">
       <div class="medicalrecord row d-flex align-items-center">
         <h4>📄Vet reports</h4>
-        <%= link_to "ℹ️ Input more details", "#", class: "input-diagnosis"%>
+        <%= link_to "📝 Input more details", "#", class: "input-diagnosis"%>
       </div>
 
-        <div class="d-flex one-diagnosis" style="margin-top: 40px;">
+      <div class="d-flex one-diagnosis" style="margin-top: 10px;">
 
-      <div class="one-diagnosis-grey-bar" style="background-color: lightgray; width: 1%">
+        <div class="one-diagnosis-a d-flex align-items-center col-2" style="margin-right: 10px; padding: 5px 0 10px 10px">
+          <p>Date of visit <%#=  %></p>
+        </div>
+
+        <div class="flex-fill one-diagnosis-b d-flex align-items-start col-4" style="  border-left: 1px solid lightgray; padding-left: 20px; padding-top: 5px">
+          <p>Diagnosis: <%#=  %></p>
+        </div>
+
+        <div class="flex-fill one-diagnosis-c d-flex align-items-start col-4" style=" border-left: 1px solid lightgray; padding: 0 20px; padding-top: 5px;">
+          <p>Treatment:<%#=  %></p>
+        </div>
+
+         <div class="d-flex align-items-center last-box col-2" style=" padding: 0 20px; padding-top: 5px">
+          <%= link_to "View full records", "#", class: "btn-record"%>
+        </div>
+
       </div>
-
-      <div class="one-diagnosis-a d-flex align-items-center col-2" style="margin-right: 10px; padding: 5px 0 10px 10px">
-        <p>Date of visit<br>12/12/2020 <%#=  %></p>
-      </div>
-
-      <div class="flex-fill one-diagnosis-b d-flex align-items-start col-4" style="  border-left: 1px solid lightgray; padding-left: 20px; padding-top: 5px">
-        <p>Diagnosis: <%#=  %></p>
-      </div>
-
-      <div class="flex-fill one-diagnosis-c d-flex align-items-start col-4" style=" border-left: 1px solid lightgray; padding: 0 20px; padding-top: 5px;">
-        <p>Treatment:<%#=  %></p>
-      </div>
-
-       <div class="d-flex align-items-center last-box col-2" style=" padding: 0 20px; padding-top: 5px">
-        <%= link_to "View full records", "#", class: "btn-record"%>
-      </div>
-
-   </div>
 </div>
 
 <div class="vaccinations">
   <div class="vaccinations-header row d-flex align-items-center">
         <h4>💉Vaccinations</h4>
-        <%= link_to "ℹ️ Input more details", "#", class: "input-diagnosis"%>
+        <%= link_to "📝 Input more details", "#", class: "input-diagnosis"%>
   </div>
 
-  <div class="d-flex one-vaccination" style="margin-top: 40px;">
-
-      <div class="one-vaccination-grey-bar" style="background-color: lightgray; width: 1%">
-      </div>
+  <div class="d-flex one-vaccination" style="margin-top: 10px;">
 
       <div class="one-vaccination-a d-flex align-items-center col-2" style="margin-right: 10px; padding: 5px 0 10px 10px">
-        <p>Vaccination date<br>12/12/2020 <%#=  %></p>
+        <p>Vaccination date <%#=  %></p>
       </div>
 
       <div class="flex-fill one-vaccination-b d-flex align-items-start col-4" style="  border-left: 1px solid lightgray; padding-left: 20px; padding-top: 5px">
@@ -103,7 +93,7 @@
         <!-- <%= link_to "View full records", "#", class: "btn-record"%> -->
       </div>
 
-    </div>
+  </div>
 </div>
 
 </div>
