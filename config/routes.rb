@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'clinics/dash', to: 'clinics#dash'
 
-  resources :clinics, only: [:index, :show, :new, :create] do
+  resources :clinics, only: [:new, :create, :show, :edit, :update] do
     resources :vets, only: [:new, :create, :edit, :update] do
       member do 
         delete :delete_photo

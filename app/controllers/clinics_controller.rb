@@ -20,13 +20,13 @@ class ClinicsController < ApplicationController
     end
 
     def edit
-      @owner.photo.attach(params[:photo])
+      
       authorize @clinic
     end
 
     def update
     
-      @vet = Vet.new
+      
   
       @clinic.update(clinic_params)
       redirect_to clinic_path(@clinic)

@@ -1,8 +1,9 @@
 class VetsController < ApplicationController
-    before_action :set_default
+    before_action :set_default, except: [:new, :create]
 
     def new
         @vet = Vet.new
+        @clinic = current_user
     end
 
     def create
