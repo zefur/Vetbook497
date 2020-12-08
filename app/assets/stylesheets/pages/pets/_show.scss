@@ -46,7 +46,15 @@ h4 {
 }
 
 
-
+.petavatar-round {
+  margin: 5px 5px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background-size: cover;
+  object-fit: cover;
+}
 
 .avatar-doggy {
   margin: 5px 5px;

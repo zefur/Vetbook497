@@ -9,8 +9,8 @@
 
       <div class="row d-flex justify-content-center align-items-center">
        <% if @owner.photo.attached? %>
-        <%= cl_image_tag( @owner.photo.key,
-      width: 400, height: 300, crop: :fill) %>
+        <%= cl_image_tag(@owner.photo.key,
+     :class => "owner_image", crop: :fill) %>
       <% else %>
         <%= image_tag "profile5.jpg", :class => 'avatar-profile' %>
 
@@ -59,11 +59,10 @@
 
          <% if pet.photo.attached? %>
            <%= cl_image_tag( pet.photo.key,
-      width: 400, height: 300, crop: :fill) %>
+     :class => "petavatar-square", crop: :fill) %>
       <% else %>
        <%= image_tag(('chihuahua.jpg'), :class =>"avatar-square") %>
          <% end %>
-
 
          </div>
 

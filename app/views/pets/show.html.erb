@@ -35,7 +35,7 @@
          </div>
 
         <div class="col info d-flex justify-content-end align-items-center">
-          <%= image_tag "chihuahua.jpg", :class => 'avatar-doggy'%>
+           <%= cl_image_tag(@pet.photo.key,:class => "petavatar-round", crop: :fill) %>
        </div>
 
       </div>
