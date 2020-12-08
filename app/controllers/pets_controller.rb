@@ -43,7 +43,6 @@ class PetsController < ApplicationController
         end
     end
     def delete_photo
-        
         @pet.photo.purge
     end
 
@@ -68,6 +67,6 @@ class PetsController < ApplicationController
 
         @pet = Pet.find(params[:id])
 
-        @owner = current_user
+        @owner = User.find(params[:owner_id])
     end
 end
