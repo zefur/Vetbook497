@@ -19,11 +19,11 @@ class VetsController < ApplicationController
     def edit
 
 
-        # authorize @vet
+        authorize @vet
     end
 
     def update
-        # authorize @vet
+        authorize @vet
         if @vet.update(vet_params)
             redirect_to clinic_path(@clinic), notice: "Vet has been updated"
 

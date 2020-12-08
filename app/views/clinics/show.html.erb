@@ -26,8 +26,6 @@
           <% if vet.photo.attached? %>
             <%= cl_image_tag( vet.photo.key, :class => "cloudinary-vet-profile-picture" ) %>
 
-            <!-- transformation: [{width: "200", height: "200", crop: "fill", radius: "max", background: "#036A71"}] -->
-
       <% else %>
             <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80" alt="photo" class="avatar vet-profile-picture">
           <% end %>
