@@ -1,10 +1,13 @@
 .login-background{
-    background-size: cover;
-  background-position: center;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   padding: 150px 0;
   display: flex;
   background-image: image-url("paws.png");
   height: 100vh;
+  align-items: top;
+  overflow-y: auto;
 }
 
 
