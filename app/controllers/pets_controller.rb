@@ -65,9 +65,6 @@ class PetsController < ApplicationController
 
 
     def set_default
-
-        @pet = Pet.find(params[:id])
-
         @owner = current_user
     end
 end

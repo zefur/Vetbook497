@@ -24,14 +24,34 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import { initMapbox } from '../plugins/init_mapbox';
+import { initMapbox, getUserLocation, getDistanceBetweenPoint,addMapMarker } from '../plugins/init_mapbox';
+import mapboxgl from 'mapbox-gl';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  initMapbox();
+  const {mapElement: element, map} = initMapbox();
+  const success = (res) => {
+    console.log(res);
+    const userlat = res.coords.latitude;
+    const userlog = res.coords.longitude;
+    const markers = JSON.parse(element.dataset.markers);
+    const nearby = markers.filter(marker => {
+      const markerlng = marker.lng; 
+      const markerlat = marker.lat;
+      const distance = getDistanceBetweenPoint(userlat,userlog,markerlat,markerlng);
+      return distance <= 100000;
+    });
+    if (nearby.length > 0)
+      addMapMarker(nearby,map);
+    //addMapMarker(markers,map);
+  };
+
+  const failure = (err) => {console.log(err)};
+  getUserLocation(success, failure);
+  
 });
 
 import "controllers"
