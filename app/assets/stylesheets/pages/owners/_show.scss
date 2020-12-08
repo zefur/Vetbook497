@@ -19,6 +19,18 @@
   font-weight: 400;
 }
 
+.owner_image{
+   background-size: cover;
+  background-position: top center;
+  margin: 15px 5px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 3px solid white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  object-fit: cover;
+}
 .one-pet-card{
   width: 700px;
   height:400px;
@@ -26,7 +38,7 @@
   // align-items: center;
   border-radius: 5px;
   margin: 20px 20px;
-  padding:20px 40px;
+  padding:20px 20px;
   overflow: hidden;
   display: flex;
   background-color: white;
@@ -48,6 +60,15 @@ img.avatar-square {
  object-fit: cover;
  border-radius: 10px;
   display: block;
+
+}
+
+.petavatar-square {
+ height: 350px;
+ width: 350px;
+ object-fit: cover;
+ border-radius: 10px;
+ display: block;
 
 }
 
