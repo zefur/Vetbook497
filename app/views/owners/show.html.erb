@@ -8,7 +8,14 @@
   <div class="col-3 mt-4">
 
       <div class="row d-flex justify-content-center align-items-center">
+       <% if @owner.photo.attached? %>
+        <%= cl_image_tag( @owner.photo.key,
+      width: 400, height: 300, crop: :fill) %>
+      <% else %>
         <%= image_tag "profile5.jpg", :class => 'avatar-profile' %>
+        
+        <% end %>
+        
       </div>
 
 
@@ -49,7 +56,15 @@
         <div class="one-pet-card">
 
          <div class="col d-flex justify-content-start align-items-center">
-            <%= image_tag(('chihuahua.jpg'), :class =>"avatar-square") %>
+         
+         <% if pet.photo.attached? %>
+           <%= cl_image_tag( pet.photo.key,
+      width: 400, height: 300, crop: :fill) %>
+      <% else %>
+       <%= image_tag(('chihuahua.jpg'), :class =>"avatar-square") %>
+         <% end %>
+         
+           
          </div>
 
           <div class="col card-pet-infos">
@@ -70,7 +85,7 @@
             </div>
 
              <div class="newpet" style="text-align: center; margin-top: 10px;">
-             <%= link_to "✏️ Edit basic pet info ","#" %>
+             <%= link_to "✏️ Edit basic pet info ", edit_owner_pet_path(@owner,  pet) %>
             </div>
 
              <div class="newpet" style="text-align: center; margin-top: 10px;">

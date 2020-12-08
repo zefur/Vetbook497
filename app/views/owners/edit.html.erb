@@ -8,6 +8,8 @@
           <%= f.input :phone_number, :hint => 'No special characters.' %>
           <%= f.input :email  %>
           <%= f.input :location%>
+          <%= f.input :photo, as: :file, label: "Upload a profile picture" %>
+        <%= link_to "Delete photo", delete_photo_owner_path(@owner), method: :delete, data: { confirm: 'Are you sure?' } %>
         </div>
 
         <div class="edit-buttons d-flex justify-content-around">

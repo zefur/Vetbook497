@@ -1,18 +1,14 @@
 class PetsController < ApplicationController
     before_action :set_default
 
-    def show
-        @pet = Pet.find(params[:id])
-    end
+ 
 
     def new
         @pet = Pet.new
         authorize @pet
     end
     
-    def edit
-        authorize @pet
-    end
+
     
     def create
         @pet = Pet.new(pet_params)
@@ -21,26 +17,43 @@ class PetsController < ApplicationController
 
         if @pet.save
           puts "printed"
-            redirect_to owner_path(current_user), notice: "Your family has grown =]"
+            redirect_to owner_path(@owner), notice: "Your family has grown =]"
         else
             render :new
         end
     end
 
+
+
+    def show
+        
+    end
+
+
+     def edit
+        authorize @pet
+    end
+
     def update
         authorize @pet
         if @pet.update(pet_params)
-            redirect_to @pet, notice: 'Successfully updated'
+            redirect_to owner_path(@owner), notice: 'Successfully updated'
         else
             render :edit
         end
     end
+    def delete_photo
+        
+        @pet.photo.purge
+    end
 
     def destroy
 
+
         authorize @pet
         @pet.destroy
-        redirect_to pets_path, notice: 'Successfully deleted'
+        redirect_to owner_path(@owner), notice: 'Successfully deleted'
+
 
     end
 
@@ -52,6 +65,9 @@ class PetsController < ApplicationController
 
 
     def set_default
+
+        @pet = Pet.find(params[:id])
+
         @owner = current_user
     end
 end

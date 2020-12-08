@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   get 'clinics/dash', to: 'clinics#dash'
 
   resources :clinics, only: [:index, :show, :new, :create] do
-    resources :vets, only: [:new, :create, :edit, :update]
+    resources :vets, only: [:new, :create, :edit, :update] do
+      member do 
+        delete :delete_photo
+       end
+    end
     resources :bookings, only: [:new, :create, :edit, :update] do
     member do
     get :toggle_accepted
@@ -14,7 +18,13 @@ end
   get 'owners/dash', to: 'owners#dash'
 
   resources :owners, only: [:show, :edit, :update] do
-    resources :pets, only: [:new, :create, :show, :edit, :update, :destroy] do
+    member do 
+      delete :delete_photo
+     end
+    resources :pets, only: [:new, :create, :show, :edit, :update, :destroy] do 
+       member do 
+        delete :delete_photo
+       end
       resources :health_records
     end
   end

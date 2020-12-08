@@ -20,7 +20,7 @@ before_action :set_default
     private
 
     def health_params
-        params.require(:health_record).permit(:diagnosis_date,:diagnosis,:treatment,:vaccination_date,:vaccination_type,:pet_id,:is_vaccinated, :type)
+        params.require(:health_record).permit(:diagnosis_date,:diagnosis,:treatment,:vaccination_date,:vaccination_type,:pet_id,:is_vaccinated, :type, :document)
     end
 
     def set_default
