@@ -1,0 +1,74 @@
+.clinic-edit-background {
+  background-size: cover;
+  background-position: center center;
+  background-image: no-repeat;
+  padding: 20px;
+  background-image: image-url("paws.png");
+  height: 100vh;
+  align-items: center;
+  overflow-y: auto;
+}
+
+
+  .clinic-edit-form-container {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+    background-color: $submit-button-green;
+    max-height: 700px;
+    width: 500px;
+    border-radius:3px;
+    h4 {
+     color:$submit-button-orange;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    text-align:center;
+    margin-top:20px;
+
+   }
+  }
+
+  .form-inputs-clinic-edit {
+    color:white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    margin-top: 10px;
+    align-items: center;
+    //border: 3px solid black;
+    width: 100%;
+    // margin-top: 0;
+  }
+
+.form-bar-width {
+  max-height: 250px;
+}
+
+.clinic-edit-buttons {
+margin-top: 10px;
+
+.submit_class {
+  color:white;
+  background-color: $submit-button-orange;
+  padding: 8px 20px;
+  border: 1px solid $submit-button-orange;
+  border-radius: 5px;
+  width: 100px;
+  text-align: center;
+  margin-right: 5px;
+
+}
+.btn_back {
+  color:$submit-button-orange;
+  background-color: white;
+  padding: 8px 13px;
+  border: 1px solid $submit-button-orange;
+  border-radius: 5px;
+  width: 80px;
+  text-align:center;
+  margin-left: 5px;
+
+
+}
+}

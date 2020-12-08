@@ -39,7 +39,7 @@ before_action :set_default
         if @pet.update(pet_params)
             redirect_to owner_path(@owner), notice: 'Successfully updated'
         else
-            render :edit
+            render :edit, notice: 'Something went wrong, please try again'
         end
     end
 
@@ -63,7 +63,7 @@ before_action :set_default
 
     def set_default
 
-       
+
 
         @owner = User.find(params[:owner_id])
 
