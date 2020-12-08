@@ -1,20 +1,23 @@
 .newpet-background {
-  background-size: cover;
-  background-position: center;
-  padding: 50px 0;
+   background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding: 150px 0;
   display: flex;
   background-image: image-url("paws.png");
   height: 100vh;
+  align-items: center;
+  overflow-y: auto;
 }
 
 
 .newpet-form{
-    padding-left: 20px;
-    padding-right: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
   margin-top: 15px;
   margin-bottom: 30px;
   background-color: $submit-button-green;
-   width: 400px;
+  width: 450px;
    // height: 1000px;
   border-radius:3px;
    h4 {
@@ -37,6 +40,7 @@
 
   .newpet-buttons {
 margin-top: 10px;
+margin-bottom: 20px;
 .submit_class {
   color:white;
   background-color: $submit-button-orange;
