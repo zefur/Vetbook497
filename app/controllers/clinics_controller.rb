@@ -25,11 +25,8 @@ class ClinicsController < ApplicationController
     end
 
     def update
-
-
-
       @clinic.update(clinic_params)
-      redirect_to clinic_path(@clinic)
+      redirect_to clinic_path(@clinic), notice: "Your sucessfully updated your details"
     end
 
     private

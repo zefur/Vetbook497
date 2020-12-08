@@ -1,0 +1,21 @@
+<div class="clinic-edit-background d-flex justify-content-center">
+  <div class="clinic-edit-form-container">
+    <h4>Edit clinic information</h4>
+
+        <div class="form-inputs-clinic-edit d-flex">
+
+        <%= simple_form_for(@clinic, :url => {:action => 'update', :id => @clinic.id}) do |f| %>
+          <%= f.input :name %>
+          <%= f.input :owner_name %>
+          <%= f.input :phone_number %>
+          <%= f.input :email %>
+          <%= f.input :location %>
+          <%= f.input :photo, as: :file, label: "Upload a clinic logo" %>
+          <div class="clinic-edit-buttons d-flex justify-content-around">
+            <%= f.submit "Submit", disable_with: 'Submiting...', class: "submit_class" %>
+            <%= link_to "Back", clinic_path(@clinic), class: "btn_back"  %>
+          </div>
+        <% end %>
+      </div>
+  </div>
+</div>
