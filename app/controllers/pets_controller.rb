@@ -1,12 +1,18 @@
 class PetsController < ApplicationController
     before_action :set_default
 
+ 
+
     def new
         @pet = Pet.new
+        authorize @pet
     end
+    
 
+    
     def create
         @pet = Pet.new(pet_params)
+        authorize @pet
         @pet.user = current_user
 
         if @pet.save
@@ -17,15 +23,19 @@ class PetsController < ApplicationController
         end
     end
 
+
+
     def show
         
     end
-    def edit
-        
+
+
+     def edit
+        authorize @pet
     end
 
-
     def update
+        authorize @pet
         if @pet.update(pet_params)
             redirect_to owner_path(@owner), notice: 'Successfully updated'
         else
@@ -38,9 +48,13 @@ class PetsController < ApplicationController
     end
 
     def destroy
-       
-       @pet.destroy
-       redirect_to owner_path(@owner)
+
+
+        authorize @pet
+        @pet.destroy
+        redirect_to owner_path(@owner), notice: 'Successfully deleted'
+
+
     end
 
     private
@@ -51,8 +65,9 @@ class PetsController < ApplicationController
 
 
     def set_default
-        @pet = Pet.find(params[:id])
-        @owner = current_user
 
+        @pet = Pet.find(params[:id])
+
+        @owner = current_user
     end
 end

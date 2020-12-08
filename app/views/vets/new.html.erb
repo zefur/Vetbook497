@@ -2,15 +2,16 @@
   <div class="vet-new-form-container">
     <h4>Add a vet to your clinic</h4>
 
-      <div class = "vet-new-form d-flex ml-4 mr-3">
         <div class="form-inputs-vet d-flex">
 
         <%= simple_form_for [@clinic,@vet] do |f| %>
           <%= f.input :first_name %>
           <%= f.input :last_name %>
           <%= f.input :speciality %>
-          <%= f.input :bio %>
+
+          <%= f.input :bio, as: :text, input_html: { class: "form-bar-width", maxlength: 500} %>
           <%= f.input :photo, as: :file, label: "Upload a photo" %>
+
 
           <div class="vet-new-buttons d-flex justify-content-around">
             <%= f.submit "Submit", disable_with: 'Submiting...', class: "submit_class" %>
@@ -18,6 +19,5 @@
           </div>
         <% end %>
       </div>
-    </div>
   </div>
 </div>
