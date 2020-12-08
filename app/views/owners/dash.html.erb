@@ -55,7 +55,14 @@
                 <div class="one-booking-a-col" style="margin-right: 10px; padding: 5px 0 10px 10px">
                   <p> <%= booking.date %></p>
                   <p>Time: <%= booking.time.to_s(:time)  %></p>
-                  <p> Status: <%= booking.accepted? ? "Confirmed" : "Pending" %>
+                  <% if booking.accepted? %>
+                    <p> Status: <span style="color: green; font-weight: bold">Confirmed</span></p>
+                  <% else %>
+                    <p> Status: <span style="color: #F1C232; font-weight: bold">Pending</span></p>
+                  <% end %>
+
+
+                  <!-- <p> Status: <%#= booking.accepted? ? "Confirmed" : "Pending" %></p> -->
                 </div>
                 <div class="flex-fill one-booking-b-col" style="  border-left: 1px solid lightgray; padding-left: 20px; padding-top: 5px">
 
