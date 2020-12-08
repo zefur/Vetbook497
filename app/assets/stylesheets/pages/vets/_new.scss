@@ -1,24 +1,24 @@
 .vet-new-background {
   background-size: cover;
-  background-position: center;
-  padding: 200px;
-  display: flex;
+  background-position: center center;
+  background-image: no-repeat;
+  padding: 20px;
   background-image: image-url("paws.png");
   height: 100vh;
+  align-items: center;
+  overflow-y: auto;
 }
 
-
-.form-inputs-vet {
-  margin-top: 0;
-}
 
   .vet-new-form-container {
     padding-left: 20px;
     padding-right: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    padding-bottom: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
     background-color: $submit-button-green;
-    height-max: 300px;
+    max-height: 700px;
+    width: 500px;
     border-radius:3px;
     h4 {
      color:$submit-button-orange;
@@ -35,8 +35,15 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     margin-top: 10px;
-
+    align-items: center;
+    //border: 3px solid black;
+    width: 100%;
+    // margin-top: 0;
   }
+
+.form-bar-width {
+  max-height: 250px;
+}
 
 .vet-new-buttons {
 margin-top: 10px;
