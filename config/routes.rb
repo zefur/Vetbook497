@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create, :edit, :update] do
     member do
     get :toggle_accepted
+    get :archive_booking
   end
 end
   end

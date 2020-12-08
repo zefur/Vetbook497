@@ -25,12 +25,18 @@ class BookingsController < ApplicationController
     end
 
     def toggle_accepted
-        @booking = Booking.find(params[:id])
+        
         if !@booking.accepted
             @booking.accepted = true
             @booking.save
             BookingsMailer.with(booking: @booking).confirmed_booking.deliver_later
         end
+        redirect_to clinics_dash_path
+    end
+
+    def archive_booking
+        @booking.archived = true
+        @booking.save
         redirect_to clinics_dash_path
     end
 
@@ -45,5 +51,6 @@ class BookingsController < ApplicationController
     def set_default
         @clinic= Clinic.find(params[:clinic_id])
         @user = current_user
+        @booking = Booking.find(params[:id])
     end
 end

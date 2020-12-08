@@ -62,6 +62,10 @@ before_action :set_default
 
 
     def set_default
-        @owner = current_user
+
+       
+
+        @owner = User.find(params[:owner_id])
+
     end
 end
