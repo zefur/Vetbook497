@@ -11,29 +11,36 @@ class PetsController < ApplicationController
 
         if @pet.save
           puts "printed"
-            redirect_to owner_path(current_user), notice: "Your family has grown =]"
+            redirect_to owner_path(@owner), notice: "Your family has grown =]"
         else
             render :new
         end
     end
 
     def show
-        @pet = Pet.find(params[:id])
+        
+    end
+    def edit
+        
     end
 
 
     def update
         if @pet.update(pet_params)
-            redirect_to @pet, notice: 'Successfully updated'
+            redirect_to owner_path(@owner), notice: 'Successfully updated'
         else
             render :edit
         end
     end
+    def delete_photo
+        
+        @pet.photo.purge
+    end
 
     def destroy
-       @pet = Pet.find(params[:id])
+       
        @pet.destroy
-       redirect_to owner_path(current_user)
+       redirect_to owner_path(@owner)
     end
 
     private
@@ -44,7 +51,7 @@ class PetsController < ApplicationController
 
 
     def set_default
-
+        @pet = Pet.find(params[:id])
         @owner = current_user
 
     end

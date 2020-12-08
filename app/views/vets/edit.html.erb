@@ -1,6 +1,6 @@
 <div class="vet-new-background d-flex justify-content-center">
   <div class="vet-new-form-container">
-    <h4>Add a vet to your clinic</h4>
+    <h4>Edit a vet in your clinic</h4>
 
       <div class = "vet-new-form d-flex ml-4 mr-3">
         <div class="form-inputs-vet d-flex">
@@ -11,7 +11,7 @@
           <%= f.input :speciality %>
           <%= f.input :bio %>
           <%= f.input :photo, as: :file, label: "Upload a photo" %>
-
+          <%= link_to "Delete photo", delete_photo_clinic_vet_path(@clinic, @vet), method: :delete, data: { confirm: 'Are you sure?' } %>
           <div class="vet-new-buttons d-flex justify-content-around">
             <%= f.submit "Submit", disable_with: 'Submiting...', class: "submit_class" %>
             <%= link_to "Back", clinic_path(@clinic), class: "btn_back"  %>

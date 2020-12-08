@@ -29,6 +29,9 @@ class OwnersController < ApplicationController
           render :edit
       end
    end
+   def delete_photo
+    @owner.photo.purge
+   end
 
    private
 

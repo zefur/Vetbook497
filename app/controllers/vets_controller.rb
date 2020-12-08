@@ -15,6 +15,23 @@ class VetsController < ApplicationController
         end
     end
 
+    def edit
+        
+    end
+
+    def update
+
+        if @vet.update(vet_params)
+            redirect_to clinic_path(@clinic), notice: "Vet has been updated"
+        else
+            render :edit
+        end
+    end
+
+    def delete_photo
+        @vet.photo.purge
+    end
+
     private
     
     def vet_params
@@ -23,6 +40,7 @@ class VetsController < ApplicationController
 
     def set_default
         @clinic = current_user
+        @vet = Vet.find(params[:id])
     end
 
     
