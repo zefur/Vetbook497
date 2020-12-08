@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
      before_action :set_user
-     
+
     def dash
         # @clinics = Clinic.all
         # @markers = @clinics.geocoded.map do |clinic|
@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     def user_params
         params.require(:user).permit(:first_name,:last_name,:location,:phone_number, :photo)
     end
-    
+
     def set_user
         @user = current_user
     end

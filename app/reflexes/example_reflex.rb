@@ -23,9 +23,10 @@ class ExampleReflex < ApplicationReflex
   # Learn more at: https://docs.stimulusreflex.com
 
   def change_signup
-    puts element
-    puts "JAMES JAMES JAMES"
     @type = session[:type] = element[:value].nil? ? nil : element[:value]
+  end
 
+  def change_record
+    @type = session[:type] = element[:value].nil? ? nil : element[:value]
   end
 end

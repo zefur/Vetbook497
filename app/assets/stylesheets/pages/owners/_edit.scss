@@ -1,26 +1,23 @@
-.vet-new-background {
+.edit-background {
   background-size: cover;
-  background-position: center center;
-  background-image: no-repeat;
-  padding: 20px;
+  background-position: center;
+  padding: 50px 0;
+  display: flex;
   background-image: image-url("paws.png");
   height: 100vh;
-  align-items: center;
-  overflow-y: auto;
 }
 
 
-  .vet-new-form-container {
+.edit-form{
     padding-left: 20px;
     padding-right: 20px;
-    padding-bottom: 20px;
-    margin-top: auto;
-    margin-bottom: auto;
-    background-color: $submit-button-green;
-    max-height: 700px;
-    width: 500px;
-    border-radius:3px;
-    h4 {
+  margin-top: 15px;
+  margin-bottom: 30px;
+  background-color: $submit-button-green;
+   width: 400px;
+   // height: 1000px;
+  border-radius:3px;
+   h4 {
      color:$submit-button-orange;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
@@ -30,35 +27,25 @@
    }
   }
 
-  .form-inputs-vet {
-    color:white;
+  .form-inputs-edit {
+      color:white;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     margin-top: 10px;
-    align-items: center;
-    //border: 3px solid black;
-    width: 100%;
-    // margin-top: 0;
+
   }
 
-.form-bar-width {
-  max-height: 250px;
-}
-
-.vet-new-buttons {
+  .edit-buttons {
 margin-top: 10px;
-
-.submit_class {
+.edit_class {
   color:white;
   background-color: $submit-button-orange;
-  padding: 8px 13px;
+  padding: 10px 15px;
   border: 1px solid $submit-button-orange;
   border-radius: 5px;
-  width: 80px;
-  text-align:center;
+  width: 100px;
+  text-align: center;
   margin-right: 5px;
-
-
 
 }
 .btn_back {
@@ -67,7 +54,7 @@ margin-top: 10px;
   padding: 8px 13px;
   border: 1px solid $submit-button-orange;
   border-radius: 5px;
-  width: 80px;
+  width: 100px;
   text-align:center;
   margin-left: 5px;
 

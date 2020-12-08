@@ -9,6 +9,7 @@ class BookingsController < ApplicationController
         @booking = Booking.new(booking_params)
 
         if @booking.save
+            BookingsMailer.with(booking: @booking).booking_recieved.deliver_later
           redirect_to owners_dash_path(@user), notice: "Your booking has been sent, please wait for confirmation"
         else
           render :new
@@ -28,6 +29,7 @@ class BookingsController < ApplicationController
         if !@booking.accepted
             @booking.accepted = true
             @booking.save
+            BookingsMailer.with(booking: @booking).confirmed_booking.deliver_later
         end
         redirect_to clinics_dash_path
     end

@@ -1,6 +1,8 @@
 class OwnersController < ApplicationController
+
     before_action :set_owner  
     before_action :authenticate_user!
+
 
    def dash
        @clinics = Clinic.all
@@ -24,6 +26,7 @@ class OwnersController < ApplicationController
     authorize @owner
    end
 
+
    def update
     @pet = Pet.new
     if @owner.update(owner_params)
@@ -34,14 +37,15 @@ class OwnersController < ApplicationController
    end
 
 
+
    private
 
    def owner_params
        params.require(:owner).permit(:first_name,:last_name,:location,:phone_number, :photo)
    end
-   
+
    def set_owner
        @owner = current_user
-       
+
    end
 end

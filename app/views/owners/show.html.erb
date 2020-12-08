@@ -1,3 +1,6 @@
+<head>
+  <%= csrf_meta_tags %>
+</head>
 
 <body>
 <%= render "shared/navbar" %>
@@ -26,7 +29,7 @@
       </div>
 
       <div class="row d-flex justify-content-center align-items-center newpet mb-2">
-        <%= link_to "➕ Add new pet", new_owner_pet_path(@owner) %>
+        <%= link_to "➕ Add new pet", new_owner_pet_path(@owner), data: { turbolinks: false }%>
       </div>
 
       <div class="row d-flex justify-content-center align-items-center newpet mb-2">
@@ -34,7 +37,7 @@
       </div>
 
       <div class="row d-flex justify-content-center align-items-center newpet mb-2">
-         <%= link_to "✏️ Edit profile", "#" %>
+       <%= link_to "✏️ Edit your profile", edit_owner_path(@owner) %>
       </div>
 
   </div>
@@ -65,6 +68,18 @@
             <div class="wrapper" style="text-align: center;">
              <%= link_to "View full pet records",owner_pet_path(@owner,pet), class: "btn button-view-record"  %>
             </div>
+
+             <div class="newpet" style="text-align: center; margin-top: 10px;">
+             <%= link_to "✏️ Edit basic pet info ","#" %>
+            </div>
+
+             <div class="newpet" style="text-align: center; margin-top: 10px;">
+              <%= link_to "❌ Remove",
+              owner_pet_path(@owner,pet),
+              :method => :delete,
+              data: { confirm: "Are you sure you wish to delete your pet?" } %>
+            </div>
+
          </div>
       </div>
         <%end%>

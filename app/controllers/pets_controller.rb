@@ -20,9 +20,9 @@ class PetsController < ApplicationController
         @pet.user = current_user
 
         if @pet.save
+          puts "printed"
             redirect_to owner_path(current_user), notice: "Your family has grown =]"
         else
-
             render :new
         end
     end
@@ -37,10 +37,13 @@ class PetsController < ApplicationController
     end
 
     def destroy
+
         authorize @pet
         @pet.destroy
         redirect_to pets_path, notice: 'Successfully deleted'
+
     end
+
     private
 
     def pet_params

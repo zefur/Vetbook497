@@ -1,0 +1,3 @@
+class Vaccination < HealthRecord
+    
+end

@@ -68,3 +68,6 @@ gem "stimulus_reflex", "~> 3.3"
 gem "redis-session-store"
 
 gem "hiredis"
+
+gem 'sidekiq'
+gem 'sidekiq-failures'
