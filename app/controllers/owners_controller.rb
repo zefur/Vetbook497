@@ -25,12 +25,14 @@ class OwnersController < ApplicationController
    end
 
    def update
-    
     @pet = Pet.new
+    if @owner.update(owner_params)
+        redirect_to owner_path(@owner), notice: 'Successfully updated'
+    else
+        render :edit
+    end
+   end
 
-    @owner.update(owner_params)
-    redirect_to owner_path(@owner)
-  end
 
    private
 
