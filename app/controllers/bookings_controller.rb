@@ -34,6 +34,13 @@ class BookingsController < ApplicationController
         redirect_to clinics_dash_path
     end
 
+    def archive_booking
+        @booking = Booking.find(params[:id])
+        @booking.archived = true
+        @booking.save
+        redirect_to clinics_dash_path
+    end
+
     def destroy
 
     end

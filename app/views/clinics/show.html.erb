@@ -2,7 +2,7 @@
 <%= render "shared/navbar" %>
   <% if current_user.type == "Clinic" %>
     <div style="text-align: right; position: -webkit-sticky; position: sticky; top: 0;">
-      <%= link_to "Edit clinic profile", clinics_dash_path, class: "btn button-to-edit-clinic" %>
+      <%= link_to "Edit clinic profile", edit_clinic_path(@clinic), class: "btn button-to-edit-clinic" %>
       <%= link_to "✚ Add a vet profile", new_clinic_vet_path(@clinic), class: "btn button-to-edit-clinic" %>
     </div>
   <% end %>
@@ -22,14 +22,16 @@
       <% @clinic.vets.each do |vet| %>
         <div class= "clinic-show-vet">
           <div style="text-align: center;">
-          
-          <% if vet.photo.attached? %>          
-           <%= cl_image_tag( vet.photo.key,
-      width: 400, height: 300, crop: :fill) %>
+
+          <% if vet.photo.attached? %>
+            <%= cl_image_tag( vet.photo.key, :class => "cloudinary-vet-profile-picture" ) %>
+
       <% else %>
-            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80" alt="photo" class="avatar vet-profile-picture">
+            <!-- <img src="https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg" alt="photo" class="avatar vet-profile-picture"> -->
+            <%= image_tag "default-profile-image.jpg", :class => 'avatar vet-profile-picture' %>
+
           <% end %>
-          
+
           </div>
           <div style="padding: 10px">
             <h4 class="clinic-show-vet-name"><strong>Name:</strong> <%= vet.first_name %> <%= vet.last_name %></h4>
