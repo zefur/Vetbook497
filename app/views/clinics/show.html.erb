@@ -2,7 +2,7 @@
 <%= render "shared/navbar" %>
   <% if current_user.type == "Clinic" %>
     <div style="text-align: right; position: -webkit-sticky; position: sticky; top: 0;">
-      <%= link_to "Edit clinic profile", clinics_dash_path, class: "btn button-to-edit-clinic" %>
+      <%= link_to "Edit clinic profile", edit_clinic_path(@clinic), class: "btn button-to-edit-clinic" %>
       <%= link_to "✚ Add a vet profile", new_clinic_vet_path(@clinic), class: "btn button-to-edit-clinic" %>
     </div>
   <% end %>

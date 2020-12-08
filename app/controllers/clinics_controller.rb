@@ -16,17 +16,17 @@ class ClinicsController < ApplicationController
 
     def show
       @clinic = Clinic.find(params[:id])
-      authorize @clinic
+      # authorize @clinic
     end
 
     def edit
-      @owner.photo.attach(params[:photo])
+      
       authorize @clinic
     end
 
     def update
     
-      @vet = Vet.new
+      
   
       @clinic.update(clinic_params)
       redirect_to clinic_path(@clinic)

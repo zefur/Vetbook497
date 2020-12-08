@@ -24,7 +24,7 @@ before_action :set_default
 
 
     def show
-
+        @pet = Pet.find(params[:id])
     end
 
 
