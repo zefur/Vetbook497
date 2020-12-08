@@ -11,7 +11,7 @@
   justify-content: center;
   //direction: ltr;
   width: 400px;
-  height: 200px;
+  height: 230px;
   margin: 10px;
   background-color: #006A71;
   border-radius: 10px;
@@ -26,18 +26,31 @@
   transition: all 0.5s ease;
 }
 
+.one-clinic-logo .clinic-initial {
+  //font-family: "Times New Roman";
+  font-size: 80px;
+  color: lightgray;
+  text-align: center;
+  border: 5px solid white;
+  height: 100px;
+  width: 100px;
+  padding-left: 0;
+  border-radius: 50%;
+  margin: 0;
+}
+
 .one-clinic-logo img {
   height: 100px;
   width: 100px;
-  border: 15px solid #ECF4F3;
+  //border: 15px solid #ECF4F3;
   border-radius: 50%;
   margin: 0;
+  //padding-right: 5px;
 }
 
 .one-clinic-logo {
   //border: 3px solid red;
   padding-top: 20px;
-  padding-left: 20px;
   padding-bottom: 20px;
   text-align: right;
   direction: ltr;
@@ -45,7 +58,7 @@
   margin: 0;
   width: 150px;
   height: 150px;
-
+  background-color: none;
 }
 
 
@@ -56,14 +69,16 @@
   direction: rtl;
   color: white;
   width: 200px;
-  height: 200px;
+  height: 100%;
 }
 
 .clinic-card-description p{
   font-weight: 400;
   padding-bottom: 0;
-  border: 1px solid white;
-  width: 100%;
+  margin-top: 10px;
+  //border: 1px solid white;
+  //height: 100%;
+  //width: 100%;
 }
 
 

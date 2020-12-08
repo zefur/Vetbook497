@@ -13,10 +13,10 @@
                 <%= f.input :type, collection: %w[Clinic Owner], input_html: {data: {reflex: "change->ExampleReflex#change_signup"}} %>
               </div>
               <%if @type == "Clinic" %>
-              <%= f.input :owner_name, required: true,autofocus: true, placeholder: "Please input your clinic's name" %>
-              <%= f.input :name,required: true, placeholder: "Please input your full name"%>
+              <%= f.input :owner_name, required: true,autofocus: true, placeholder: "Please input your full name" %>
+              <%= f.input :name,required: true, label: "Clinic name", placeholder: "Please input your clinic's name"%>
 
-              <%= f.input :location, required: true %>
+              <%= f.input :location, required: true, label: "Full address" %>
               <%= f.input :phone_number, required: true %>
               <%= f.input :email,
                             required: true,

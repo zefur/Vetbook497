@@ -1,6 +1,6 @@
 class OwnersController < ApplicationController
 
-    before_action :set_owner  
+    before_action :set_owner
     before_action :authenticate_user!
 
 
