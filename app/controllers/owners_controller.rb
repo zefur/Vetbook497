@@ -1,5 +1,8 @@
 class OwnersController < ApplicationController
-    before_action :set_owner
+
+    before_action :set_owner  
+    before_action :authenticate_user!
+
 
    def dash
        @clinics = Clinic.all
@@ -14,25 +17,30 @@ class OwnersController < ApplicationController
    end
 
    def show
-
+    @owner = User.find(params[:id])
+    authorize @owner
    end
 
    def edit
-    @owner = Owner.find(params[:id])
+    @owner.photo.attach(params[:photo])
+    authorize @owner
    end
 
+
    def update
-      @owner = Owner.find(params[:id])
-      if @owner.update(user_params)
-         redirect_to owner_path(current_user), notice: 'Successfully updated'
-        else
-          render :edit
-      end
+    @pet = Pet.new
+    if @owner.update(owner_params)
+        redirect_to owner_path(@owner), notice: 'Successfully updated'
+    else
+        render :edit
+    end
    end
+
+
 
    private
 
-   def user_params
+   def owner_params
        params.require(:owner).permit(:first_name,:last_name,:location,:phone_number, :photo)
    end
 
