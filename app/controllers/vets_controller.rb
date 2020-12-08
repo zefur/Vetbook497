@@ -1,6 +1,6 @@
 class VetsController < ApplicationController
     before_action :set_default
-    
+
     def new
         @vet = Vet.new
     end
@@ -18,12 +18,12 @@ class VetsController < ApplicationController
 
     def edit
 
-            
-        authorize @vet
+
+        # authorize @vet
     end
 
     def update
-        authorize @vet
+        # authorize @vet
         if @vet.update(vet_params)
             redirect_to clinic_path(@clinic), notice: "Vet has been updated"
 
@@ -39,7 +39,7 @@ class VetsController < ApplicationController
 
     private
 
-    
+
     def vet_params
         params.require(:vet).permit(:first_name, :last_name, :speciality, :bio, :photo)
     end
@@ -56,5 +56,5 @@ class VetsController < ApplicationController
         @vet = Vet.find(params[:id])
     end
 
-    
+
 end
