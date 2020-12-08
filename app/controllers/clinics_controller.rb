@@ -1,7 +1,7 @@
 class ClinicsController < ApplicationController
   before_action :set_clinic
 
-   
+
     def new
 
     end
@@ -20,14 +20,14 @@ class ClinicsController < ApplicationController
     end
 
     def edit
-      
+
       authorize @clinic
     end
 
     def update
-    
-      
-  
+
+
+
       @clinic.update(clinic_params)
       redirect_to clinic_path(@clinic)
     end

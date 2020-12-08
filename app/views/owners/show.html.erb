@@ -12,7 +12,7 @@
         <%= cl_image_tag(@owner.photo.key,
      :class => "owner_image", crop: :fill) %>
       <% else %>
-        <%= image_tag "profile5.jpg", :class => 'avatar-profile' %>
+        <%= image_tag "default-profile-image.jpg", :class => 'avatar-profile' %>
 
         <% end %>
 
@@ -61,7 +61,7 @@
            <%= cl_image_tag( pet.photo.key,
      :class => "petavatar-square", crop: :fill) %>
       <% else %>
-       <%= image_tag(('chihuahua.jpg'), :class =>"avatar-square") %>
+       <%= image_tag "default-pet-image.jpg", :class =>"avatar-square" %>
          <% end %>
 
          </div>
