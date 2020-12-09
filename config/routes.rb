@@ -37,10 +37,10 @@ end
        member do
         delete :delete_photo
        end
-      resources :health_records do
-        resources :vaccinations
-        resources :diagnosis
-      end
+      resources :health_records 
+      resources :vaccinations
+      resources :diagnosis
+      
     end
   end
 
