@@ -20,6 +20,21 @@ before_action :set_default
         @health_record = HealthRecord.find(params[:id])
     end
 
+
+    def edit
+        @health_record = HealthRecord.find(params[:id])
+    end
+
+    def update
+        @health_record = HealthRecord.find(params[:id])
+        if @health_record.update(health_params)
+            redirect_to owner_pet_path(@owner,@pet), notice: 'Successfully updated'
+        else
+            render :edit, notice: 'Something went wrong, please try again'
+        end
+    end
+
+
     private
 
     def health_params
