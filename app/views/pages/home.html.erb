@@ -10,7 +10,7 @@
      </div>
 
      <div class="row d-flex d-flex justify-content-center align-items-center">
-      <p>Save your pet, cloud store the health records!</p>
+      <h5>Save your pet, cloud store the health records!</h5>
     </div>
 
     <div class="row d d-flex justify-content-center align-items-center">
@@ -22,13 +22,13 @@
 </div>
 </div>
 
-<div class= "part2-homepage master-box d-flex justify-content-center"  >
+<div class= "part2-homepage master-box d-flex justify-content-center" style="">
   <!-- <div class="container"> -->
 
 
-    <div class="col-6 d-flex justify-content-center align-items-center ">
+    <div class="col-6 d-flex justify-content-center align-items-center">
       <div class="box mt-3 pt-2 pb-2 align-items-center">
-        <h2>How VetBook benefit you</h2>
+        <h2>How <strong>VetBook</strong> benefits you</h2>
       </div>
     </div>
 
@@ -43,7 +43,7 @@
           </div>
 
           <div class= "d-flex justify-content-center">
-            <h5>Appointments</h5>
+            <h3>Appointments</h3>
           </div>
 
           <div class= "d-flex justify-content-center">
@@ -63,7 +63,7 @@
           </div>
 
           <div class= "d-flex justify-content-center">
-            <h5>Medical records</h5>
+            <h3>Medical records</h3>
           </div>
 
           <div class= "d-flex justify-content-center">
@@ -79,7 +79,7 @@
         </div>
 
         <div class= "row d-flex justify-content-center">
-          <h5>Reminders</h5>
+          <h3>Reminders</h3>
         </div>
 
         <div class= "row d-flex justify-content-center align-items-center">
@@ -95,7 +95,7 @@
         </div>
 
         <div class= "row d-flex justify-content-center">
-          <h5>View vets nearby</h5>
+          <h3>View vets nearby</h3>
         </div>
 
         <div class= "row d-flex justify-content-center align-items-center">
@@ -117,12 +117,12 @@
 
 <div class ="container-customer flex-wrapper">
 
- <div class="customer-box col-12 mt-2 pt-4 pb-2">
+ <div class="customer-box col-12 mt-2 pt-4 pb-2" style="">
   <h2>What pet owners think</h2>
 </div>
 
-<div class="container-lg my-3 d-flex justify-content-center">
-  <div id="myCarousel" class="carousel slide d-flex justify-content-center" data-ride="carousel">
+<div class="container-lg d-flex justify-content-center" style="">
+  <div id="myCarousel" class="carousel slide d-flex justify-content-center" data-ride="carousel" style="">
     <!-- Carousel indicators -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -130,36 +130,38 @@
       <li data-target="#myCarousel" data-slide-to="2"></li>
     </ol>
     <!-- Wrapper for carousel items -->
-    <div class="carousel-inner">
+    <div class="carousel-inner" style="">
       <div class="carousel-item active">
         <div class="row">
-
-          <div class="col">
-           <div class="row d-flex justify-content-center">
+          <!-- one review starts -->
+          <div class="col" style="height: 500px;">
+           <div class="row d-flex justify-content-center align-items-center" style ="">
              <div>
               <%= image_tag "profile3.jpg", :class => 'avatar' %>
             </div>
           </div>
-          <div class="review row d-flex justify-content-center tp-2 pl-2 pr-1">
-            <p>“ The only app <br>reminding me vaccinations”</p>
+          <div class="review row d-flex justify-content-center tp-2 pl-2 pr-1 align-items-center" style ="">
+            <h3>“ The only app <br>reminding me of vaccinations”</h3>
             <!-- <p>⭐️⭐️⭐️⭐️⭐️</p> -->
             <p>Alicia B.- pet owner</p>
           </div>
         </div>
+        <!-- one review ends -->
 
-        <div class="col">
-         <div class="row d-flex justify-content-center">
+        <!-- one review starts -->
+        <div class="col" style="height: 500px;">
+         <div class="row d-flex justify-content-center" style ="">
            <div>
             <%= image_tag "profile-1.jpg", :class => 'avatar' %>
           </div>
         </div>
-        <div class="review row d-flex justify-content-center tp-2 pl-2 pr-1">
-          <p>“ Awesomeeeee <br> awesome and once more awesome!!”</p>
+        <div class="review row d-flex justify-content-center tp-2 pl-2 pr-1" style ="">
+          <h3>“ Awesomeeeee <br> awesome and once more awesome!!”</h3>
           <!-- <p>⭐️⭐️⭐️⭐️⭐️</p> -->
           <p>Jessica S.- pet owner</p>
         </div>
       </div>
-
+      <!-- one review ends -->
     </div>
 
   </div>
@@ -168,27 +170,27 @@
   <div class="carousel-item">
    <div class="row">
 
-    <div class="col">
-     <div class="row d-flex justify-content-center">
+    <div class="col" style="height: 500px;">
+     <div class="row d-flex justify-content-center" style ="">
        <div>
         <%= image_tag "profile2.jpg", :class => 'avatar' %>
       </div>
     </div>
-    <div class="review row d-flex justify-content-center tp-2 pl-2 pr-1">
-      <p>“ Fabulous idea <br>to have handy app for pets”</p>
+    <div class="review row d-flex justify-content-center tp-2 pl-2 pr-1" style ="">
+      <h3>“ Fabulous idea <br>to have handy app for pets”</h3>
       <!-- <p>⭐️⭐️⭐️⭐️⭐️</p> -->
       <p>Teresa B.- pet owner</p>
     </div>
   </div>
 
-  <div class="col">
-   <div class="row d-flex justify-content-center">
+  <div class="col" style="height: 500px;">
+   <div class="row d-flex justify-content-center" style ="">
      <div>
       <%= image_tag "profile4.jpg", :class => 'avatar' %>
     </div>
   </div>
-  <div class="review row d-flex justify-content-center tp-2 pl-2 pr-1">
-    <p>“ Ive been volunteer <br> to test this app, and I love it!!”</p>
+  <div class="review row d-flex justify-content-center tp-2 pl-2 pr-1"style ="">
+    <h3>“ Ive been volunteer <br> to test this app, and I love it!!”</h3>
     <!-- <p>⭐️⭐️⭐️⭐️⭐️</p> -->
     <p>Janice S.- pet owner</p>
   </div>
@@ -199,31 +201,31 @@
       <div class="carousel-item">
         <div class="row">
 
-          <div class="col">
-           <div class="row d-flex justify-content-center">
+          <div class="col" style="height: 500px;">
+           <div class="row d-flex justify-content-center" style ="">
              <div>
               <%= image_tag "profile5.jpg", :class => 'avatar' %>
             </div>
           </div>
-          <div class="review row d-flex justify-content-center tp-2 pl-2 pr-1">
-            <p>“ Nice to have<br>app as reminder. May use now!”</p>
+          <div class="review row d-flex justify-content-center tp-2 pl-2 pr-1" style ="">
+            <h3>“ Nice to have<br>app as reminder. May use now!”</h3>
             <!-- <p>⭐️⭐️⭐️⭐️⭐️</p> -->
             <p>Dereck S.- pet owner</p>
           </div>
         </div>
 
-        <div class="col">
-         <div class="row d-flex justify-content-center">
+        <div class="col" style="height: 500px;">
+          <div class="row d-flex justify-content-center" style ="">
            <div>
             <%= image_tag "profile6.jpg", :class => 'avatar' %>
+            </div>
+          </div>
+          <div class="review row d-flex justify-content-center tp-2 pl-2 pr-1" style ="">
+            <h3>“ Love it <br> coudlnt have better interface!!”</h3>
+            <!-- <p>⭐️⭐️⭐️⭐️⭐️</p> -->
+            <p>Jack N.- pet owner</p>
           </div>
         </div>
-        <div class="review row d-flex justify-content-center tp-2 pl-2 pr-1">
-          <p>“ Love it <br> coudlnt have better interface!!”</p>
-          <!-- <p>⭐️⭐️⭐️⭐️⭐️</p> -->
-          <p>Jack N.- pet owner</p>
-        </div>
-      </div>
     </div>
   </div>
   </div>

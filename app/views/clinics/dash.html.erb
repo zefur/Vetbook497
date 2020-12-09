@@ -10,7 +10,7 @@
 <%# 2.times do %>
 <% @clinic.vets.each do |vet| %>
   <% vet.bookings.each do |booking| %>
-  <% if booking.accepted %>
+  <% if booking.accepted && !booking.archived %>
   <div class="d-flex one-booking">
 
     <div class="one-booking-grey-bar" style="background-color: lightgray; width: 1%">
@@ -18,7 +18,7 @@
 
     <div class="one-booking-a" style="margin-right: 10px; padding: 5px 0 10px 10px">
       <p> Date: <%= booking.date %></p>
-      <p> Time: <%= booking.time %></p>
+      <p> Time: <%= booking.time.to_s(:time)%></p>
     </div>
 
     <div class="flex-fill one-booking-b" style="  border-left: 1px solid lightgray; padding-left: 20px; padding-top: 5px">
@@ -38,16 +38,19 @@
       Manage
       </button>
       <ul class="dropdown-menu one-booking-manage-action" aria-labelledby="dropdownMenuButton">
-      <%#= link_to new_owner_pet_health_record_path(booking.pet.user, booking.pet) do %>
+      <%= link_to new_owner_pet_health_record_path(booking.pet.user, booking.pet) do %>
         <li class="dropdown-item" >Submit health report</li>
-        <%# end %>
+        <% end %>
         <!-- <a class="dropdown-item" href="#">Pet health profile</a> -->
-       <%#= link_to '#' do %><li class="dropdown-item" > Pet health profile</li>
-       <%# end %>
+       <%= link_to owner_pet_path(booking.pet.user, booking.pet) do %><li class="dropdown-item" > Pet health profile</li>
+       <% end %>
        <%#= link_to '#' do %>
        <li class="dropdown-item" >Cancel booking</li>
        <%# end %>
 
+<%= link_to archive_booking_clinic_booking_path(@clinic, booking) do %>
+        <li class="dropdown-item" >Booking completed</li>
+        <% end %>
       </ul>
     </div>
 

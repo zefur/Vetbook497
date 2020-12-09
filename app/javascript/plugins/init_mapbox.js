@@ -25,6 +25,7 @@ const addMarkersToMap = (map, markers) => {
   });
 };
 
+
 const getUserLocation = (sucess,failure) => {
   if (window.navigator.geolocation){
     window.navigator.geolocation.getCurrentPosition(sucess, failure);
@@ -48,6 +49,7 @@ const d = R * c;
 return d;
 }
 const addMapMarker = (markers,map) =>{
+
   markers.forEach((marker) => {
     new mapboxgl.Marker()
 

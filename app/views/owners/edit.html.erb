@@ -9,7 +9,7 @@
           <%= f.input :email  %>
           <%= f.input :location%>
           <%= f.input :photo, as: :file, label: "Upload a profile picture" %>
-        <%= link_to "Delete photo", delete_photo_owner_path(@owner), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to "❌Delete photo", delete_photo_owner_path(@owner), method: :delete, data: { confirm: 'Are you sure?' }, class: "delete_photo" %>
         </div>
 
         <div class="edit-buttons d-flex justify-content-around">

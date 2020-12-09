@@ -26,12 +26,14 @@ require("channels")
 import "bootstrap";
 import { initMapbox, getUserLocation, getDistanceBetweenPoint,addMapMarker } from '../plugins/init_mapbox';
 import mapboxgl from 'mapbox-gl';
+
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+
   const {mapElement: element, map} = initMapbox();
   const success = (res) => {
     console.log(res);
@@ -52,6 +54,7 @@ document.addEventListener('turbolinks:load', () => {
   const failure = (err) => {console.log(err)};
   getUserLocation(success, failure);
   
+
 });
 
 import "controllers"

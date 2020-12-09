@@ -1,9 +1,8 @@
-.newpet-background {
-   background-size: cover;
+.clinic-edit-background {
+  background-size: cover;
   background-position: center center;
-  background-repeat: no-repeat;
-  padding: 150px 0;
-  display: flex;
+  background-image: no-repeat;
+  padding: 20px;
   background-image: image-url("paws.png");
   height: 100vh;
   align-items: center;
@@ -11,16 +10,17 @@
 }
 
 
-.newpet-form{
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-top: 15px;
-  margin-bottom: 30px;
-  background-color: $submit-button-green;
-  width: 450px;
-   // height: 1000px;
-  border-radius:3px;
-   h4 {
+  .clinic-edit-form-container {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+    background-color: $submit-button-green;
+    max-height: 700px;
+    width: 500px;
+    border-radius:3px;
+    h4 {
      color:$submit-button-orange;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
@@ -30,21 +30,29 @@
    }
   }
 
-  .form-inputs-newpet {
-      color:white;
+  .form-inputs-clinic-edit {
+    color:white;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     margin-top: 10px;
-
+    align-items: center;
+    justify-content: center;
+    //border: 3px solid black;
+    width: 100%;
+    // margin-top: 0;
   }
 
-  .newpet-buttons {
-margin-top: 10px;
-margin-bottom: 20px;
+.form-bar-width {
+  max-height: 250px;
+}
+
+.clinic-edit-buttons {
+margin-top: 40px;
+
 .submit_class {
   color:white;
   background-color: $submit-button-orange;
-  padding: 10px 15px;
+  padding: 8px 20px;
   border: 1px solid $submit-button-orange;
   border-radius: 5px;
   width: 100px;

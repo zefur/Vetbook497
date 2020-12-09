@@ -1,5 +1,5 @@
-.newpet-background {
-   background-size: cover;
+.editpet-background {
+  background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   padding: 150px 0;
@@ -11,13 +11,13 @@
 }
 
 
-.newpet-form{
-  padding-left: 20px;
-  padding-right: 20px;
+.editpet-form{
+    padding-left: 20px;
+    padding-right: 20px;
   margin-top: 15px;
   margin-bottom: 30px;
   background-color: $submit-button-green;
-  width: 450px;
+   width: 400px;
    // height: 1000px;
   border-radius:3px;
    h4 {
@@ -30,7 +30,7 @@
    }
   }
 
-  .form-inputs-newpet {
+  .form-inputs-editpet {
       color:white;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
@@ -38,9 +38,8 @@
 
   }
 
-  .newpet-buttons {
+  .editpet-buttons {
 margin-top: 10px;
-margin-bottom: 20px;
 .submit_class {
   color:white;
   background-color: $submit-button-orange;
@@ -64,4 +63,9 @@ margin-bottom: 20px;
 
 
 }
+}
+a.delete_photo {
+  text-decoration: none;
+  color: white;
+  padding-top:5px;
 }

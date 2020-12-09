@@ -1,7 +1,7 @@
-<<div class="newpet-background d-flex justify-content-center">
-  <div class="newpet-form form pt-3">
-    <h4>Add pet to your family</h4>
-        <div class="form-inputs-newpet">
+<div class="editpet-background d-flex justify-content-center">
+  <div class="editpet-form form mt-5">
+    <h4>Edit pet basic info</h4>
+        <div class="form-inputs-editpet">
         <%= simple_form_for [@owner, @pet] do |f| %>
           <%= f.input :name %>
             <%= f.input :dob %>
@@ -11,14 +11,13 @@
             <%= f.label :notes, 'Describe behavior during vet visits' %>
             <%= f.input :notes, as: :text, label: false ,:placeholder => 'nervous, calm, growling, snapping, or biting' %>
             <%= f.input :photo, as: :file, label: "Upload a photo" %>
-            <%= link_to "Delete photo", delete_photo_owner_pet_path(@owner, @pet), method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to "❌Delete photo", delete_photo_owner_pet_path(@owner, @pet), method: :delete, data: { confirm: 'Are you sure?' }, class: "delete_photo" %>
         </div>
-        <div class="newpet-buttons d-flex justify-content-around">
-          <%= f.submit "Add Pet", :class => 'submit_class' %>
+        <div class="editpet-buttons d-flex justify-content-around mb-3">
+          <%= f.submit "Edit Pet", :class => 'submit_class' %>
           <%= link_to "Back",owner_path(current_user), class: "btn_back"  %>
         </div>
-
+     </div>
   <% end %>
 
-  </div>
 </div>
