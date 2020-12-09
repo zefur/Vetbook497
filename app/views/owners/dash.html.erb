@@ -15,11 +15,17 @@
             <div class="one-clinic-card">
               <div class="col-8 one-clinic-card-description">
                 <p class="clinic-card-description"> <strong><%= clinic.name %></strong></p>
-                <p class="clinic-card-description" style=" padding: 0 auto; border-top: 1px solid #ECF4F3; height: 72px"> <%= clinic.location %> </p>
-                <p class="clinic-card-description">⭐️ ⭐️ ⭐️ ⭐️</p>
+                <p class="clinic-card-description" style=" padding: 0 auto; border-top: 1px solid #ECF4F3; height: 100px;"> <%= clinic.location %> </p>
+                <span class="clinic-card-description" style="margin-top: 10px;"><p >⭐️ ⭐️ ⭐️ ⭐️</p></span>
               </div>
               <div class="col-4 header one-clinic-logo">
-                <img src="https://images.freeimg.net/rsynced_images/stethoscope-icon-2316460_1280.png" alt="Photo profile">
+                <% if clinic.photo.attached? %>
+                  <%= cl_image_tag(clinic.photo.key, crop: :fill) %>
+                <% else %>
+                  <%= image_tag "default-clinic-image.png", :class => "avatar clinic-initial"  %>
+
+                <% end %>
+                <!-- <img src="https://images.freeimg.net/rsynced_images/stethoscope-icon-2316460_1280.png" alt="Photo profile"> -->
               </div>
             </div>
             <% end %>
