@@ -6,8 +6,6 @@ before_action :set_default
         authorize @pet
     end
 
-
-
     def create
         @pet = Pet.new(pet_params)
         authorize @pet

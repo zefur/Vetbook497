@@ -6,11 +6,11 @@ class PetPolicy < ApplicationPolicy
   end
 
   def new?
-    user == record
+    true
   end
   
   def create?
-    true
+    user.id == record.user_id
   end
 
   def show?
@@ -18,7 +18,7 @@ class PetPolicy < ApplicationPolicy
   end
 
   def edit?
-    user == record
+    user.id == record.user_id
   end
 
   def update?
