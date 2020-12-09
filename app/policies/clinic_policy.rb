@@ -6,11 +6,11 @@ class ClinicPolicy < ApplicationPolicy
   end
 
   def show?
-    user == record
+   true
   end
 
   def edit?
-    true
+    user.id == record.id
   end
 
   def update?

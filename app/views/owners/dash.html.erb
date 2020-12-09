@@ -4,12 +4,178 @@
 
 
 <body>
-  <h2 style="color: #FF7E67; font-weight: 400; text-align: center">Clinics within your area</h2>
 
-    <div class="row users-dashboard" style="margin-top: 30px">
+  <div class="row users-dashboard">
+    <!-- LEFT column -->
+    <div class="col-2">
 
-      <div class="col-7">
+    <div class="row d-flex justify-content-center align-items-center" style="margin: auto; padding: auto;">
+       <% if @owner.photo.attached? %>
+        <%= cl_image_tag(@owner.photo.key,
+     :class => "owner_avatar", crop: :fill) %>
+      <% else %>
+        <%= image_tag "default-profile-image.jpg", :class => 'avatar-owner-profile' %>
+
+        <% end %>
+
+      </div>
+
+
+      <div class="row d-flex justify-content-center align-items-center owner-profile-name">
+       <h4><%= @owner.name%></h4>
+      </div>
+
+      <div class="row d-flex justify-content-center align-items-center">
+        <p><%= @owner.location %></p>
+      </div>
+
+      <div class="row d-flex justify-content-center align-items-center owner-profile-phone">
+        <p><%= @owner.phone_number %></p>
+      </div>
+
+      <div class="row d-flex justify-content-center align-items-center owner-profile-email">
+        <p><%= @owner.email %></p>
+      </div>
+
+      <div class="row d-flex justify-content-center align-items-center newpet mb-2">
+        <%= link_to "Add new pet", new_owner_pet_path(@owner), data: { turbolinks: false }%>
+      </div>
+
+      <div class="row d-flex justify-content-center align-items-center newpet mb-2">
+       <%= link_to "Edit your profile", edit_owner_path(@owner),data: { turbolinks: false } %>
+      </div>
+
+
+    </div>
+
+
+    <!-- RIGHT column -->
+    <div class="col-10 map-and-booking-info" style="background-color: white">
+
+      <div class="container">
+
+
+        <!-- ALL REMINDERS (including APPOINTMENTS) start-->
+
+          <h3 style="color: #FF7E67; font-weight: 200; text-align: center">REMINDERS</h3>
+          <div class="d-flex flex-wrap justify-content-around">
+          <% @owner.pets.take(2).each do |pet| %>
+            <% pet.bookings.each do |booking| %>
+
+            <% if !booking.archived %>
+              <div class="d-flex one-booking-col">
+                <div class="one-booking-col-grey-bar">
+                </div>
+                <div class="one-booking-a-col">
+
+                  <p>Date:<br><%= booking.date %></p>
+                  <p>Time:<br><%= booking.time.to_s(:time)  %></p>
+                  <% if booking.accepted? %>
+                    <p> Status:<br><span style="color: green; font-weight: bold">Confirmed</span></p>
+                  <% else %>
+                    <p> Status:<br><span style="color: #F1C232; font-weight: bold">Pending</span></p>
+                  <% end %>
+                  <!-- <p> Status: <%#= booking.accepted? ? "Confirmed" : "Pending" %></p> -->
+                </div>
+
+                <div class="flex-fill one-booking-b-col" style="  border-left: 1px solid lightgray; padding-left: 20px; padding-top: 5px">
+                  <div class="d-flex justify-content-end">
+                  <button class="btn dropdown-toggle one-booking-col-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Manage</button>
+
+                  <div class="dropdown-menu dropdown-menu-right booking-manage-action" aria-labelledby="dropdownMenuButton">
+                    <%= link_to do %>
+                      <span class="dropdown-item manage-booking-item"><p>Pet health profile</p></span>
+                    <% end %>
+
+                    <%= link_to do %>
+                      <span class="dropdown-item manage-booking-item"><p>Change booking</p></span>
+                    <% end %>
+
+                    <%= link_to do %>
+                      <span class="dropdown-item manage-booking-item"><p>Cancel booking</p></span>
+                    <% end %>
+
+                  </div>
+                  </div>
+                  <p>Pet: <%= booking.pet.name%></p>
+                  <p>Clinic: <%= booking.vet.user.name%></p>
+                  <p>Address: <%= booking.vet.user.location %></p>
+                  <p>Veterinary: <%= booking.vet.first_name %> <%= booking.vet.last_name %></p>
+
+
+
+                <!-- </div> -->
+
+
+                <!-- <div class="dropdown one-booking-c-col"> -->
+
+                </div>
+              </div>
+            <% end %>
+            <% end %>
+          <% end %>
+        </div>
+          <!-- ALL REMINDERS (including APPOINTMENTS) end-->
+
+
+<!-- PET CARDS start -->
+
+    <h3 style="color: #FF7E67; font-weight: 200; text-align: center; margin-top: 20px;">YOUR FAMILY</h3>
+<% @owner.pets.each do |pet| %>
+<div class="container pet-card-container">
+    <div class="flipper pet-card-flipper">
+      <div class="front pet-card-front">
+        <% if pet.photo.attached? %>
+          <%= cl_image_tag( pet.photo.key,
+          :class => "front-avatar-square", crop: :fill) %>
+        <% else %>
+          <%= image_tag "default-pet-image.jpg", :class =>"front-avatar-square" %>
+        <!-- <img src="https://images.unsplash.com/photo-1560830672-575980201c33?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8aHVza3l8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="cherry blossoms"> -->
+        <% end %>
+        <p class="caption pet-card-caption"><%= pet.name %></p>
+      </div>
+      <div class="back d-flex pet-card-back">
+        <div class="col">
+
+          <div style="height: 180px;">
+            <h1 style="padding-bottom: 20px;"><%= pet.name %></h1>
+
+            <p class="pet-card-date"></p>
+            <p class="pet-card-description">Birthday: <%= pet.dob %></p>
+            <p class="pet-card-description">Breed: <%= pet.breed %></p>
+            <p class="pet-card-description">Gender: <%= pet.gender %></p>
+          </div>
+
+
+          <div style="margin-bottom: 0; padding-bottom: 0;">
+            <%= link_to "Edit basic info", edit_owner_pet_path(@owner,  pet), data: { turbolinks: false }, class: "btn button-edit-pet-info" %>
+
+            <div class="d-flex justify-content-between align-items-bottom">
+
+              <%= link_to "View records",owner_pet_path(@owner,pet), class: "btn button-view-pet-record"%>
+              <%#= link_to "Edit basic info", edit_owner_pet_path(@owner,  pet), data: { turbolinks: false }, class: "btn button-edit-pet-record" %>
+              <%= link_to "Remove",
+                owner_pet_path(@owner,pet),
+                :method => :delete,
+                data: { confirm: "Are you sure you wish to delete your pet?" },
+                class: "btn button-remove-pet" %>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <%end%>
+<!-- PET CARDS end-->
+
+
+
+        <h3 style="color: #FF7E67; font-weight: 200; text-align: center; margin-top: 20px;">CLINICS IN YOUR AREA</h3>
+
+      <!-- start of clinic cards+map container -->
+        <div class="d-flex">
         <div class="container clinic-cards">
+
           <% @clinics.each do |clinic| %>
             <%= link_to clinic_path(clinic) do %>
             <div class="one-clinic-card">
@@ -32,13 +198,7 @@
           <% end %>
 
         </div>
-      </div>
-
-
-      <!-- SECOND column -->
-      <div class="col-5 map-and-booking-info">
-
-        <div class="container">
+        <!-- CLINICS CARDS end-->
 
           <!-- MAP -->
           <div id="map"
@@ -47,89 +207,19 @@
             data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
           </div>
 
+        </div>
+        <!-- END of clinic cards+map container -->
 
-          <!-- APPOINTMENTS -->
-          <h3 style="color: #FF7E67; font-weight: 200; text-align: center">My upcoming appointments</h3>
-
-          <% @owner.pets.each do |pet| %>
-            <% pet.bookings.each do |booking| %>
-
-            <% if !booking.archived %>
-              <div class="d-flex one-booking-col">
-                <div class="one-booking-col-grey-bar" style="background-color: lightgray; width: 1%">
-                </div>
-                <div class="one-booking-a-col" style="margin-right: 10px; padding: 5px 0 10px 10px">
-                  <p> <%= booking.date %></p>
-                  <p>Time: <%= booking.time.to_s(:time)  %></p>
-                  <% if booking.accepted? %>
-                    <p> Status: <span style="color: green; font-weight: bold">Confirmed</span></p>
-                  <% else %>
-                    <p> Status: <span style="color: #F1C232; font-weight: bold">Pending</span></p>
-                  <% end %>
-
-
-                  <!-- <p> Status: <%#= booking.accepted? ? "Confirmed" : "Pending" %></p> -->
-                </div>
-                <div class="flex-fill one-booking-b-col" style="  border-left: 1px solid lightgray; padding-left: 20px; padding-top: 5px">
-
-                  <p>Pet name: <%= booking.pet.name%></p>
-                  <p>Clinic name: <%= booking.vet.user.name%></p>
-                  <p>Clinic address: <%= booking.vet.user.location %></p>
-                  <p>Veterinary booked: <%= booking.vet.first_name %> <%= booking.vet.last_name %></p>
-
-                </div>
-
-
-                <div class="dropdown one-booking-c-col">
-                  <button class="btn dropdown-toggle one-booking-col-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Manage</button>
-
-                  <div class="dropdown-menu dropdown-menu-right booking-manage-action" aria-labelledby="dropdownMenuButton">
-                    <%= link_to do %>
-                      <span class="dropdown-item manage-booking-item"><p>Pet health profile</p></span>
-                    <% end %>
-
-                    <%= link_to do %>
-                      <span class="dropdown-item manage-booking-item"><p>Change booking</p></span>
-                    <% end %>
-
-                    <%= link_to do %>
-                      <span class="dropdown-item manage-booking-item"><p>Cancel booking</p></span>
-                    <% end %>
-
-
-                    <%#= link_to "Change booking", class: "dropdown-item manage-booking-item"%>
-                    <%#= link_to "Cancel booking", class: "dropdown-item manage-booking-item"%>
-                    <!-- <a class="dropdown-item c-col-item"></a> -->
-                    <!-- <a class="dropdown-item c-col-item" href="#">Change booking</a> -->
-                    <!-- <a class="dropdown-item c-col-item" href="#">Cancel booking</a> -->
-                  </div>
-                </div> </div>
-
-
-            <% end %>
-
-
-
-
-            <% end %>
-          <% end %>
-
-          <!-- REMINDERS -->
-
-          <h3 style="margin-top: 20px; margin-bottom: 10px; color: #FF7E67; font-weight: 200; text-align: center">Reminders</h3>
-          <div style="background-color: rgba(254,126,104,0.2); padding-top: 5px">
-            <p style="color: grey; padding-left: 10px;">You currently have no reminders.</p>
-          </div>
 
         </div>
         <!-- END of this container -->
 
 
      </div>
-      <!-- END of this col-5 -->
+      <!-- END of RIGHT COLUMN -->
 
   </div>
   <!-- END of row -->
 
-<!-- </body> -->
+</body>
 

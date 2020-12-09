@@ -1,4 +1,232 @@
 
+// LEFT COLUMN
+.avatar-owner-profile {
+  background-size: cover;
+  background-position: top center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+.owner_avatar{
+  background-size: cover;
+  background-position: top center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  object-fit: cover;
+}
+
+
+.owner-profile-name,
+.owner-profile-phone,
+.owner-profile-email {
+  text-align: center;
+}
+
+
+//  RIGHT COLUMN
+
+// booking
+
+
+.one-booking-col {
+  margin-top: 20px;
+  border: 1px solid lightgray;
+  width: 600px;
+}
+
+.one-booking-col-grey-bar {
+  background-color: lightgray;
+  width: 1%;
+}
+
+.one-booking-a-col{
+  width: 15%;
+  margin-right: 10px;
+  padding: 5px 0 10px 10px;
+}
+
+.one-booking-b-col{
+  width: 65%;
+}
+
+.one-booking-c-col{
+  width: 20%;
+}
+
+.booking-manage-action{
+  margin-bottom: 10px;
+}
+
+.one-booking-col-btn {
+  margin-top: 5px;
+  margin-right: 5px;
+  background-color: #FF7E67;
+  color: white;
+}
+
+.one-booking-col-btn:hover {
+  background-color: white;
+  border: 1px solid #FF7E67;
+  color: #FF7E67;
+}
+
+.manage-booking-item p {
+  padding: 0;
+  margin: 0;
+}
+
+.manage-booking-item:hover {
+  background-color: rgba(254,126,104,0.2);
+}
+
+// pet cards
+
+
+@import url(https://fonts.googleapis.com/css?family=Raleway|Reenie+Beanie);
+
+.pet-card-container {
+  box-sizing: border-box;
+  perspective: 1000px;
+  display: inline-block;
+  margin: 5%;
+  //margin-bottom: 50px;
+  //border: 1px solid black;
+}
+
+// html,
+// body {
+//   margin: 5%;
+//   font-family: "Raleway", sans-serif;
+//   line-height: 1.5em;
+// }
+
+.pet-card-front .front-avatar-square {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.pet-card-back a {
+  text-decoration: none;
+}
+
+.pet-card-caption,
+.pet-card-back h1,
+.pet-card-date {
+  margin: 0;
+  text-align: center;
+}
+
+.pet-card-caption,
+h1 {
+  font-family: "Reenie Beanie", sans-serif;
+  font-size: 2em;
+  padding: 10px 10px 0 10px;
+}
+
+.pet-card-date {
+  font-size: 0.75em;
+}
+
+.pet-card-description {
+  font-size: 0.9em;
+  padding: 0 20px;
+  text-align: left;
+}
+
+.pet-card-back p{
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
+  line-height: 1.5em;
+  //border: 1px solid black;
+}
+
+.pet-card-container {
+
+  //margin: 20px;
+  //border: 1px solid black;
+}
+
+.pet-card-container:hover .pet-card-flipper {
+  transform: rotateY(180deg);
+}
+
+.pet-card-container,
+.pet-card-front,
+.pet-card-back {
+  width: 250px;
+  height: 250px;
+  //margin: 20px;
+}
+
+.pet-card-flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.pet-card-front,
+.pet-card-back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.pet-card-front {
+  z-index: 2;
+}
+
+.pet-card-back {
+  transform: rotateY(180deg);
+}
+
+// .button-view-pet-record{
+//   background-color: $submit-button-orange;
+//   color: white;
+//   align-self: center;
+// }
+
+// .button-view-record:hover {
+// color: white;
+// opacity: 0.8;
+
+// }
+
+.button-view-pet-record,
+.button-edit-pet-info,
+.button-remove-pet{
+    color:$submit-button-green;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    //margin-right:20px;
+    text-align:center;
+    margin-bottom: 0;
+    //border: 1px solid green;
+}
+
+
+
+// clinic cards
+
 .clinic-cards {
   //border: 1px solid black;
   display: flex;
@@ -72,6 +300,7 @@
   height: 100%;
 }
 
+
 .clinic-card-description p{
   font-weight: 400;
   padding-bottom: 0;
@@ -87,46 +316,7 @@ a:link, a:visited, a:hover, a:active {
   text-decoration: none;
 }
 
-/////////////////////////////
 
-.one-booking-col {
-  margin-top: 20px;
-  border: 1px solid lightgray;
-}
-
-.one-booking-a-col{
-  width: 15%;
-}
-
-.one-booking-b-col{
-  width: 65%;
-}
-
-.one-booking-c-col{
-  width: 20%;
-}
-
-.one-booking-col-btn {
-  margin-top: 5px;
-  margin-right: 5px;
-  background-color: #FF7E67;
-  color: white;
-}
-
-.one-booking-col-btn:hover {
-  background-color: white;
-  border: 1px solid #FF7E67;
-  color: #FF7E67;
-}
-
-.manage-booking-item p {
-  padding: 0;
-  margin: 0;
-}
-
-.manage-booking-item:hover {
-  background-color: rgba(254,126,104,0.2);
-}
 
 
 

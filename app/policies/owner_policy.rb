@@ -6,11 +6,11 @@ class OwnerPolicy < ApplicationPolicy
   end
 
     def show?
-      user == record
+      true
     end
 
     def edit?
-      true
+      user == record
     end
 
     def update?

@@ -4,8 +4,13 @@ class PetPolicy < ApplicationPolicy
       scope.all
     end
   end
-  def create?
+
+  def new?
     true
+  end
+  
+  def create?
+    user.id == record.user_id
   end
 
   def show?
@@ -13,7 +18,7 @@ class PetPolicy < ApplicationPolicy
   end
 
   def edit?
-    true
+    user.id == record.user_id
   end
 
   def update?

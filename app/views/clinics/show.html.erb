@@ -2,8 +2,8 @@
 <%= render "shared/navbar" %>
   <% if current_user.type == "Clinic" %>
     <div style="text-align: right; position: -webkit-sticky; position: sticky; top: 0;">
-      <%= link_to "Edit clinic profile", edit_clinic_path(@clinic), class: "btn button-to-edit-clinic" %>
-      <%= link_to "✚ Add a vet profile", new_clinic_vet_path(@clinic), class: "btn button-to-edit-clinic" %>
+      <%= link_to "Edit my clinic profile", edit_clinic_path(@clinic), class: "btn button-to-edit-clinic" %>
+      <%= link_to "✚ Add my vets", new_clinic_vet_path(@clinic), class: "btn button-to-edit-clinic" %>
     </div>
   <% end %>
 
@@ -14,6 +14,18 @@
 
   <h1><strong><%= @clinic.name %></strong></h1>
   <h3><%= @clinic.location %></h3>
+
+
+
+<% @clinic.pictures.each do |picture| %>
+  <%= cl_image_tag(picture.key) %>
+  <%= link_to "delete", delete_pic_clinic_path(picture), method: :delete %>
+<% end %>
+
+
+
+
+  <%= @clinic.bio %>
   <h2><strong>OUR VETS</strong></h2>
 
 
@@ -41,7 +53,10 @@
             </div>
             <div style="text-align: left">
               <% if current_user.type == "Clinic" %>
+                <% if current_user == @clinic %>
                 <%= link_to "Edit", edit_clinic_vet_path(@clinic, vet), class: "btn button-to-edit-vet" %>
+                <%= link_to "Delete", clinic_vet_path(@clinic,vet), method: :delete, class: "btn button-to-edit-vet" %>
+               <% end %>
               <% else %>
                 <%= link_to "Book", new_clinic_booking_path(@clinic, {vet: vet}), class: "btn button-to-edit-vet" %>
               <% end %>
