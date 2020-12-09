@@ -27,6 +27,6 @@ class VetPolicy < ApplicationPolicy
 
   private
     def user_is_owner_or_admin?
-      user == record.user || user.admin
+      user.id == record.user_id || user.admin
     end
 end

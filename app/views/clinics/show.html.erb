@@ -43,6 +43,7 @@
               <% if current_user.type == "Clinic" %>
                 <% if current_user == @clinic %>
                 <%= link_to "Edit", edit_clinic_vet_path(@clinic, vet), class: "btn button-to-edit-vet" %>
+                <%= link_to "Delete", clinic_vet_path(@clinic,vet), method: :delete, class: "btn button-to-edit-vet" %>
                <% end %>
               <% else %>
                 <%= link_to "Book", new_clinic_booking_path(@clinic, {vet: vet}), class: "btn button-to-edit-vet" %>
