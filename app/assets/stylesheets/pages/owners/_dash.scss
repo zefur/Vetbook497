@@ -100,7 +100,8 @@
   box-sizing: border-box;
   perspective: 1000px;
   display: inline-block;
-  margin: 5%;
+  align-self: center;
+  margin: 30px;
   //margin-bottom: 50px;
   //border: 1px solid black;
 }
@@ -130,7 +131,7 @@
 }
 
 .pet-card-caption,
-h1 {
+.pet-card-back h1 {
   font-family: "Reenie Beanie", sans-serif;
   font-size: 2em;
   padding: 10px 10px 0 10px;
@@ -166,6 +167,7 @@ h1 {
 }
 
 .pet-card-container,
+.pet-card-flipper,
 .pet-card-front,
 .pet-card-back {
   width: 250px;
@@ -198,17 +200,6 @@ h1 {
   transform: rotateY(180deg);
 }
 
-// .button-view-pet-record{
-//   background-color: $submit-button-orange;
-//   color: white;
-//   align-self: center;
-// }
-
-// .button-view-record:hover {
-// color: white;
-// opacity: 0.8;
-
-// }
 
 .button-view-pet-record,
 .button-edit-pet-info,
@@ -232,6 +223,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin-top: 30px;
 }
 
 .one-clinic-card {
