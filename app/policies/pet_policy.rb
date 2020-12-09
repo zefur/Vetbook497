@@ -8,6 +8,7 @@ class PetPolicy < ApplicationPolicy
   def new?
     user == record
   end
+  
   def create?
     true
   end
