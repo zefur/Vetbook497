@@ -81,11 +81,6 @@ body {
 
 }
 
-// .card-product img {
-//   height: 50%;
-//   width: 120px;
-//   object-fit: cover;
-// }
 
   .card-product{
   overflow: hidden;
@@ -215,6 +210,7 @@ body {
   margin: 15px 5px;
   width: 200px;
   height: 200px;
+  object-fit: cover;
   border-radius: 50%;
     border: 2px solid white;
     background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), image-url("profile2.jpg");

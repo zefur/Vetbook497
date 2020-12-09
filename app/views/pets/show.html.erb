@@ -1,62 +1,108 @@
 
 <div class = "petshow container">
 
-
-
     <div class="header row d-flex justify-content-center align-items-center mt-4">
       <h4><%= @pet.name.capitalize %>'s Health Record</h4>
     </div>
 
-    <div class="container generalinfo pt-0">
+<div class="row d-flex justify-content-around align-items-start mt-4 first-row" style="background-color: white;">
+     <div class="col-4">
+        <div class="container flip-card-petshow">
+          <div class="flipper flipper-card-petshow">
 
-      <div class="medicalrecord row d-flex align-items-center">
-      <h4>ℹ️General info</h4>
-    </div>
+          <div class="front flipper-card-front">
+            <% if @pet.photo.attached? %>
+              <%= cl_image_tag(@pet.photo.key,:class => "avatar-doggy", crop: :fill) %>
+              <% else %>
+              <%= image_tag(('default-pet-image.jpg'), :class =>"petavatar-fixed") %>
+            <% end %>
+          </div>
 
-       <div class="row">
-         <div class="col info-written">
-
-            <div class="underline">
-              <p><b>Animal breed:</b> <%= @pet.breed %> </p>
-            </div>
-            <div class="underline">
-              <p><b>Animal gender:</b> <%= @pet.gender %></p>
-            </div>
-            <div class="underline">
-              <p><b>DOB:</b> <%= @pet.dob %> </p>
-            </div>
-            <div class="underline">
-              <p><b>Owner name:</b> <%= @pet.user.name %></p>
-            </div>
-            <div class="underline">
-              <p><b><%=@pet.name%> behavior at clinic:</b> <%= @pet.notes %></p>
-            </div>
+          <div class="back caption-card-back">
+               <p class="name"><%=@pet.name%>'s General info</h4>
+            <p class="underline"><b>Animal breed:</b> <%= @pet.breed %></p>
+            <p class="underline"><b>Animal gender:</b> <%= @pet.gender %></p>
+            <p class="underline"><b>DOB:</b> <%= @pet.dob %></p>
+            <p class="underline"><b>Owner name: </b><%= @pet.user.name %></p>
+            <p class="underline"><b><%=@pet.name%> behavior at clinic:</b> <%= @pet.notes %></p>
+          </div>
 
          </div>
+        </div>
+     </div>
 
-        <div class="col info d-flex justify-content-end align-items-center">
-        
-        <% if @pet.photo.attached? %>
-          <%= cl_image_tag(@pet.photo.key,:class => "petavatar-round", crop: :fill) %>
-          <% else %>
-          <%= image_tag(('chihuahua.jpg'), :class =>"avatar-square") %>
-        <% end %>
-        
-           
-       </div>
+ <div class="col-8 vaccinations">
+  <!-- <div class="vaccinations"> -->
+  <div class="vaccinations-header row d-flex align-items-center justify-content-start">
+        <h4>Vaccinations</h4>
+        <%= link_to "📝 Input vaccination record", new_owner_pet_health_record_path(@owner,@pet), class: "input-diagnosis"%>
+  </div>
 
-      </div>
 
+  <div class= "container d-flex align-items-start">
+
+    <div class="one-vaccinations-header col-4 d-flex align-items-start">
+      <p><strong>Vaccination date</strong></p>
     </div>
 
-<div class="diagnosis">
-      <div class="medicalrecord row d-flex align-items-center">
-        <h4>📄Vet reports</h4>
-        <%= link_to "📝 Input more details", new_owner_pet_health_record_path(@owner,@pet), class: "input-diagnosis"%>
+      <div class="col-4 one-vaccinations-header d-flex align-items-start ">
+        <p><strong>Type of Vaccine</strong></p>
       </div>
 
-       <div class= "container container-diagnosis d-flex align-items-start mb-1">
+      <div class="col-3 one-vaccinations-header d-flex align-items-start ">
+        <p><strong>Next vaccination</strong></p>
+      </div>
 
+  </div>
+
+<div class="container-vaccinations-flow">
+
+<% @pet.health_records.each do |record| %>
+
+<% if record.type == "Vaccination" %>
+
+    <div class= "container d-flex align-items-start mb-2">
+
+      <div class="d-flex align-items-end col-1 justify-content-end">
+          <%= link_to "✏️", edit_owner_pet_health_record_path(@pet.user, @pet, record)%>
+      </div>
+
+      <div class="one-vaccination-a col-3 d-flex align-items-start">
+        <p><%= record.vaccination_date  %></p>
+      </div>
+
+      <div class="col-4 one-vaccination-b d-flex align-items-start ">
+        <p><%= record.vaccination_type  %></p>
+      </div>
+
+      <div class="col-3 one-vaccination-c d-flex align-items-start " >
+        <p><%#=  %></p>
+      </div>
+    </div>
+
+
+
+      <% end %>
+      <% end %>
+    <!-- </div> -->
+ </div>
+ </div>
+
+</div>
+
+<div class="dotted-line">
+
+</div>
+
+
+
+<div class="diagnosis row " style="background-color: white;">
+      <div class="medicalrecord row d-flex align-items-center justify-content-start ml-3">
+        <h4>Vet reports</h4>
+        <%= link_to "📝 Input medical record", new_owner_pet_health_record_path(@owner,@pet), class: "input-diagnosis"%>
+      </div>
+
+    <div class= "container container-diagnosis d-flex align-items-start mb-1">
       <div class="header-a col-3 d-flex align-items-start">
         <p><strong>Date of visit</strong><br></p>
       </div>
@@ -83,16 +129,18 @@
         <p><%= record.diagnosis_date %></p>
       </div>
 
-      <div class= "col-3 one-diagnosis-b d-flex align-items-start " >
+      <div class= "col-3 one-diagnosis-b d-flex align-items-start" >
         <p><%= record.diagnosis %></p>
       </div>
 
-      <div class="col-3 one-diagnosis-c d-flex align-items-start ">
+      <div class="col-3 one-diagnosis-c d-flex align-items-start">
         <p><%= record.treatment  %></p>
       </div>
 
-       <div class="d-flex align-items-start last-box col-3 justify-content-end" >
+
+       <div class="d-flex align-items-start last-box col-3 justify-content-start" >
         <%= link_to "🔍 Full report", owner_pet_health_record_path(@pet.user, @pet, record), class: "btn-record"%>
+
       </div>
 
       </div>
@@ -101,63 +149,18 @@
   </div>
 
 
-<div class="vaccinations">
-  <div class="vaccinations-header row d-flex align-items-center">
-        <h4>💉Vaccinations</h4>
-        <%= link_to "📝 Input more details", new_owner_pet_health_record_path(@owner,@pet), class: "input-diagnosis"%>
-  </div>
 
+  <div class="d-flex profile-back justify-content-center align-items-end">
+    <% if current_user.type == "Owner" %>
+    <%= link_to owners_dash_path(current_user) do %>
+      <span class= "btn_back"><p>🔙Back to dashboard</p></span>
+    <% end %>
+  <% else %>
+    <%= link_to clinics_dash_path(current_user)   do  %>
+      <span class= "btn_back"><p>🔙Back to dashboard</p></span>
+    <% end %>
+  <% end %>
 
-
-  <div class= "container container-vaccinations d-flex align-items-start mb-2">
-    <div class="one-vaccinations-header col-3 d-flex align-items-start">
-      <p><strong>Vaccination date</strong></p>
-    </div>
-
-      <div class="col-4 one-vaccinations-header d-flex align-items-start ">
-        <p><strong>Type of Vaccine</strong></p>
-      </div>
-
-      <div class="col-4 one-vaccinations-header d-flex align-items-start ">
-        <p><strong>Next vaccination date</strong></p>
-      </div>
-
-       <div class="d-flex align-items-center last-box col-1">
-  <%= link_to "View full records", '#', class: "btn-record"%> -->
-      </div>
-
-  </div>
-
-<% @pet.health_records.each do |record| %>
-
-<% if record.type == "Vaccination" %>
-
-    <div class= "container container-vaccinations d-flex align-items-start mb-2">
-      <div class="one-vaccination-a col-3 d-flex align-items-start">
-        <p><%= record.vaccination_date  %></p>
-      </div>
-
-      <div class="col-4 one-vaccination-b d-flex align-items-start ">
-        <p><%= record.vaccination_type  %></p>
-      </div>
-
-      <div class="col-4 one-vaccination-c d-flex align-items-start " >
-        <p><%#=  %></p>
-      </div>
-
-       <div class="d-flex align-items-center last-box col-1">
-   <%= link_to "View full records", owner_pet_health_record_path(@pet.user, @pet, record), class: "btn-record"%>
-      </div>
-
-      </div>
-
-<% end %>
-<% end %>
 </div>
-
-   <div class="d-flex profile-back justify-content-center align-items-end">
-      <%= link_to "🔙Back to profile", owner_path(current_user), class: "btn_back"%>
-    </div>
 </div>
-
 
