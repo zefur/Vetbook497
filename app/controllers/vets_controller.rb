@@ -8,20 +8,17 @@ class VetsController < ApplicationController
 
     def create
         @vet = Vet.new(vet_params)
-        authorize @vet
         @vet.user = current_user
+        authorize @vet
         if @vet.save!
-            redirect_to clinic_path(@clinic)
+            redirect_to clinic_path(@vet.user)
         else
             render :new
         end
     end
 
     def edit
-
-
         @vet = Vet.find(params[:id])
-
         authorize @vet
     end
 
@@ -36,6 +33,12 @@ class VetsController < ApplicationController
         end
     end
 
+    def destroy 
+        @vet = Vet.find(params[:id])  
+        authorize @vet
+        @vet.destroy
+        redirect_to clinic_path(@clinic), notice: 'Successfully deleted'
+    end
 
     def delete_photo
         @vet.photo.purge
@@ -43,22 +46,13 @@ class VetsController < ApplicationController
 
     private
 
-
     def vet_params
         params.require(:vet).permit(:first_name, :last_name, :speciality, :bio, :photo)
     end
 
-    def destroy
-        
-        authorize @vet
-        @vet.destroy
-        redirect_to vets_path, notice: 'Successfully deleted'
-    end
 
-    private
     def set_default
-        @clinic = current_user
-        
+        @clinic = Clinic.find(params[:clinic_id])   
     end
 
 

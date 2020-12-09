@@ -6,7 +6,7 @@ class VetPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    user.id == record.user_id
   end
 
   def show?
@@ -14,7 +14,7 @@ class VetPolicy < ApplicationPolicy
   end
 
   def edit?
-    true
+    user.id == record.user_id
   end
 
   def update?
@@ -27,6 +27,6 @@ class VetPolicy < ApplicationPolicy
 
   private
     def user_is_owner_or_admin?
-      user == record.user || user.admin
+      user.id == record.user_id || user.admin
     end
 end

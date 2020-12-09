@@ -15,7 +15,7 @@ Rails.application.routes.draw do
       delete :delete_pictures
       delete :delete_pic
     end
-    resources :vets, only: [:new, :create, :edit, :update] do
+    resources :vets do
       member do 
         delete :delete_photo
        end
