@@ -7,59 +7,59 @@
 
   <div class="row users-dashboard">
     <!-- LEFT column -->
-    <div class="col-2">
+    <div class="col-2 container">
 
-    <div class="row d-flex justify-content-center align-items-center" style="margin: auto; padding: auto;">
-       <% if @owner.photo.attached? %>
-        <%= cl_image_tag(@owner.photo.key,
-     :class => "owner_avatar", crop: :fill) %>
-      <% else %>
-        <%= image_tag "default-profile-image.jpg", :class => 'avatar-owner-profile' %>
-
-        <% end %>
-
+      <div class="row d-flex justify-content-center align-items-center" style="margin: 10px; padding: 5px;">
+        <% if @owner.photo.attached? %>
+          <%= cl_image_tag(@owner.photo.key,
+          :class => "owner_avatar", crop: :fill) %>
+        <% else %>
+          <%= image_tag "default-profile-image.jpg", :class => 'avatar-owner-profile' %>
+          <% end %>
       </div>
 
+      <div style="margin: 10px; padding: 5px;">
+        <div class="owner-profile-name">
+         <h4 style="font-weight: bold; text-align: center; padding-bottom: 15px;"><%= @owner.name%></h4>
+        </div>
 
-      <div class="row d-flex justify-content-center align-items-center owner-profile-name">
-       <h4><%= @owner.name%></h4>
+        <div class="">
+          <p><span style="color: gray">Address:</span> <br><%= @owner.location %></p>
+        </div>
+
+        <div class="owner-profile-phone">
+          <p><span style="color: gray">Phone number:</span> <br><%= @owner.phone_number %></p>
+        </div>
+
+        <div class="owner-profile-email">
+          <p><span style="color: gray">Account e-mail:</span> <br><%= @owner.email %></p>
+        </div>
+
+        <div class="edit-profile-dash">
+         <%= link_to "Edit your profile", edit_owner_path(@owner),data: { turbolinks: false } %>
+        </div>
+
+        <div class="add-pet-dash">
+          <%= link_to "Add new pet", new_owner_pet_path(@owner), data: { turbolinks: false } %>
+        </div>
+
+
       </div>
-
-      <div class="row d-flex justify-content-center align-items-center">
-        <p><%= @owner.location %></p>
-      </div>
-
-      <div class="row d-flex justify-content-center align-items-center owner-profile-phone">
-        <p><%= @owner.phone_number %></p>
-      </div>
-
-      <div class="row d-flex justify-content-center align-items-center owner-profile-email">
-        <p><%= @owner.email %></p>
-      </div>
-
-      <div class="row d-flex justify-content-center align-items-center newpet mb-2">
-        <%= link_to "Add new pet", new_owner_pet_path(@owner), data: { turbolinks: false }%>
-      </div>
-
-      <div class="row d-flex justify-content-center align-items-center newpet mb-2">
-       <%= link_to "Edit your profile", edit_owner_path(@owner),data: { turbolinks: false } %>
-      </div>
-
-
     </div>
 
 
     <!-- RIGHT column -->
-    <div class="col-10 map-and-booking-info" style="background-color: white">
+    <div class="col-10 map-and-booking-info">
 
-      <div class="container">
+      <div>
 
 
         <!-- ALL REMINDERS (including APPOINTMENTS) start-->
-
+        <!-- <div style="background-color: white; margin-top: 20px;padding-bottom: 20px; width: 90%;"> -->
+          <div style= "background-color: white; margin-top: 20px; padding-top: 10px; padding-bottom: 20px;">
           <h3 style="color: #FF7E67; font-weight: 200; text-align: center">REMINDERS</h3>
-          <div class="d-flex flex-wrap justify-content-around">
-          <% @owner.pets.take(2).each do |pet| %>
+          <div class="d-flex flex-wrap justify-content-around" style="">
+          <% @owner.pets.each do |pet| %>
             <% pet.bookings.each do |booking| %>
 
             <% if !booking.archived %>
@@ -101,80 +101,81 @@
                   <p>Clinic: <%= booking.vet.user.name%></p>
                   <p>Address: <%= booking.vet.user.location %></p>
                   <p>Veterinary: <%= booking.vet.first_name %> <%= booking.vet.last_name %></p>
-
-
-
-                <!-- </div> -->
-
-
-                <!-- <div class="dropdown one-booking-c-col"> -->
-
                 </div>
+
+
               </div>
             <% end %>
             <% end %>
           <% end %>
         </div>
+        </div>
+        <!-- </div> -->
           <!-- ALL REMINDERS (including APPOINTMENTS) end-->
 
 
-<!-- PET CARDS start -->
+        <!-- PET CARDS start -->
 
-    <h3 style="color: #FF7E67; font-weight: 200; text-align: center; margin-top: 20px;">YOUR FAMILY</h3>
-<% @owner.pets.each do |pet| %>
-<div class="container pet-card-container">
-    <div class="flipper pet-card-flipper">
-      <div class="front pet-card-front">
-        <% if pet.photo.attached? %>
-          <%= cl_image_tag( pet.photo.key,
-          :class => "front-avatar-square", crop: :fill) %>
-        <% else %>
-          <%= image_tag "default-pet-image.jpg", :class =>"front-avatar-square" %>
-        <!-- <img src="https://images.unsplash.com/photo-1560830672-575980201c33?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8aHVza3l8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="cherry blossoms"> -->
-        <% end %>
-        <p class="caption pet-card-caption"><%= pet.name %></p>
-      </div>
-      <div class="back d-flex pet-card-back">
-        <div class="col">
-
-          <div style="height: 180px;">
-            <h1 style="padding-bottom: 20px;"><%= pet.name %></h1>
-
-            <p class="pet-card-date"></p>
-            <p class="pet-card-description">Birthday: <%= pet.dob %></p>
-            <p class="pet-card-description">Breed: <%= pet.breed %></p>
-            <p class="pet-card-description">Gender: <%= pet.gender %></p>
+        <div style= "background-color: white; margin-top: 20px; padding-top: 10px; padding-bottom: 30px;">
+        <h3 style="color: #FF7E67; font-weight: 200; text-align: center;">YOUR FAMILY</h3>
+        <div class="row d-flex justify-content-center align-items-center pet-cards" style="">
+        <% @owner.pets.each do |pet| %>
+          <div class="container pet-card-container">
+          <div class="flipper pet-card-flipper">
+          <div class="front pet-card-front">
+            <% if pet.photo.attached? %>
+              <%= cl_image_tag( pet.photo.key,
+              :class => "front-avatar-square", crop: :fill) %>
+            <% else %>
+              <%= image_tag "default-pet-image.jpg", :class =>"front-avatar-square" %>
+            <!-- <img src="https://images.unsplash.com/photo-1560830672-575980201c33?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8aHVza3l8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="cherry blossoms"> -->
+            <% end %>
+            <p class="caption pet-card-caption"><%= pet.name %></p>
           </div>
+          <div class="back d-flex pet-card-back">
+            <div class="col">
+
+              <div style="height: 180px;">
+                <h1 style="padding-bottom: 20px; text-decoration: underline;"><%= pet.name %></h1>
+
+                <p class="pet-card-date"></p>
+                <p class="pet-card-description">Birthday: <%= pet.dob %></p>
+                <p class="pet-card-description">Breed: <%= pet.breed %></p>
+                <p class="pet-card-description">Gender: <%= pet.gender %></p>
+              </div>
 
 
-          <div style="margin-bottom: 0; padding-bottom: 0;">
-            <%= link_to "Edit basic info", edit_owner_pet_path(@owner,  pet), data: { turbolinks: false }, class: "btn button-edit-pet-info" %>
+              <div style="margin-bottom: 0; padding-bottom: 0;">
+                <%= link_to "Edit basic info", edit_owner_pet_path(@owner,  pet), data: { turbolinks: false }, class: "btn button-edit-pet-info" %>
 
-            <div class="d-flex justify-content-between align-items-bottom">
+                <div class="d-flex justify-content-between align-items-bottom">
 
-              <%= link_to "View records",owner_pet_path(@owner,pet), class: "btn button-view-pet-record"%>
-              <%#= link_to "Edit basic info", edit_owner_pet_path(@owner,  pet), data: { turbolinks: false }, class: "btn button-edit-pet-record" %>
-              <%= link_to "Remove",
-                owner_pet_path(@owner,pet),
-                :method => :delete,
-                data: { confirm: "Are you sure you wish to delete your pet?" },
-                class: "btn button-remove-pet" %>
+                  <%= link_to "View records",owner_pet_path(@owner,pet), class: "btn button-view-pet-record"%>
+                  <%#= link_to "Edit basic info", edit_owner_pet_path(@owner,  pet), data: { turbolinks: false }, class: "btn button-edit-pet-record" %>
+                  <%= link_to "Remove",
+                    owner_pet_path(@owner,pet),
+                    :method => :delete,
+                    data: { confirm: "Are you sure you wish to delete your pet?" },
+                    class: "btn button-remove-pet" %>
+                </div>
+              </div>
+            </div>
             </div>
           </div>
         </div>
+        <%end%>
         </div>
-      </div>
-    </div>
-    <%end%>
-<!-- PET CARDS end-->
+        </div>
+    <!-- PET CARDS end-->
 
 
+    <!-- start of CLINICs + MAP container -->
+        <div style= "background-color: white; margin-top: 20px; padding-top: 10px; padding-bottom: 20px;">
 
-        <h3 style="color: #FF7E67; font-weight: 200; text-align: center; margin-top: 20px;">CLINICS IN YOUR AREA</h3>
+        <h3 style="color: #FF7E67; font-weight: 200; text-align: center">CLINICS IN YOUR AREA</h3>
 
-      <!-- start of clinic cards+map container -->
-        <div class="d-flex">
-        <div class="container clinic-cards">
+        <div class="row">
+        <div class="col-8 container clinic-cards">
 
           <% @clinics.each do |clinic| %>
             <%= link_to clinic_path(clinic) do %>
@@ -201,18 +202,20 @@
         <!-- CLINICS CARDS end-->
 
           <!-- MAP -->
-          <div id="map"
-            style="width: 100%; height: 300px; margin-top: 10px; margin-bottom: 20px;"
-            data-markers="<%= @markers.to_json %>"
-            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-          </div>
-
+          <div class="col-4">
+            <div id="map"
+              style="width: 100%; height: 600px; margin-top: 30px; margin-bottom: 20px;"
+              data-markers="<%= @markers.to_json %>"
+              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+            </div>
         </div>
+        </div>
+      </div>
         <!-- END of clinic cards+map container -->
 
 
         </div>
-        <!-- END of this container -->
+        <!-- END of this background -->
 
 
      </div>

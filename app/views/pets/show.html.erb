@@ -1,7 +1,7 @@
 
 <div class = "petshow container">
 
-    <div class="header row d-flex justify-content-center align-items-center mt-4">
+    <div class="header pet-show-header row d-flex justify-content-center align-items-center mt-4">
       <h4><%= @pet.name.capitalize %>'s Health Record</h4>
     </div>
 
@@ -19,12 +19,12 @@
           </div>
 
           <div class="back caption-card-back">
-               <p class="name"><%=@pet.name%>'s General info</h4>
-            <p class="underline"><b>Animal breed:</b> <%= @pet.breed %></p>
-            <p class="underline"><b>Animal gender:</b> <%= @pet.gender %></p>
-            <p class="underline"><b>DOB:</b> <%= @pet.dob %></p>
-            <p class="underline"><b>Owner name: </b><%= @pet.user.name %></p>
-            <p class="underline"><b><%=@pet.name%> behavior at clinic:</b> <%= @pet.notes %></p>
+               <p class="card-back-name"><%=@pet.name%>'s General info</h4>
+            <p class="back-underline"><b>Animal breed:</b> <%= @pet.breed %></p>
+            <p class="back-underline"><b>Animal gender:</b> <%= @pet.gender %></p>
+            <p class="back-underline"><b>DOB:</b> <%= @pet.dob %></p>
+            <p class="back-underline"><b>Owner name: </b><%= @pet.user.name %></p>
+            <p class="back-underline"><b><%=@pet.name%> behavior at clinic:</b> <%= @pet.notes %></p>
           </div>
 
          </div>
@@ -79,7 +79,7 @@
         <p><%#=  %></p>
       </div>
 
-      
+
     </div>
 
 
@@ -157,11 +157,11 @@
   <div class="d-flex profile-back justify-content-center align-items-end">
     <% if current_user.type == "Owner" %>
     <%= link_to owners_dash_path(current_user) do %>
-      <span class= "btn_back"><p>🔙Back to dashboard</p></span>
+      <span class= "btn_back"><p>🔙 Back to dashboard</p></span>
     <% end %>
   <% else %>
     <%= link_to clinics_dash_path(current_user)   do  %>
-      <span class= "btn_back"><p>🔙Back to dashboard</p></span>
+      <span class= "btn_back"><p>🔙 Back to dashboard</p></span>
     <% end %>
   <% end %>
 

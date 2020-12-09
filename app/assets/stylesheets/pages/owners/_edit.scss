@@ -1,20 +1,25 @@
 .edit-background {
   background-size: cover;
-  background-position: center;
-  padding: 50px 0;
-  display: flex;
+  background-position: center center;
+  background-image: no-repeat;
+  padding: 20px;
+  //display: flex;
   background-image: image-url("paws.png");
   height: 100vh;
+  align-items: center;
+  overflow-y: auto;
 }
 
 
 .edit-form{
-    padding-left: 20px;
-    padding-right: 20px;
-  margin-top: 15px;
-  margin-bottom: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
   background-color: $submit-button-green;
-   width: 400px;
+  width: 400px;
+  max-height: 700px;
    // height: 1000px;
   border-radius:3px;
    h4 {
@@ -32,6 +37,9 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 
   }
 

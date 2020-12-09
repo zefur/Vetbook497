@@ -31,7 +31,7 @@ class OwnersController < ApplicationController
    def update
     @pet = Pet.new
     if @owner.update(owner_params)
-        redirect_to owner_path(@owner), notice: 'Successfully updated'
+        redirect_to owners_dash_path(@owner), notice: 'Successfully updated'
     else
         render :edit
     end
