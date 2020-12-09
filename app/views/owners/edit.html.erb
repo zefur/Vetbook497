@@ -9,12 +9,12 @@
           <%= f.input :email  %>
           <%= f.input :location, label: "Full address"%>
           <%= f.input :photo, as: :file, label: "Upload a profile picture" %>
-        <%= link_to "❌Delete photo", delete_photo_owner_path(@owner), method: :delete, data: { confirm: 'Are you sure?' }, class: "delete_photo" %>
+        <%= link_to "❌ Delete photo", delete_photo_owner_path(@owner), method: :delete, data: { confirm: 'Are you sure?' }, class: "delete_photo" %>
         </div>
 
         <div class="edit-buttons d-flex justify-content-around">
           <%= f.button :submit,'Submit',:class => 'edit_class' %>
-          <%= link_to "Back",owner_path(current_user), class: "btn_back"  %>
+          <%= link_to "Back",owners_dash_path(current_user), class: "btn_back"  %>
         </div>
       <% end %>
   </div>
