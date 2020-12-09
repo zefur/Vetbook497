@@ -31,6 +31,7 @@ class PetsController < ApplicationController
 
 
      def edit
+        @pet = Pet.find(params[:id])
         authorize @pet
     end
 
@@ -49,7 +50,7 @@ class PetsController < ApplicationController
 
     def destroy
 
-
+        @pet = Pet.find(params[:id])
         authorize @pet
         @pet.destroy
         redirect_to owner_path(@owner), notice: 'Successfully deleted'
