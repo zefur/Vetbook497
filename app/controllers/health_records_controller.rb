@@ -16,6 +16,9 @@ before_action :set_default
         end
     end
 
+    def show
+        @health_record = HealthRecord.find(params[:id])
+    end
 
     private
 

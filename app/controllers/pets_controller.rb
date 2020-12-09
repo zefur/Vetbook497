@@ -13,7 +13,7 @@ before_action :set_default
 
         if @pet.save
           puts "printed"
-            redirect_to owner_path(@owner), notice: "Your family has grown =]"
+            redirect_to owners_dash_path(@owner), notice: "Your family has grown =]"
         else
             render :new
         end
@@ -35,7 +35,7 @@ before_action :set_default
         @pet = Pet.find(params[:id])
         authorize @pet
         if @pet.update(pet_params)
-            redirect_to owner_path(@owner), notice: 'Successfully updated'
+            redirect_to owners_dash_path(@owner), notice: 'Successfully updated'
         else
             render :edit, notice: 'Something went wrong, please try again'
         end
@@ -50,7 +50,7 @@ before_action :set_default
         @pet = Pet.find(params[:id])
         authorize @pet
         @pet.destroy
-        redirect_to owner_path(@owner), notice: 'Successfully deleted'
+        redirect_to owners_dash_path(@owner), notice: 'Successfully deleted'
     end
 
     private
