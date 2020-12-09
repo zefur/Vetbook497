@@ -48,6 +48,7 @@ before_action :set_default
     end
 
     def destroy
+
         @pet = Pet.find(params[:id])
         authorize @pet
         @pet.destroy

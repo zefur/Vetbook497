@@ -22,7 +22,8 @@ class OwnersController < ApplicationController
    end
 
    def edit
-    @owner.photo.attach(params[:photo])
+    #@owner.photo.attach(params[:photo])
+    @owner = User.find(params[:id])
     authorize @owner
    end
 
