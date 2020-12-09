@@ -127,6 +127,8 @@
 
       <div class="one-diagnosis-date col-3 d-flex align-items-start">
         <p><%= record.diagnosis_date %></p>
+        <%= link_to "✏️", edit_owner_pet_health_record_path(@pet.user, @pet, record)%>
+
       </div>
 
       <div class= "col-3 one-diagnosis-b d-flex align-items-start" >
