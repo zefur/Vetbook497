@@ -7,44 +7,44 @@
 
   <div class="row users-dashboard">
     <!-- LEFT column -->
-    <div class="col-2">
+    <div class="col-2 container">
 
-    <div class="row d-flex justify-content-center align-items-center" style="margin: auto; padding: auto;">
-       <% if @owner.photo.attached? %>
-        <%= cl_image_tag(@owner.photo.key,
-     :class => "owner_avatar", crop: :fill) %>
-      <% else %>
-        <%= image_tag "default-profile-image.jpg", :class => 'avatar-owner-profile' %>
-
-        <% end %>
-
+      <div class="row d-flex justify-content-center align-items-center" style="margin: 10px; padding: 5px;">
+        <% if @owner.photo.attached? %>
+          <%= cl_image_tag(@owner.photo.key,
+          :class => "owner_avatar", crop: :fill) %>
+        <% else %>
+          <%= image_tag "default-profile-image.jpg", :class => 'avatar-owner-profile' %>
+          <% end %>
       </div>
 
+      <div style="margin: 10px; padding: 5px;">
+        <div class="owner-profile-name">
+         <h4 style="font-weight: bold; text-align: center; padding-bottom: 15px;"><%= @owner.name%></h4>
+        </div>
 
-      <div class="row d-flex justify-content-center align-items-center owner-profile-name">
-       <h4><%= @owner.name%></h4>
+        <div class="">
+          <p><span style="color: gray">Address:</span> <br><%= @owner.location %></p>
+        </div>
+
+        <div class="owner-profile-phone">
+          <p><span style="color: gray">Phone number:</span> <br><%= @owner.phone_number %></p>
+        </div>
+
+        <div class="owner-profile-email">
+          <p><span style="color: gray">Account e-mail:</span> <br><%= @owner.email %></p>
+        </div>
+
+        <div class="edit-profile-dash">
+         <%= link_to "Edit your profile", edit_owner_path(@owner),data: { turbolinks: false } %>
+        </div>
+
+        <div class="add-pet-dash">
+          <%= link_to "Add new pet", new_owner_pet_path(@owner), data: { turbolinks: false } %>
+        </div>
+
+
       </div>
-
-      <div class="row d-flex justify-content-center align-items-center">
-        <p><%= @owner.location %></p>
-      </div>
-
-      <div class="row d-flex justify-content-center align-items-center owner-profile-phone">
-        <p><%= @owner.phone_number %></p>
-      </div>
-
-      <div class="row d-flex justify-content-center align-items-center owner-profile-email">
-        <p><%= @owner.email %></p>
-      </div>
-
-      <div class="row d-flex justify-content-center align-items-center newpet mb-2">
-        <%= link_to "Add new pet", new_owner_pet_path(@owner), data: { turbolinks: false }%>
-      </div>
-
-      <div class="row d-flex justify-content-center align-items-center newpet mb-2">
-       <%= link_to "Edit your profile", edit_owner_path(@owner),data: { turbolinks: false } %>
-      </div>
-
     </div>
 
 
@@ -118,7 +118,7 @@
 
         <div style= "background-color: white; margin-top: 20px; padding-top: 10px; padding-bottom: 30px;">
         <h3 style="color: #FF7E67; font-weight: 200; text-align: center;">YOUR FAMILY</h3>
-        <div class="row d-flex justify-content-center align-items-center" style="">
+        <div class="row d-flex justify-content-center align-items-center pet-cards" style="">
         <% @owner.pets.each do |pet| %>
           <div class="container pet-card-container">
           <div class="flipper pet-card-flipper">
