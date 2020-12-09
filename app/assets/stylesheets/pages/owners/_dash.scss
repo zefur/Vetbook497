@@ -94,6 +94,10 @@
 
 .pet-card-container {
   box-sizing: border-box;
+  perspective: 1000px;
+  display: inline-block;
+  margin: 5%;
+  //margin-bottom: 50px;
   //border: 1px solid black;
 }
 
@@ -139,8 +143,7 @@ h1 {
 }
 
 .pet-card-container {
-  perspective: 1000px;
-  display: inline-block;
+
   //margin: 20px;
   //border: 1px solid black;
 }
