@@ -20,10 +20,13 @@ class VetsController < ApplicationController
     def edit
 
 
+        @vet = Vet.find(params[:id])
+
         authorize @vet
     end
 
     def update
+        @vet = Vet.find(params[:id])
         authorize @vet
         if @vet.update(vet_params)
             redirect_to clinic_path(@clinic), notice: "Vet has been updated"
@@ -46,6 +49,7 @@ class VetsController < ApplicationController
     end
 
     def destroy
+        
         authorize @vet
         @vet.destroy
         redirect_to vets_path, notice: 'Successfully deleted'
@@ -54,7 +58,7 @@ class VetsController < ApplicationController
     private
     def set_default
         @clinic = current_user
-        @vet = Vet.find(params[:id])
+        
     end
 
 
