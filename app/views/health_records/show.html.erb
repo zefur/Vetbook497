@@ -1,0 +1,7 @@
+<%= @health_record %>
+
+<% if @health_record.document.attached? %>
+    <%= url_for(@health_record.document.key) %>
+<% end %>
+
+  

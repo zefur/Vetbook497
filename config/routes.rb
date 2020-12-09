@@ -10,6 +10,11 @@ Rails.application.routes.draw do
   get 'clinics/dash', to: 'clinics#dash'
 
   resources :clinics, only: [:new, :create, :show, :edit, :update] do
+    member do 
+      delete :delete_photo
+      delete :delete_pictures
+      delete :delete_pic
+    end
     resources :vets, only: [:new, :create, :edit, :update] do
       member do 
         delete :delete_photo

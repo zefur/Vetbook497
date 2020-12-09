@@ -9,8 +9,12 @@
           <%= f.input :owner_name %>
           <%= f.input :phone_number %>
           <%= f.input :email %>
+          <%= f.input :bio, label: "Description" %>
           <%= f.input :location, label: "Full address" %>
           <%= f.input :photo, as: :file, label: "Upload a clinic logo" %>
+          <%= link_to "Delete photo", delete_photo_clinic_path, method: :delete %>
+         <%= f.input :pictures, as: :file, input_html: {:multiple => true} %>
+         <%= link_to "Delete photo", delete_pictures_clinic_path, method: :delete %>
           <div class="clinic-edit-buttons d-flex justify-content-around">
             <%= f.submit "Submit", disable_with: 'Submiting...', class: "submit_class" %>
             <%= link_to "Back", clinic_path(@clinic), class: "btn_back"  %>
