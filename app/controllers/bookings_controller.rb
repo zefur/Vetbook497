@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-    before_action :set_default
+    before_action :set_default, except: :destroy
     def new
         @booking = Booking.new
         @vet = Vet.find(params[:vet])
@@ -42,7 +42,9 @@ class BookingsController < ApplicationController
     end
 
     def destroy
-
+        @booking= Booking.find(params[:id])
+        @booking.destroy
+        redirect_back(fallback_location: root_path)
     end
 
     private
