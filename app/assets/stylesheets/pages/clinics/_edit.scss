@@ -2,7 +2,7 @@
   background-size: cover;
   background-position: center center;
   background-image: no-repeat;
-  padding: 20px;
+  padding: 20px auto;
   background-image: image-url("paws.png");
   height: 100vh;
   align-items: center;
@@ -20,6 +20,7 @@
     max-height: 950px;
     width: 500px;
     border-radius:3px;
+    overflow: auto;
     h4 {
      color:$submit-button-orange;
     font-family: 'Montserrat', sans-serif;
@@ -30,9 +31,12 @@
    }
   }
 
-  a.delete {
-    color: #1d2d50;
+  a.delete-logo,
+  a.delete-photo {
+    color: lightgray;
   }
+
+
   label.file.optional {
   color:$submit-button-orange;
   padding-top: 10px;
@@ -47,12 +51,12 @@
     align-items: center;
     justify-content: center;
     //border: 3px solid black;
-    width: 100%;
+    //width: 100%;
     // margin-top: 0;
   }
 
-.form-bar-width {
-  max-height: 250px;
+.clinic-form-bar-width {
+  max-height: 230px;
 }
 
 .clinic-edit-buttons {

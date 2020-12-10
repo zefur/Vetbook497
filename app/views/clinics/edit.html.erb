@@ -9,12 +9,12 @@
           <%= f.input :owner_name %>
           <%= f.input :phone_number %>
           <%= f.input :email %>
-          <%= f.input :bio, label: "Description" %>
+          <%= f.input :bio, label: "Description", input_html: { class: "clinic-form-bar-width", maxlength: 300}  %>
           <%= f.input :location, label: "Full address" %>
           <%= f.input :photo, as: :file, label: "Upload a clinic logo" %>
-          <%= link_to "❌ Delete logo", delete_photo_clinic_path, method: :delete, class: "delete" %>
+          <%= link_to "❌ Delete logo", delete_photo_clinic_path, method: :delete, class: "delete-logo" %>
          <%= f.input :pictures, as: :file, input_html: {:multiple => true}, label: "Upload a clinic photos",  hint: "Upload at least 3 photos for better visual" %>
-         <%= link_to "❌ Delete clinic photos", delete_pictures_clinic_path, method: :delete, class: "delete" %>
+         <%= link_to "❌ Delete clinic photos", delete_pictures_clinic_path, method: :delete, class: "delete-photo" %>
           <div class="clinic-edit-buttons d-flex justify-content-around">
             <%= f.submit "Submit", disable_with: 'Submiting...', class: "submit_class" %>
             <%= link_to "Back", clinic_path(@clinic), class: "btn_back"  %>

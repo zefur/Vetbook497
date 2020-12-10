@@ -11,7 +11,7 @@
           <%= f.input :speciality %>
           <%= f.input :bio, as: :text, input_html: { class: "form-bar-width", maxlength: 200} %>
           <%= f.input :photo, as: :file, label: "Upload a photo" %>
-          <%= link_to "Delete photo", delete_photo_clinic_vet_path(@clinic, @vet), method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to "Delete photo", delete_photo_clinic_vet_path(@clinic, @vet), method: :delete, data: { confirm: 'Are you sure?' }, class: "delete-photo" %>
           <div class="vet-new-buttons d-flex justify-content-around">
             <%= f.submit "Submit", disable_with: 'Submiting...', class: "submit_class" %>
             <%= link_to "Back", clinic_path(@clinic), class: "btn_back"  %>
