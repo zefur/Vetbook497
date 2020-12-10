@@ -33,9 +33,9 @@
 
  <div class="col-8 vaccinations">
   <!-- <div class="vaccinations"> -->
-  <div class="vaccinations-header row d-flex align-items-center justify-content-start">
+  <div class="vaccinations-header row d-flex align-items-center justify-content-between">
         <h4>Vaccinations</h4>
-        <%= link_to "📝 Input vaccination record", new_owner_pet_health_record_path(@owner,@pet), class: "input-diagnosis"%>
+        <%= link_to "⨁", new_owner_pet_health_record_path(@owner,@pet), class: "input-diagnosis-vaccinations"%>
   </div>
 
 
@@ -127,8 +127,6 @@
 
       <div class="one-diagnosis-date col-3 d-flex align-items-start">
         <p><%= record.diagnosis_date %></p>
-        <%= link_to "✏️", edit_owner_pet_diagnosis_path(@pet.user, @pet, record)%>
-
       </div>
 
       <div class= "col-3 one-diagnosis-b d-flex align-items-start" >
@@ -145,7 +143,7 @@
           <span class="dropdown-item manage-booking-item"><p>View full report</p></span>
         <% end %>
 
-        <%= link_to edit_owner_pet_vaccinations_path(@pet.user, @pet, record)do %>
+        <%= link_to edit_owner_pet_vaccination_path(@pet.user, @pet, record)do %>
           <span class="dropdown-item manage-booking-item"><p>Edit</p></span>
         <% end %>
 
@@ -154,10 +152,10 @@
         <% end %>
       </div>
 
-       <div class="d-flex align-items-start last-box col-3 justify-content-start" >
+      <!--  <div class="d-flex align-items-start last-box col-3 justify-content-start" >
         <%= link_to "🔍 Full report", owner_pet_health_record_path(@pet.user, @pet, record), class: "btn-record"%>
 
-      </div>
+      </div> -->
 
       </div>
     <% end %>

@@ -148,11 +148,11 @@
 
 
               <div style="margin-bottom: 0; padding-bottom: 0;">
-                <%= link_to "Edit basic info", edit_owner_pet_path(@owner,  pet), data: { turbolinks: false }, class: "btn button-edit-pet-info" %>
+                <%= link_to "Edit basic info", edit_owner_pet_path(@owner, pet), data: { turbolinks: false }, class: "btn button-edit-pet-info" %>
 
                 <div class="d-flex justify-content-between align-items-bottom">
 
-                  <%= link_to "View records",owner_pet_path(@owner,pet), class: "btn button-view-pet-record"%>
+                  <%= link_to "View records", owner_pet_path(@owner,pet), class: "btn button-view-pet-record"%>
                   <%#= link_to "Edit basic info", edit_owner_pet_path(@owner,  pet), data: { turbolinks: false }, class: "btn button-edit-pet-record" %>
                   <%= link_to "Remove",
                     owner_pet_path(@owner,pet),
