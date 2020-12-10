@@ -27,7 +27,7 @@ class DiagnosisController < ApplicationController
     def update
         @diagnosis = Diagnosis.find(params[:id])
         if @diagnosis.update(diagnosis_params)
-            redirect_to owner_path(@owner)
+            redirect_to owner_pet_path(@owner, @pet)
         else
             render :edit
         end

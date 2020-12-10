@@ -19,11 +19,8 @@
       <% if user_signed_in? %>
 
         <div class="nav-item active d-flex justify-content-around mr-3">
-        <% if current_user.type == "Owner" %>
-          <%= link_to owner_path(current_user) do  %>
-                      <span class="profile-button"><p>My Profile  </p></span>
-                    <% end %>
-<% else %>
+        <% if current_user.type == "Clinic" %>
+        
 <%= link_to clinic_path(current_user) do  %>
                       <span class="profile-button"><p>My Profile  </p></span>
                     <% end %>

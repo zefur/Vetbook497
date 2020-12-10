@@ -29,7 +29,7 @@ class VaccinationsController < ApplicationController
         if @vaccination.update(vaccination_params)
             VaccinationMailer.with(vaccination: @vaccination).vaccination_remider.deliver_later
             flash[:notice] = "Your vaccination has been updated"
-            redirect_to owner_path(@owner)
+            redirect_to owner_pet_path(@owner, @pet)
         else
             render :edit
         end
