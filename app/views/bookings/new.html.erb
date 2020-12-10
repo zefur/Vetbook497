@@ -3,14 +3,13 @@
   <div class="booking-form-container">
 <h4>Appointment booking</h4>
 
-<div class = "booking-form d-flex ml-3 mr-2">
     <div class="form-inputs-booking d-flex">
 
       <%= simple_form_for [@clinic, @booking] do |f| %>
       <%= f.input :vet, input_html: {value: "#{@vet.first_name} #{@vet.last_name}"} , disabled: true   %>
       <%=f.input :vet_id, :as => :hidden, :input_html => { :value => @vet.id }%>
       <%= f.input :pet_id, collection: current_user.pets %>
-                       <%= f.input :reason_for_visit,
+      <%= f.input :reason_for_visit,
     collection: [
       "Skin conditions",
 "Stomach issues",
@@ -33,6 +32,5 @@
   </div>
     <% end %>
     </div>
-</div>
     </div>
 </div>
