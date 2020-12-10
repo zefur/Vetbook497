@@ -1,7 +1,8 @@
 <div class="edit-background d-flex justify-content-center">
-  <div class="edit-form form pt-3">
+  <div class="edit-form-container">
     <h4>Edit your personal details</h4>
-        <div class="form-inputs-edit">
+
+        <div class="form-inputs-edit d-flex">
 
         <%= simple_form_for(@owner, :url => {:action => 'update', :id => @owner.id}) do |f| %>
           <%= f.input :name %>
@@ -10,12 +11,12 @@
           <%= f.input :location, label: "Full address"%>
           <%= f.input :photo, as: :file, label: "Upload a profile picture" %>
         <%= link_to "❌ Delete photo", delete_photo_owner_path(@owner), method: :delete, data: { confirm: 'Are you sure?' }, class: "delete_photo" %>
-        </div>
 
         <div class="edit-buttons d-flex justify-content-around">
-          <%= f.button :submit,'Submit',:class => 'edit_class' %>
+          <%= f.button :submit,'Submit',:class => 'submit_class' %>
           <%= link_to "Back",owners_dash_path(current_user), class: "btn_back"  %>
         </div>
       <% end %>
+    </div>
   </div>
 </div>
