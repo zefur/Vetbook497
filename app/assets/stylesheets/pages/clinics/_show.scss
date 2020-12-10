@@ -5,10 +5,19 @@
   padding: 5px 30px;
   margin-right: 10px;
   margin-top: 10px;
-  //position: fixed;
-  //position: -webkit-sticky; /* Safari */
-  //position: sticky;
-  // top: 0;
+}
+
+.button-to-edit-clinic-right {
+  color: #006A71;
+  background-color: white;
+  border: 1px solid #006A71;
+  padding: 5px 30px;
+  margin-top: 10px;
+}
+
+.button-to-edit-clinic-right:hover {
+  background-color: #006A71;
+  color: white;
 }
 
 .button-to-edit-clinic:hover {
@@ -16,32 +25,95 @@
   color: white;
 }
 
-.clinic-show-container h1 {
-  font-weight: 400;
-  color: #006A71;
+.clinic-basic-info {
+  margin-top:20px;
+  background-color: white;
+  overflow: hidden;
+  border-radius:5px;
+  height: 340px;
+  display: flex;
+  align-items: center;
+}
+
+.container-clinic-name {
+    h4 {
   text-align: center;
-  //border-top: 1px solid lightgray;
+  font-family: 'Montserrat', sans-serif;
+  // font-weight: 400;  margin-top: 10px;
+  padding-top: 10px;
+  color: #036A71;
+  font-family: 'Montserrat', sans-serif;
+  // margin-top: 8px;
+
+ }
+  p {
+  margin-bottom: 0;
+  margin-top: 8px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  }
+  h5 {
+  font-weight: 200;
+  color: #006A71;
+  font-size: 12px;
+  text-align: left;
+  // margin-bottom: 20px;
+  // padding-bottom: 10px;
+  text-align: center;
+  color: #FF7E67;
+
+}
+}
+
+
+
+
+.bio-vets {
+   background-color: white;
+  padding: 20px 20px;
+  border-radius: 5px;
   margin-top: 10px;
+  margin-bottom: 20px;
+  max-height:320px;
+  h3 {
+ font-weight: 400;
+ color: #FF7E67;
+ font-family: 'Montserrat', sans-serif;
+  }
+}
+
+
+
+
+.about-header {
+ font-weight: 400;
+  color: #FF7E67;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;  margin-top: 10px;
   padding-top: 10px;
 }
 
-.clinic-show-container h2 {
-  font-weight: 200;
-  color: #FF7E67;
-  text-align: left;
-  border-bottom: 1px solid lightgray;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-
+.clinic_picture_show  {
+  object-fit: cover;
+  width: 600px;
+  height: 320px;
+  border-radius:5px;
 }
 
-.clinic-show-container h3 {
-  font-weight: 200;
-  color: #006A71;
-  text-align: center;
-  border-bottom: 1px solid lightgray;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
+.clinic_logo_show {
+  object-fit: cover;
+  width: 300px;
+  height: 300px;
+}
+
+
+.carousel-inner-vet {
+  height: 320px;
+}
+
+.carousel-vet{
+  // background-color: white;
 }
 
 .clinic-show-container{
@@ -50,8 +122,6 @@
 }
 
 .clinic-show-cards {
-  //background-color: gray;
-  //height: 100vh;
   padding: 0 auto;
   justify-content: center;
   align-items: center;
@@ -63,13 +133,15 @@
 
 .clinic-show-vet {
   border-radius: 20px;
-  //border: 1px solid red;
-  color: white;
-  width: 100%;
+ // border: 1px solid red;
+  color: black;
+  width: 45%;
   display: flex;
-  margin: 10px 0;
-  //height: 300px;
-  background-color: #036A71;
+  margin: 10px 10px;
+  height: 300px;
+  font-family: 'Montserrat', sans-serif;
+
+  // background-color: #036A71;
 }
 
 // cl_image_tag ( vet.photo.key, :transformation => [
@@ -79,27 +151,32 @@
 
 .vet-profile-picture {
   object-fit: cover;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   //border: 2px solid red;
 }
 
 .cloudinary-vet-profile-picture {
   object-fit: cover;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   margin-top: 10px;
   margin-left: 5px;
+  padding: 5px 5px;
   border: 3px solid white;
   //border: 2px solid red;
 }
 
+.clinic-show-bio {
 
+}
 
 .clinic-show-vet-name {
   border-bottom: 1px solid lightgray;
-  margin-top: 20px;
+  // margin-top: 20px;
+  color: #036A71;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .vet-bio-div{
@@ -108,6 +185,9 @@
   padding: 0;
   height: 130px;
   margin-bottom: 10px;
+  opacity: .9;
+  // color: #036A71;
+
 }
 
 .button-to-edit-vet {
