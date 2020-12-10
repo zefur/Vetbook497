@@ -44,9 +44,9 @@
         <!-- <a class="dropdown-item" href="#">Pet health profile</a> -->
        <%= link_to owner_pet_path(booking.pet.user, booking.pet) do %><li class="dropdown-item" > Pet health profile</li>
        <% end %>
-       <%#= link_to '#' do %>
+       <%= link_to booking_path(booking),method: :delete, data: {confirm: "Are you sure you want to cancel this booking?"} do %>
        <li class="dropdown-item" >Cancel booking</li>
-       <%# end %>
+       <% end %>
 
 <%= link_to archive_booking_clinic_booking_path(@clinic, booking) do %>
         <li class="dropdown-item" >Booking completed</li>
@@ -101,9 +101,9 @@
        <%= link_to toggle_accepted_clinic_booking_path(@clinic,booking.id) do %>
        <li class="dropdown-item"> Accept booking </li>
        <% end %>
-       <%= link_to '#' do %><li class="dropdown-item" > Pet health profile</li>
+       <%= link_to owner_pet_path(booking.pet.user, booking.pet) do %><li class="dropdown-item" > Pet health profile</li>
        <% end %>
-       <%= link_to '#' do %>
+       <%= link_to booking_path(booking),method: :delete, data: {confirm: "Are you sure you want to cancel this booking?"} do %>
        <li class="dropdown-item" >Cancel booking</li>
        <% end %>
 

@@ -76,7 +76,7 @@
       </div>
 
       <div class="col-3 one-vaccination-c d-flex align-items-start " >
-        <p><%#=  %></p>
+        <p><%= record.vaccination_date.next_year  %></p>
       </div>
 
 
@@ -101,7 +101,7 @@
 <div class="diagnosis row " style="background-color: white;">
       <div class="medicalrecord row d-flex align-items-center justify-content-start ml-3">
         <h4>Vet reports</h4>
-        <%= link_to "📝 Input medical record", new_owner_pet_health_record_path(@owner,@pet), class: "input-diagnosis"%>
+        <%# <%= link_to "📝 Input medical record", new_owner_pet_health_record_path(@owner,@pet), class: "input-diagnosis"%> 
       </div>
 
     <div class= "container container-diagnosis d-flex align-items-start mb-1">
