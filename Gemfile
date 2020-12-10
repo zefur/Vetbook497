@@ -71,3 +71,5 @@ gem "hiredis"
 
 gem 'sidekiq'
 gem 'sidekiq-failures'
+
+gem 'whenever', require: false

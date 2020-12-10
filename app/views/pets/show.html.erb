@@ -35,7 +35,7 @@
   <!-- <div class="vaccinations"> -->
   <div class="vaccinations-header row d-flex align-items-center justify-content-start">
         <h4>Vaccinations</h4>
-        <%= link_to "📝 Input vaccination record", new_owner_pet_health_record_path(@owner,@pet), class: "input-diagnosis"%>
+        <%= link_to "📝 Input vaccination record", new_owner_pet_health_record_path(@pet.user,@pet), class: "input-diagnosis"%>
   </div>
 
 

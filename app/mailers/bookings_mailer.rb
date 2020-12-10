@@ -9,4 +9,5 @@ class BookingsMailer < ApplicationMailer
         @booking = params[:booking]
         mail(to: @booking.vet.user.email, subject: "Booking recieved")
     end
+
 end
