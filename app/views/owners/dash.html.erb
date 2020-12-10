@@ -24,15 +24,15 @@
         </div>
 
         <div class="">
-          <p><span style="color: gray">Address:</span> <br><%= @owner.location %></p>
+          <p><span style="color: #006A71; font-weight: bold">Address:</span> <br><%= @owner.location %></p>
         </div>
 
         <div class="owner-profile-phone">
-          <p><span style="color: gray">Phone number:</span> <br><%= @owner.phone_number %></p>
+          <p><span style="color: #006A71; font-weight: bold">Phone number:</span> <br><%= @owner.phone_number %></p>
         </div>
 
         <div class="owner-profile-email">
-          <p><span style="color: gray">Account e-mail:</span> <br><%= @owner.email %></p>
+          <p><span style="color: #006A71; font-weight: bold">Account e-mail:</span> <br><%= @owner.email %></p>
         </div>
 
         <div class="edit-profile-dash">
@@ -68,39 +68,37 @@
                 </div>
                 <div class="one-booking-a-col">
 
-                  <p>Date:<br><%= booking.date %></p>
-                  <p>Time:<br><%= booking.time.to_s(:time)  %></p>
+                  <p><strong>Date:</strong><br><%= booking.date %></p>
+                  <p><strong>Time:</strong><br><%= booking.time.to_s(:time)  %></p>
                   <% if booking.accepted? %>
-                    <p> Status:<br><span style="color: green; font-weight: bold">Confirmed</span></p>
+                    <p><strong>Status:</strong><br><span style="color: green; font-weight: bold">Confirmed</span></p>
                   <% else %>
-                    <p> Status:<br><span style="color: #F1C232; font-weight: bold">Pending</span></p>
+                    <p><strong>Status:</strong><br><span style="color: #F1C232; font-weight: bold">Pending</span></p>
                   <% end %>
                   <!-- <p> Status: <%#= booking.accepted? ? "Confirmed" : "Pending" %></p> -->
                 </div>
 
                 <div class="flex-fill one-booking-b-col" style="  border-left: 1px solid lightgray; padding-left: 20px; padding-top: 5px">
-                  <div class="d-flex justify-content-end">
-                  <button class="btn dropdown-toggle one-booking-col-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Manage</button>
+
 
                   <div class="dropdown-menu dropdown-menu-right booking-manage-action" aria-labelledby="dropdownMenuButton">
                     <%= link_to owner_pet_path(booking.pet.user, booking.pet) do %>
                       <span class="dropdown-item manage-booking-item"><p>Pet health profile</p></span>
                     <% end %>
 
-                    <%= link_to do %>
-                      <span class="dropdown-item manage-booking-item"><p>Change booking</p></span>
-                    <% end %>
+
 
                     <%= link_to booking_path(booking), method: :delete, data: {confirm: "Are you sure you want to cancel this booking?"}  do %>
                       <span class="dropdown-item manage-booking-item"><p>Cancel booking</p></span>
                     <% end %>
 
+                    </div>
                   </div>
-                  </div>
-                  <p>Pet: <%= booking.pet.name%></p>
-                  <p>Clinic: <%= booking.vet.user.name%></p>
-                  <p>Address: <%= booking.vet.user.location %></p>
-                  <p>Veterinary: <%= booking.vet.first_name %> <%= booking.vet.last_name %></p>
+
+
+                  <p><strong>Clinic:</strong> <%= booking.vet.user.name%></p>
+                  <p><strong>Address:</strong> <%= booking.vet.user.location %></p>
+                  <p><strong>Veterinary:</strong> <%= booking.vet.first_name %> <%= booking.vet.last_name %></p>
                 </div>
 
 
@@ -204,7 +202,7 @@
           <!-- MAP -->
           <div class="col-4">
             <div id="map"
-              style="width: 100%; height: 600px; margin-top: 30px; margin-bottom: 20px;"
+              style="width: 100%; height: 700px; margin-top: 30px; margin-bottom: 20px;"
               data-markers="<%= @markers.to_json %>"
               data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
             </div>

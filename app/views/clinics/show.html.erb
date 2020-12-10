@@ -1,52 +1,80 @@
 
 <%= render "shared/navbar" %>
   <% if current_user.type == "Clinic" %>
-    <div style="text-align: right; position: -webkit-sticky; position: sticky; top: 0;">
+    <div class="container d-flex justify-content-end align-items-end pr-0" style="top: 0;">
       <%= link_to "Edit my clinic profile", edit_clinic_path(@clinic), class: "btn button-to-edit-clinic" %>
-      <%= link_to "✚ Add my vets", new_clinic_vet_path(@clinic), class: "btn button-to-edit-clinic" %>
+      <%= link_to "✚ Add my vets", new_clinic_vet_path(@clinic), class: "btn button-to-edit-clinic-right" %>
     </div>
   <% end %>
 
+<!-- <div class="container clinic-show-container"> -->
 
-
-<div class="container clinic-show-container">
-
-
-  <h1><strong><%= @clinic.name %></strong></h1>
-  <h3><%= @clinic.location %></h3>
-
-
-
-<% @clinic.pictures.each do |picture| %>
-  <%= cl_image_tag(picture.key) %>
-  <%= link_to "delete", delete_pic_clinic_path(picture), method: :delete %>
-<% end %>
+<div class="clinic-basic-info container d-flex align-items-center justify-content-center">
+ <div class="infos col-4">
+    <div class="container container-clinic-name">
+        <h4><%= @clinic.name %></h4>
+        <h5><%=@clinic.location %></h5>
+        <p><%= @clinic.bio %></p>
+    </div>
+  </div>
 
 
 
+<!-- carousel start -->
+<div class="container-lg col-8 d-flex justify-content-center align-items-center">
+  <div id="myCarousel" class="carousel slide d-flex justify-content-end carousel-vet" data-ride="carousel" style="">
+    <!-- Wrapper for carousel items -->
+    <div class="carousel-inner carousel-inner-vet">
+           <div class="carousel-item active">
+             <% if @clinic.photo.attached? %>
+                <%= cl_image_tag(@clinic.photo.key, crop: :fill, :class => "clinic_logo_show") %>
+              <% else %>
+                <%= image_tag "default-clinic-image.png", :class => "avatar clinic-initial"  %>
+              <% end %>
+            </div>
 
-  <%= @clinic.bio %>
-  <h2><strong>OUR VETS</strong></h2>
+            <% @clinic.pictures.each do |picture| %>
+              <div class="carousel-item">
+                 <%= cl_image_tag(picture.key, crop: :fill, :class => "clinic_picture_show") %>
+               </div>
+            <% end %>
+     <!-- Carousel indicators -->
+
+            <ol class="carousel-indicators d-flex align-items-center">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+      <li data-target="#myCarousel" data-slide-to="4"></li>
+    </ol>
+        </div>
+      </div>
+    </div>
+
+</div>
 
 
 
-    <div class="clinic-show-cards">
+<div class="space">
+  <p></p>
+  <p></p>
+</div>
+
+<div class ="bio-vets container">
+
+    <div class="clinic-show-cards d-flex">
       <% @clinic.vets.each do |vet| %>
         <div class= "clinic-show-vet">
-          <div style="text-align: center;">
-
+          <div class= "d-flex align-items-start pl-1 pr-1"style="text-align: center;">
           <% if vet.photo.attached? %>
             <%= cl_image_tag( vet.photo.key, :class => "cloudinary-vet-profile-picture" ) %>
-
-      <% else %>
-            <!-- <img src="https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg" alt="photo" class="avatar vet-profile-picture"> -->
+          <% else %>
             <%= image_tag "default-profile-image.jpg", :class => 'avatar vet-profile-picture' %>
-
           <% end %>
 
           </div>
-          <div style="padding: 10px">
-            <h4 class="clinic-show-vet-name"><strong>Name:</strong> <%= vet.first_name %> <%= vet.last_name %></h4>
+          <div class="container" style="padding: 10px">
+            <h4 class="clinic-show-vet-name"><%= vet.first_name %> <%= vet.last_name %></h4>
             <p><strong>Speciality:</strong> <%= vet.speciality %></p>
             <div class="vet-bio-div">
               <p><strong>Bio: </strong><%= vet.bio %></p>
@@ -65,9 +93,8 @@
         </div>
       <% end %>
     </div>
+  </div>
 
 
-  <!-- </div> -->
 
-</div>
 
