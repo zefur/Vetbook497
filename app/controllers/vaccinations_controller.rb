@@ -27,13 +27,13 @@ class VaccinationsController < ApplicationController
     def update
         @vaccination = Vaccination.find(params[:id])
         if @vaccination.update(vaccination_params)
+            VaccinationMailer.with(vaccination: @vaccination).vaccination_remider.deliver_later
+            flash[:notice] = "Your vaccination has been updated"
             redirect_to owner_path(@owner)
         else
             render :edit
         end
     end
-
-
 
     private
 
@@ -44,6 +44,5 @@ class VaccinationsController < ApplicationController
     def set_default
         @owner = Owner.find(params[:owner_id])
         @pet = Pet.find(params[:pet_id])
-
     end
 end

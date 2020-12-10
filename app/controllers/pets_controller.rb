@@ -8,9 +8,8 @@ before_action :set_default
 
     def create
         @pet = Pet.new(pet_params)
-        authorize @pet
         @pet.user = current_user
-
+        authorize @pet
         if @pet.save
           puts "printed"
             redirect_to owners_dash_path(@owner), notice: "Your family has grown =]"

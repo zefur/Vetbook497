@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+
+  <h1> Vaccination</h1>
+  <p> Hello <%= @vaccination.pet.user.owner_name %> This is a remider for the upcoming vaccination</p> 
+  <p> <%= @vaccination.pet.name %> had last vaccination on </p>
+   <p> Vaccination date: <%= @vaccination.vaccination_date %></p>
+   <p>Please visit the website to book a new vaccination appiontment</p>
+  <p> Animal: <%= @vaccination.pet.name %> </p>
+  <p> Looking forward to see you.</p>
+<br/>
+<p>Vetbook</p>
+  </body>
+  </html>
