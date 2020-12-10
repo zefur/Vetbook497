@@ -18,10 +18,9 @@
     margin-bottom: auto;
     background-color: $submit-button-green;
     max-height: 800px;
-    //width: 500px;
+    width: 500px;
     border-radius:3px;
     overflow: auto;
-
     h4 {
      color:$submit-button-orange;
     font-family: 'Montserrat', sans-serif;
@@ -41,7 +40,8 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     margin-top: 10px;
-
+    align-items: center;
+    justify-content: center;
   }
 
 .vet-form-bar-width {
@@ -49,7 +49,8 @@
 }
 
 .vet-new-buttons {
-margin-top: 10px;
+margin-top: 20px;
+
 
 .submit_class {
   color:white;
