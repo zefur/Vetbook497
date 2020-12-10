@@ -17,7 +17,7 @@
     margin-top: auto;
     margin-bottom: auto;
     background-color: $submit-button-green;
-    max-height: 700px;
+    max-height: 950px;
     width: 500px;
     border-radius:3px;
     h4 {
@@ -28,6 +28,15 @@
     margin-top:20px;
 
    }
+  }
+
+  a.delete {
+    color: #1d2d50;
+  }
+  label.file.optional {
+  color:$submit-button-orange;
+  padding-top: 10px;
+
   }
 
   .form-inputs-clinic-edit {
