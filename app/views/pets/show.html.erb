@@ -145,7 +145,9 @@
           <span class="dropdown-item manage-booking-item"><p>View full report</p></span>
         <% end %>
 
-        <%= link_to edit_owner_pet_vaccination_path(@pet.user, @pet, record)do %>
+
+        <%= link_to edit_owner_pet_diagnosis_path(@pet.user, @pet, record)do %>
+
           <span class="dropdown-item manage-booking-item"><p>Edit</p></span>
         <% end %>
 
@@ -155,7 +157,8 @@
       </div>
 
        <div class="d-flex align-items-start last-box col-3 justify-content-start" >
-        <%= link_to "🔍 Full report", owner_pet_path(@pet.user, @pet, record), class: "btn-record"%>
+
+       
 
       </div>
 
