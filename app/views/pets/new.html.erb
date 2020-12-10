@@ -14,7 +14,7 @@
         </div>
         <div class="newpet-buttons d-flex justify-content-around">
           <%= f.submit "Add Pet", :class => 'submit_class' %>
-          <%= link_to "Back",owner_path(current_user), class: "btn_back"  %>
+          <%= link_to "Back",owners_dash_path(current_user), class: "btn_back"  %>
         </div>
 
   <% end %>
