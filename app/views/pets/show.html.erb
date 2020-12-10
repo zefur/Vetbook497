@@ -145,17 +145,17 @@
           <span class="dropdown-item manage-booking-item"><p>View full report</p></span>
         <% end %>
 
-        <%= link_to edit_owner_pet_vaccinations_path(@pet.user, @pet, record)do %>
+        <%= link_to edit_owner_pet_vaccination_path(@pet.user, @pet, record)do %>
           <span class="dropdown-item manage-booking-item"><p>Edit</p></span>
         <% end %>
 
-        <%= link_to do %>
+        <%= link_to owner_pet_health_record_path(@pet.user, @pet, record), method: :delete do %>
           <span class="dropdown-item manage-booking-item"><p>Remove</p></span>
         <% end %>
       </div>
 
        <div class="d-flex align-items-start last-box col-3 justify-content-start" >
-        <%= link_to "🔍 Full report", owner_pet_health_record_path(@pet.user, @pet, record), class: "btn-record"%>
+        <%= link_to "🔍 Full report", owner_pet_path(@pet.user, @pet, record), class: "btn-record"%>
 
       </div>
 

@@ -20,9 +20,14 @@ before_action :set_default
         @health_record = HealthRecord.find(params[:id])
     end
 
-
     def edit
         @health_record = HealthRecord.find(params[:id])
+    end
+
+    def destroy
+        @health_record = HealthRecord.find(params[:id])
+        @health_record.destroy
+        redirect_to owner_pet_path(@owner,@pet), notice: 'Successfully deleted'
     end
 
     def update
