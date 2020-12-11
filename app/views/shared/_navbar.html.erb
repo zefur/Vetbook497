@@ -18,9 +18,9 @@
     <ul class="navbar-nav mr-auto justify-content-between">
       <% if user_signed_in? %>
 
-        <div class="nav-item active d-flex justify-content-around mr-3">
+        <div class="nav-item active d-flex justify-content-end">
         <% if current_user.type == "Clinic" %>
-        
+
 <%= link_to clinic_path(current_user) do  %>
                       <span class="profile-button"><p>My Profile  </p></span>
                     <% end %>
@@ -29,7 +29,7 @@
 
          </div>
 
-        <div class="nav-item  d-flex justify-content-around ">
+        <div class="nav-item  d-flex justify-content-end" style="margin-left: 10px">
             <%= link_to destroy_user_session_path, method: :delete do  %>
                       <span class="logout-button"><p>Log out</p></span>
                     <% end %>
