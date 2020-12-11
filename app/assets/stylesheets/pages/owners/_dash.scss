@@ -34,20 +34,6 @@
   text-align: left;
 }
 
-.add-pet-dash{
-  text-decoration: none;
-    margin: 15px auto;
-     a{
-  text-decoration: none;
-  background-color: $submit-button-green;
-  color: white;
-  padding: 5px 15px;
-  border-radius: 5px;
-
-     }
-}
-
-
 .edit-profile-dash {
   text-decoration: none;
     margin: 15px auto;
@@ -61,6 +47,22 @@
 
      }
 }
+
+.add-pet-dash{
+  text-decoration: none;
+    margin: 15px auto;
+     a{
+  text-decoration: none;
+  background-color: $submit-button-green;
+  color: white;
+  padding: 5px 28px;
+  border-radius: 5px;
+
+     }
+}
+
+
+
 
 //  RIGHT COLUMN
 
