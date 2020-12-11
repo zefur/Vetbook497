@@ -1,7 +1,9 @@
 // Specific CSS for your home-page
 
-body {
+html, body {
   background-color: $my-background-color;
+  width: 100vw;
+  margin: 0
 }
 
 
@@ -11,7 +13,7 @@ body {
   padding: 150px 0;
   display: flex;
   background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), image-url("background2.jpg");
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .homepage {
@@ -111,7 +113,7 @@ body {
 
 .master-box {
   max-height: 100%;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .dotted-div {
