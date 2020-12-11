@@ -1,7 +1,7 @@
 <div class="newpet-background d-flex justify-content-center">
-  <div class="newpet-form form pt-3">
+  <div class="newpet-form-container">
     <h4>Add pet to your family</h4>
-        <div class="form-inputs-newpet">
+        <div class="form-inputs-newpet d-flex">
         <%= simple_form_for [@owner,@pet] do |f| %>
           <%= f.input :name %>
             <%= f.input :dob %>
@@ -9,15 +9,14 @@
             <%= f.input :breed %>
             <%= f.input :gender, collection: Pet.genders.keys %>
             <%= f.label :notes, 'Describe behavior during vet visits' %>
-            <%= f.input :notes, as: :text, label: false ,:placeholder => 'nervous, calm, growling, snapping, or biting' %>
+            <%= f.input :notes, as: :text, label: false ,:placeholder => 'nervous, calm, growling, snapping, or biting',  input_html: { class: "pet-form-bar-width", maxlength: 50}  %>
             <%= f.input :photo, as: :file, label: "Upload a photo" %>
-        </div>
         <div class="newpet-buttons d-flex justify-content-around">
           <%= f.submit "Add Pet", :class => 'submit_class' %>
           <%= link_to "Back",owners_dash_path(current_user), class: "btn_back"  %>
         </div>
 
   <% end %>
-
+    </div>
   </div>
 </div>

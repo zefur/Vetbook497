@@ -1,34 +1,38 @@
 <div class="health_record-background d-flex justify-content-center">
-
   <div class="health_record-form-container">
-    <h4>Add a health record</h4>
-    <%= simple_form_for([@owner, @pet, @health_record], url: owner_pet_health_record_path)  do |f| %>
-      <div class="form-inputs-health_record ">
-        <%= f.input :type, collection: %w[Diagnosis Vaccination], input_html: {data: {reflex: "change->ExampleReflex#change_record"}} %>
+    <h4>Edit a health record</h4>
 
-        <% if @type == "Diagnosis" %>
-          <%= f.input :pet, input_html: {value: @pet.name}, disabled: true %>
-          <%= f.input :pet_id, :as => :hidden, :input_html => { :value => @pet.id }%>
-          <%= f.input :diagnosis_date %>
-          <%= f.input :diagnosis%>
-          <%= f.input :treatment%>
-          <%= f.input :document, as: :file, label: "Please up load documents"  %>
-          <div class="health_record-buttons d-flex justify-content-between">
-            <%= f.submit "Add record", disable_with: 'Submiting...',:class => 'submit_record'  %>
-            <%= link_to "Back", owner_pet_path(@owner,@pet), class: "btn_back"%>
-          </div>
+      <div class="form-inputs-health_record d-flex">
+        <%= simple_form_for([@owner, @pet, @health_record], url: owner_pet_health_record_path)  do |f| %>
 
-        <% else %>
-          <%= f.input :pet, input_html: {value: @pet.name}, disabled: true %>
-          <%=f.input :pet_id, :as => :hidden, :input_html => { :value => @pet.id }%>
-          <%= f.input :vaccination_date %>
-          <%= f.input :vaccination_type%>
-          <div class="health_record-buttons d-flex justify-content-between">
-            <%= f.submit "Add record", disable_with: 'Submiting...',:class => 'submit_record' %>
-            <%= link_to "Back", owner_pet_path(@owner,@pet), class: "btn_back"%>
-          </div>
-        <% end %>
-      </div>
+          <%= f.input :type, collection: %w[Diagnosis Vaccination], input_html: {data: {reflex: "change->ExampleReflex#change_record"}} %>
+
+            <% if @type == "Diagnosis" %>
+              <%= f.input :pet, input_html: {value: @pet.name}, disabled: true %>
+              <%= f.input :pet_id, :as => :hidden, :input_html => { :value => @pet.id }%>
+              <%= f.input :diagnosis_date %>
+              <%= f.input :diagnosis%>
+              <%= f.input :treatment%>
+              <%= f.input :document, as: :file, label: "Please up load documents"  %>
+              <div class="health_record-buttons d-flex justify-content-between">
+                <%= f.submit "Add record", disable_with: 'Submiting...',:class => 'submit_record'  %>
+                <%= link_to "Back", owner_pet_path(@owner,@pet), class: "btn_back"%>
+              </div>
+
+            <% else %>
+              <%= f.input :pet, input_html: {value: @pet.name}, disabled: true %>
+              <%= f.input :pet_id, :as => :hidden, :input_html => { :value => @pet.id }%>
+              <%= f.input :vaccination_date %>
+              <%= f.input :vaccination_type%>
+              <div class="health_record-buttons d-flex justify-content-between">
+                <%= f.submit "Add record", disable_with: 'Submiting...',:class => 'submit_record' %>
+                <%= link_to "Back", owner_pet_path(@owner,@pet), class: "btn_back"%>
+              </div>
+
+            <% end %>
+        </div>
+
     <% end %>
+
   </div>
 </div>

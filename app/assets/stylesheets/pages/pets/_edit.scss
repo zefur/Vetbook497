@@ -2,8 +2,7 @@
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  padding: 150px 0;
-  display: flex;
+  padding: 20px 0;
   background-image: image-url("paws.png");
   height: 100vh;
   align-items: center;
@@ -11,15 +10,18 @@
 }
 
 
-.editpet-form{
-    padding-left: 20px;
-    padding-right: 20px;
-  margin-top: 15px;
-  margin-bottom: 30px;
+.editpet-form-container{
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 50px;
+  padding-top: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
   background-color: $submit-button-green;
-   width: 400px;
-   // height: 1000px;
+  max-height: 900px;
+  width: 500px;
   border-radius:3px;
+  overflow: auto;
    h4 {
      color:$submit-button-orange;
     font-family: 'Montserrat', sans-serif;
@@ -31,19 +33,25 @@
   }
 
   .form-inputs-editpet {
-      color:white;
+    color:white;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+  }
 
+  .pet-form-bar-width {
+  max-height: 70px;
   }
 
   .editpet-buttons {
 margin-top: 10px;
+
 .submit_class {
   color:white;
   background-color: $submit-button-orange;
-  padding: 10px 15px;
+  padding: 8px 20px;
   border: 1px solid $submit-button-orange;
   border-radius: 5px;
   width: 100px;
@@ -66,6 +74,5 @@ margin-top: 10px;
 }
 a.delete_photo {
   text-decoration: none;
-  color: white;
-  padding-top:5px;
+  color: lightgray;
 }

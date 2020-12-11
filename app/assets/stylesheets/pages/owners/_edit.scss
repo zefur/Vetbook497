@@ -2,8 +2,7 @@
   background-size: cover;
   background-position: center center;
   background-image: no-repeat;
-  padding: 20px;
-  //display: flex;
+  padding: 150px 0;
   background-image: image-url("paws.png");
   height: 100vh;
   align-items: center;
@@ -11,17 +10,18 @@
 }
 
 
-.edit-form{
+.edit-form-container{
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 20px;
+  padding-top: 20px;
   margin-top: auto;
   margin-bottom: auto;
   background-color: $submit-button-green;
-  width: 400px;
-  max-height: 700px;
-   // height: 1000px;
+  max-height: 800px;
+  width: 500px;
   border-radius:3px;
+  overflow: auto;
    h4 {
      color:$submit-button-orange;
     font-family: 'Montserrat', sans-serif;
@@ -32,23 +32,25 @@
    }
   }
 
+  a.delete-photo {
+    color: lightgray;
+  }
+
   .form-inputs-edit {
-      color:white;
+    color:white;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     margin-top: 10px;
     align-items: center;
     justify-content: center;
-    width: 100%;
-
   }
 
   .edit-buttons {
 margin-top: 10px;
-.edit_class {
+.submit_class {
   color:white;
   background-color: $submit-button-orange;
-  padding: 10px 15px;
+  padding: 8px 20px;
   border: 1px solid $submit-button-orange;
   border-radius: 5px;
   width: 100px;
