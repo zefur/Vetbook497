@@ -9,19 +9,19 @@
 
 <!-- <div class="container clinic-show-container"> -->
 
-<div class="clinic-basic-info container d-flex align-items-center justify-content-center">
- <div class="infos col-4">
-    <div class="container container-clinic-name">
+<div class="clinic-basic-info container d-flex align-items-center justify-content-around">
+ <div class="infos col-6 container d-flex justify-content-center align-items-center">
+    <div class="container container-clinic-name" style="1px solid black">
         <h4><%= @clinic.name %></h4>
-        <h5><%=@clinic.location %></h5>
-        <p><%= @clinic.bio %></p>
+        <h5 style="border-bottom: 1px solid lightgrey; padding-bottom: 5px"><%=@clinic.location %></h5>
+        <p style="text-align: left; padding-bottom: 10px;"><%= @clinic.bio %></p>
     </div>
   </div>
 
 
 
 <!-- carousel start -->
-<div class="container-lg col-8 d-flex justify-content-center align-items-center">
+<div class="container-lg col-6 d-flex justify-content-around align-items-center">
   <div id="myCarousel" class="carousel slide d-flex justify-content-end carousel-vet" data-ride="carousel" style="">
     <!-- Wrapper for carousel items -->
     <div class="carousel-inner carousel-inner-vet">
@@ -62,10 +62,10 @@
 
 <div class ="bio-vets container">
 
-    <div class="clinic-show-cards d-flex">
+    <div class="clinic-show-cards row container">
       <% @clinic.vets.each do |vet| %>
-        <div class= "clinic-show-vet">
-          <div class= "d-flex align-items-start pl-1 pr-1"style="text-align: center;">
+        <div class= "container clinic-show-vet">
+          <div class= "d-flex align-items-start"style="text-align: center;">
           <% if vet.photo.attached? %>
             <%= cl_image_tag( vet.photo.key, :class => "cloudinary-vet-profile-picture" ) %>
           <% else %>

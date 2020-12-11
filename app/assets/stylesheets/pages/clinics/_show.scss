@@ -30,12 +30,12 @@
   background-color: white;
   overflow: hidden;
   border-radius:5px;
-  height: 340px;
-  display: flex;
-  align-items: center;
+  min-height: 340px;
+  flex-wrap: wrap;
 }
 
 .container-clinic-name {
+
     h4 {
   text-align: center;
   font-family: 'Montserrat', sans-serif;
@@ -67,24 +67,6 @@
 
 
 
-
-.bio-vets {
-   background-color: white;
-  padding: 20px 20px;
-  border-radius: 5px;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  max-height:320px;
-  h3 {
- font-weight: 400;
- color: #FF7E67;
- font-family: 'Montserrat', sans-serif;
-  }
-}
-
-
-
-
 .about-header {
  font-weight: 400;
   color: #FF7E67;
@@ -110,10 +92,29 @@
 
 .carousel-inner-vet {
   height: 320px;
+  border: 1px solid lightgray;
 }
 
 .carousel-vet{
   // background-color: white;
+}
+
+
+
+////////////////////////////////
+
+.bio-vets {
+   background-color: white;
+  padding: 20px 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  min-height:320px;
+  h3 {
+ font-weight: 400;
+ color: #FF7E67;
+ font-family: 'Montserrat', sans-serif;
+  }
 }
 
 .clinic-show-container{
@@ -125,20 +126,17 @@
   padding: 0 auto;
   justify-content: center;
   align-items: center;
+  min-height: 320px;
+  flex-wrap: wrap;
 }
-
-////////////////////////////////
-
-
-
 .clinic-show-vet {
   border-radius: 20px;
  // border: 1px solid red;
   color: black;
-  width: 45%;
+  width: 500px;
   display: flex;
   margin: 10px 10px;
-  height: 300px;
+  min-height: 320px;
   font-family: 'Montserrat', sans-serif;
 
   // background-color: #036A71;
@@ -164,7 +162,6 @@
   margin-top: 10px;
   margin-left: 5px;
   padding: 5px 5px;
-  border: 3px solid white;
   //border: 2px solid red;
 }
 
@@ -183,7 +180,7 @@
   overflow: auto;
   //border: 2px solid red;
   padding: 0;
-  height: 130px;
+  height: 150px;
   margin-bottom: 10px;
   opacity: .9;
   // color: #036A71;
