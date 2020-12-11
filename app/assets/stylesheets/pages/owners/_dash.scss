@@ -1,5 +1,13 @@
 
+
+
 // LEFT COLUMN
+
+.profile-container{
+  min-width: 250px;
+  flex-wrap: wrap;
+}
+
 .avatar-owner-profile {
   background-size: cover;
   background-position: top center;
@@ -34,20 +42,6 @@
   text-align: left;
 }
 
-.add-pet-dash{
-  text-decoration: none;
-    margin: 15px auto;
-     a{
-  text-decoration: none;
-  background-color: $submit-button-green;
-  color: white;
-  padding: 5px 15px;
-  border-radius: 5px;
-
-     }
-}
-
-
 .edit-profile-dash {
   text-decoration: none;
     margin: 15px auto;
@@ -61,6 +55,22 @@
 
      }
 }
+
+.add-pet-dash{
+  text-decoration: none;
+    margin: 15px auto;
+     a{
+  text-decoration: none;
+  background-color: $submit-button-green;
+  color: white;
+  padding: 5px 28px;
+  border-radius: 5px;
+
+     }
+}
+
+
+
 
 //  RIGHT COLUMN
 
@@ -244,6 +254,10 @@
 
 // clinic cards
 
+.clinic-map-container {
+  flex-wrap: wrap;
+}
+
 .clinic-cards {
   //border: 1px solid black;
   display: flex;
@@ -333,6 +347,8 @@
 a:link, a:visited, a:hover, a:active {
   text-decoration: none;
 }
+
+
 
 
 
